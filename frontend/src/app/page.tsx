@@ -188,7 +188,7 @@ export default function DisasterApp() {
     // Fetch mock messages from Mistral API backend
     const fetchMessages = async () => {
       try {
-        const res = await fetch(`${BACKEND_URL}/api/community-messages`);
+        const res = await fetch(`${BACKEND_URL}/api/community-messages?lang=${language}`);
         const data = await res.json();
         setCommunityMessages(data);
       } catch (e) {
@@ -196,7 +196,7 @@ export default function DisasterApp() {
       }
     };
     fetchMessages();
-  }, []);
+  }, [language]);
 
   const handlePlayAudio = (id: string, audioUrl?: string) => {
     if (playingAudioId === id) {
