@@ -83,6 +83,24 @@ const translations = {
     descSources: "Sources: Mga taho sa komunidad ug mga katigulangan alang sa tinuod nga mga update sa yuta.",
     descReport: "Report: Pagpadala og mga taho sa peligro o pangayo og tabang, lakip na ang pag-record og tingog.",
     descSupply: "Recovery Map: Usa ka interactive nga mapa nga nagpakita sa mga supply drops, luwas nga mga lugar, ug mga lugar nga adunay peligro.",
+    problemsTitle: "Mga Problema",
+    prob1: "Nakalimtan nan gobyerno",
+    prob2: "Layu an pag-ila nan gobyerno sa kahibalo nan mga lumad",
+    prob3: "Waya nakaeskwela an kadaghanan sa komunidad (nahamutang layo sa moderno)",
+    solutionTitle: "Solusyon",
+    sol1: "Mapa nan supply nga nagapakita sa pasilidad para makahibayo an mga tao daw an gobyerno unsay ayuhon",
+    sol2: "Balita gikan sa mga Katiguyangan pinaagi sa boses (aron magsalig an gobyerno daw komunidad)",
+    sol3: "Tubagon an mga pasilidad nga kinahanglan ayuhon",
+    measureTitle: "Pagsukod nan Kalampusan",
+    meas1: "Pangayo-on an sulti nan Katiguyangan",
+    meas2: "Ihapon an nangamatay (quantitative tracking)",
+    meas3: "% nan hangyo sa pagbakwit nga natuman",
+    limitTitle: "Mga Limitasyon",
+    lim1: "Kulag an digital infrastracture daw kahibayo",
+    lim2: "Kinahanglan nan training para matudloan an komunidad paggamit",
+    futureTitle: "Mga Umaabot nga Plano",
+    fut1: "Mangayo nan tabang o grants sa gobyerno",
+    fut2: "Alternatibo sa GoFundMe sa Pilipinas (pareho nan Daisy, BayanihanPH)",
   },
   bisaya: {
     statusLine: "Nagka-duol ang bagyo. Siguroha ang inyong mga balay ug pangandam sa pag-bakwit sa taas nga dapit.",
@@ -150,6 +168,24 @@ const translations = {
     descSources: "Sources: Mga taho sa komunidad ug mga katigulangan alang sa tinuod nga mga update.",
     descReport: "Report: Pagpadala og mga taho sa peligro o pangayo og tabang, lakip na ang pag-record og tingog.",
     descSupply: "Recovery Map: Usa ka interactive nga mapa nga nagpakita sa mga supply drops ug luwas nga mga lugar.",
+    problemsTitle: "Mga Problema",
+    prob1: "Nakalimtan sa gobyerno",
+    prob2: "Dakong kal-ang tali sa lumad nga kahibalo ug mga proyekto sa gobyerno",
+    prob3: "Sagad sa komunidad walay igong edukasyon (layo sa modernong mga komunidad)",
+    solutionTitle: "Solusyon",
+    sol1: "Recovery supply map nga nagpakita sa mga pasilidad aron kahibalo ang komunidad asa moadto ug kahibalo ang gobyerno unsay ayuhon",
+    sol2: "Mga balita gikan sa mga Katigulangan pinaagi sa voice recording (nagpalig-on sa pagsalig tali sa gobyerno ug komunidad)",
+    sol3: "Pag-atiman sa mga pasilidad nga kinahanglan ayuhon",
+    measureTitle: "Pagsukod sa Kalamposan",
+    meas1: "Mangayo og feedback gikan sa mga Katigulangan",
+    meas2: "Ihap sa nangamatay (quantitative tracking)",
+    meas3: "% sa mga hangyo sa pagbakwit nga natuman (paghimo sa imprastraktura)",
+    limitTitle: "Mga Limitasyon",
+    lim1: "Limitado ang digital nga imprastraktura ug kahibalo",
+    lim2: "Nagkinahanglan og dugang training workshops aron matudloan ang komunidad",
+    futureTitle: "Mga Plano sa Umaabot",
+    fut1: "Mang-apply alang sa grants gikan sa gobyerno",
+    fut2: "Mga alternatibo sa GoFundMe sa Pilipinas (pananglitan, Daisy, BayanihanPH)",
   },
   tagalog: {
     statusLine: "Papalapit ang bagyo. Iseguro ang mga tahanan at maghandang lumipat sa mataas na lugar.",
@@ -217,6 +253,24 @@ const translations = {
     descSources: "Sources: Mga ulat ng komunidad at matatanda para sa mga totoong update.",
     descReport: "Report: Magsumite ng mga ulat sa panganib o humingi ng tulong, kasama ang pag-record ng boses.",
     descSupply: "Recovery Map: Isang interactive na mapa na nagpapakita ng mga supply drop at ligtas na mga lugar.",
+    problemsTitle: "Mga Problema",
+    prob1: "Nakaligtaan ng gobyerno",
+    prob2: "Puwang sa pagitan ng katutubong kaalaman at mga inisyatiba ng gobyerno",
+    prob3: "Karamihan sa komunidad ay hindi nakapag-aral dahil sa kakulangan sa edukasyon (nakahiwalay sa mga modernong komunidad)",
+    solutionTitle: "Solusyon",
+    sol1: "Recovery supply map na nagpapakita ng mga pasilidad upang malaman ng komunidad kung saan pupunta at alam ng gobyerno kung ano ang aayusin",
+    sol2: "Balita mula sa mga Nakatatanda/Pinuno sa pamamagitan ng voice recording (nagpapatibay ng tiwala sa pagitan ng gobyerno at komunidad)",
+    sol3: "Tugunan ang mga pasilidad na kailangang ayusin",
+    measureTitle: "Pagsukat ng Tagumpay",
+    meas1: "Humingi ng feedback ng mga Nakatatanda",
+    meas2: "Bilang ng mga namatay (quantitative tracking)",
+    meas3: "% ng mga hiling para sa paglikas na naipatupad (pagpapatupad ng imprastraktura)",
+    limitTitle: "Mga Limitasyon",
+    lim1: "Limitado ang digital na imprastraktura at kaalaman",
+    lim2: "Kailangan ng karagdagang pagsasanay upang turuan ang komunidad na gumamit",
+    futureTitle: "Mga Hinaharap na Plano",
+    fut1: "Mag-apply para sa mga pondo mula sa gobyerno",
+    fut2: "Mga alternatibo sa GoFundMe sa Pilipinas (hal., Daisy, BayanihanPH)",
   },
   english: {
     statusLine: "Typhoon approaching. Secure homes and prepare to move to high ground.",
@@ -284,6 +338,24 @@ const translations = {
     descSources: "Sources: A feed of community and elder reports, providing real-time, verified ground updates.",
     descReport: "Report: Submit new hazard reports or requests for assistance, with voice recording capabilities.",
     descSupply: "Recovery Map: An interactive map showing supply drops, safe zones, and hazard areas.",
+    problemsTitle: "Problems",
+    prob1: "Overlooked by the government",
+    prob2: "Gap between indigenous knowledge and government initiatives",
+    prob3: "Community is mostly illiterate due to lack of education (disconnected from modern communities)",
+    solutionTitle: "Solution",
+    sol1: "Recovery supply map showing facilities so community members know where to go and government knows what to renovate",
+    sol2: "News from Elders/Chiefs through voice recording (builds trust between government and community)",
+    sol3: "Respond to facilities that need renovation",
+    measureTitle: "Measuring Success",
+    meas1: "Asks Elder's feedback",
+    meas2: "Death toll (quantitative tracking)",
+    meas3: "% of evacuation requests executed (infrastructure implementation)",
+    limitTitle: "Limitations",
+    lim1: "Limited digital infrastructure & knowledge",
+    lim2: "Need further training workshops to teach community to use",
+    futureTitle: "Future Implementations",
+    fut1: "Apply for government grants",
+    fut2: "GoFundMe alternatives in Philippines (e.g., Daisy, BayanihanPH)",
   },
   cebuano: {
     statusLine: "Nagka-duol ang bagyo. Siguroha ang inyong mga balay ug pangandam sa pag-bakwit sa taas nga dapit.",
@@ -351,6 +423,24 @@ const translations = {
     descSources: "Sources: Mga taho sa komunidad ug mga katigulangan alang sa mga update.",
     descReport: "Report: Magpadala og mga taho sa peligro o pangayo og tabang gamit ang tingog.",
     descSupply: "Recovery Map: Interactive nga mapa alang sa mga supply drops ug luwas nga mga lugar.",
+    problemsTitle: "Mga Problema",
+    prob1: "Wala matagad sa gobyerno",
+    prob2: "Layo ang deperensya tali sa lumad nga kahibalo ug inisyatibo sa gobyerno",
+    prob3: "Daghan sa komunidad ang walay igong edukasyon (bulag sa modernong komunidad)",
+    solutionTitle: "Solusyon",
+    sol1: "Mapa sa recovery supply nga nagpakita sa mga pasilidad aron ang mga tawo masayod asa moadto ug ang gobyerno masayod unsa ang ayuhon",
+    sol2: "Balita gikan sa mga Katigulangan pinaagi sa tingog (pagtukod og pagsalig tali sa gobyerno ug komunidad)",
+    sol3: "Pagtubag sa mga pasilidad nga kinahanglan i-renovate",
+    measureTitle: "Pagsukod sa Kalampusan",
+    meas1: "Pagpangayo og feedback sa Katigulangan",
+    meas2: "Talaan sa namatay (quantitative tracking)",
+    meas3: "% sa hangyo sa evacuation nga napatuman (infrastracture implementation)",
+    limitTitle: "Mga Limitasyon",
+    lim1: "Limitado nga digital infrastracture ug kahibalo",
+    lim2: "Kinahanglan pa og training aron matudloan ang komunidad unsaon paggamit",
+    futureTitle: "Mga Umaabot nga Plano",
+    fut1: "Mag-apply alang sa mga grants sa gobyerno",
+    fut2: "Mga alternatibo sa GoFundMe sa Pilipinas (e.g., Daisy, BayanihanPH)",
   },
   ilocano: {
     statusLine: "Umay ti bagyo. I-sigurado dagiti balay yo ken agsagana nga mapan iti nangato a lugar.",
@@ -418,6 +508,24 @@ const translations = {
     descSources: "Sources: Pakaammo dagiti komunidad ken lallakay para kadagiti update.",
     descReport: "Report: Mangted ti pakaammo iti peligro wenno agkiddaw ti tulong.",
     descSupply: "Recovery Map: Interaktibo a mapa para kadagiti supply drops ken natalged a lugar.",
+    problemsTitle: "Dagiti Problema",
+    prob1: "Maliwayan ti gobyerno",
+    prob2: "Awan kinalaingan ti gobyerno kadagiti nakaisigudan a pannakaammo",
+    prob3: "Adu ti komunidad a saan a nakapag-adal gapu iti kinakurapay (naisina kadagiti moderno a komunidad)",
+    solutionTitle: "Solusion",
+    sol1: "Mapa ti recovery supply a mangipakita kadagiti pasilidad tapno ammo ti komunidad no sadino ti mapan ken ammo ti gobyerno ti tarimaanen",
+    sol2: "Damdamag manipud kadagiti Lallakay babaen iti voice recording (mangpataud iti panagtalek iti nagbaetan ti gobyerno ken komunidad)",
+    sol3: "Sungbatan dagiti pasilidad a kasapulan a tarimaanen",
+    measureTitle: "Panagrukod iti Balligi",
+    meas1: "Kiddawen ti pammagbaga ti Lallakay",
+    meas2: "Bilang ti pimmusay (quantitative tracking)",
+    meas3: "% kadagiti kiddaw a panagbakwit a naaramid (infrastracture implementation)",
+    limitTitle: "Dagiti Limitasion",
+    lim1: "Limitado a digital infrastracture ken pannakaammo",
+    lim2: "Kasapulan ti ad-adu a panagsanay tapno masursuruan ti komunidad nga agusar",
+    futureTitle: "Dagiti Masakbayan a Plano",
+    fut1: "Agtulong para kadagiti pondo manipud iti gobyerno",
+    fut2: "Dagiti alternatibo iti GoFundMe idiay Pilipinas (kas koma iti Daisy, BayanihanPH)",
   },
   hiligaynon: {
     statusLine: "Hapit na ang bagyo. Siguraduha ang inyo mga balay kag maghanda sa pag-evacuate sa mataas nga lugar.",
@@ -485,6 +593,24 @@ const translations = {
     descSources: "Sources: Mga taho sang komunidad kag kamagurangan para sa mga update.",
     descReport: "Report: Magpadala sing taho ukon mangayo sing bulig gamit ang tingog.",
     descSupply: "Recovery Map: Interactive nga mapa para sa mga supply drops kag luwas nga lugar.",
+    problemsTitle: "Mga Problema",
+    prob1: "Nakalimtan sang gobyerno",
+    prob2: "Gap sa tunga sang kaalam sang lumad kag mga inisyatibo sang gobyerno",
+    prob3: "Kalabanan sa komunidad wala nakatapos sang pagtuon (bulag sa moderno nga komunidad)",
+    solutionTitle: "Solusyon",
+    sol1: "Mapa sang recovery supply nga nagapakita sang mga pasilidad agud mabal-an sang komunidad kon diin makadto kag mabal-an sang gobyerno kon ano ang ayuhon",
+    sol2: "Balita halin sa mga Katigulangan paagi sa tingog (nagapadalom sang pagsalig sa tunga sang gobyerno kag komunidad)",
+    sol3: "Sabton ang mga pasilidad nga kinahanglan kay-uhon",
+    measureTitle: "Pagtakus sang Kadalag-an",
+    meas1: "Pangayoon ang opinyon sang mga Katigulangan",
+    meas2: "Kadamuon sang napatay (quantitative tracking)",
+    meas3: "% sang mga pangabay nga evacuation nga napatuman",
+    limitTitle: "Mga Limitasyon",
+    lim1: "Limitado nga digital nga imprastraktura kag ihibalo",
+    lim2: "Kinahanglan ang dugang nga paghanas agud tudluan ang komunidad sa paggamit",
+    futureTitle: "Mga Plano sa Palaabuton",
+    fut1: "Mag-apply para sa mga grant sang gobyerno",
+    fut2: "Mga alternatibo sang GoFundMe sa Pilipinas (halimbawa, Daisy, BayanihanPH)",
   },
   bicolano: {
     statusLine: "Haranihon na ang bagyo. Seguruhon ang mga harong asin mag-andam sa pagbalyo sa halangkaw na lugar.",
@@ -552,6 +678,24 @@ const translations = {
     descSources: "Sources: Mga bareta kan komunidad asin mga gurang para sa mga update.",
     descReport: "Report: Magpadara nin bareta sa peligro o maghagad nin tabang.",
     descSupply: "Recovery Map: Interactive na mapa para sa mga supply drops.",
+    problemsTitle: "Mga Problema",
+    prob1: "Linipasan kan gobyerno",
+    prob2: "Puwang sa tahaw kan aram kan katutubo asin mga plano kan gobyerno",
+    prob3: "Kadaklan sa komunidad dae nakapag-adal huli sa kakulangan (nasuhay sa modernong komunidad)",
+    solutionTitle: "Solusyon",
+    sol1: "Mapa kan recovery supply na nagpapahiling kan pasilidad tanganing maaraman kan komunidad kun saen maduman asin maaraman kan gobyerno kun ano an aayuson",
+    sol2: "Bareta hali sa mga Gurang paagi sa boses (nagpapakusog nin tiwala sa gobyerno asin komunidad)",
+    sol3: "Aksyonan an mga pasilidad na kaipuhan hirahayon",
+    measureTitle: "Pagsukol kan Kapangganahan",
+    meas1: "Hagadon an opinyon kan mga Gurang",
+    meas2: "Bilang kan mga nagadan (quantitative tracking)",
+    meas3: "% kan hinagad na evacuation na naisagibo",
+    limitTitle: "Mga Limitasyon",
+    lim1: "Limitado an digital na pasilidad asin kaaraman",
+    lim2: "Kaipuhan nin dagdag na training para matukduan an komunidad na maggamit",
+    futureTitle: "Mga Plano sa Nuanoy",
+    fut1: "Mag-apply para sa mga pondo kan gobyerno",
+    fut2: "Mga alternatibo kan GoFundMe sa Pilipinas (arog kan Daisy, BayanihanPH)",
   },
   waray: {
     statusLine: "Ti-arabot na iton bagyo. Siguruha iton iyo mga balay ngan pag-andam ha pagbakwit ngadto ha hitaas nga lugar.",
@@ -619,6 +763,24 @@ const translations = {
     descSources: "Sources: Mga sumat han komunidad ug katigulangan para hin update.",
     descReport: "Report: Magpadara hin sumat hin peligro o pangaro hin bulig.",
     descSupply: "Recovery Map: Interactive nga mapa para han mga supply drops.",
+    problemsTitle: "Mga Problema",
+    prob1: "Nakalimtan han gobyerno",
+    prob2: "Dako an guhang ha butnga han hibaro han mga lumad ug plano han gobyerno",
+    prob3: "Kadak-an ha komunidad in waray igo nga edukasyon (bulag ha modernong komunidad)",
+    solutionTitle: "Solusyon",
+    sol1: "Mapa han recovery supply nga nagpapakita han pasilidad basi mahibaro an komunidad kon diin makadto ug an gobyerno kon ano an aayuson",
+    sol2: "Mga sumat tikang ha mga Katigulangan pinaagi hin tingog (nagpapadig-on han tapod ha gobyerno ug komunidad)",
+    sol3: "Aksyonan an mga pasilidad nga kinahanglan ayuson",
+    measureTitle: "Pagsukol han Kadag-an",
+    meas1: "Pangayuon an panunahuna han mga Katigulangan",
+    meas2: "Kadamuon han namatay (quantitative tracking)",
+    meas3: "% han gin-aro nga pag-evacuate nga natuman",
+    limitTitle: "Mga Limitasyon",
+    lim1: "Limitado an digital nga imprastraktura ug hibaro",
+    lim2: "Kinahanglan hin dugang nga training basi matutdoan an komunidad paggamit",
+    futureTitle: "Mga Plano ha Kasiyahan",
+    fut1: "Mag-apply para han mga pondo han gobyerno",
+    fut2: "Mga alternatibo han GoFundMe ha Pilipinas (sugad han Daisy, BayanihanPH)",
   },
   kapampangan: {
     statusLine: "Darating ne ing bagyu. Siguradwan yo ring bale yo at magsadya kayong lumipat king matas a lugal.",
@@ -686,6 +848,24 @@ const translations = {
     descSources: "Sources: Mga balita ning komunidad at matatua para update.",
     descReport: "Report: Magpadala balita king peligro o manyad saup.",
     descSupply: "Recovery Map: Interactive a mapa para kareng supply drops.",
+    problemsTitle: "Deng Problema",
+    prob1: "Kakaligtaan ning gobyerno",
+    prob2: "Atyu gap king pamikabalu ning katutubo ampo reng planu ning gobyerno",
+    prob3: "Keraklan king komunidad ala lang sapat a pamagaral (makakawani karing modernung komunidad)",
+    solutionTitle: "Solusyon",
+    sol1: "Mapa ning recovery supply a magpakit kareng pasilidad ba'yung abalu ning komunidad nung nukarin munta at abalu ning gobyerno nung nanu ing ayusan",
+    sol2: "Balita manibat kareng Makatua gamit ing boses (magpatibe king tiwala king gobyerno at komunidad)",
+    sol3: "Aksyunan deng pasilidad a kailangang ayusan",
+    measureTitle: "Panyukad king Tagumpay",
+    meas1: "Manyad feedback kareng Makatua",
+    meas2: "Bilang da reng mete (quantitative tracking)",
+    meas3: "% da reng anyad a pag-evacuate a me-implementa",
+    limitTitle: "Deng Limitasyon",
+    lim1: "Limitadu ing digital a pasilidad at kabaluan",
+    lim2: "Kailangan ing dagdag a training ba'yung aturu ing komunidad na gumamit",
+    futureTitle: "Deng Plano king Paintungulan",
+    fut1: "Mag-apply para karing pondo ning gobyerno",
+    fut2: "Deng alternatibo king GoFundMe king Pilipinas (kalupa ning Daisy, BayanihanPH)",
   },
   pangasinan: {
     statusLine: "Oonla so bagyo. Iseguro iray abong yo tan man-akseb ya onalis ed atagey ya pasen.",
@@ -753,6 +933,24 @@ const translations = {
     descSources: "Sources: Saray tanda na komunidad tan matatken para ed update.",
     descReport: "Report: Mangipadara na tanda na peligro o onkerew na tulong.",
     descSupply: "Recovery Map: Interactive ya mapa para ed saray supply drops.",
+    problemsTitle: "Saray Problema",
+    prob1: "Abaliwalaan na gobyerno",
+    prob2: "Kulang so pika-kabat ed baetan na saray nankayarian tan saray plano na gobyerno",
+    prob3: "Dakel ed komunidad so ag-akaral lapud kulang ed edukasyon (akabiig ed saray modernon komunidad)",
+    solutionTitle: "Solusyon",
+    sol1: "Mapa na recovery supply ya mangipanengneng na saray pasilidad pian amta na komunidad no iner so laen tan amta na gobyerno no anto so apigeren",
+    sol2: "Balita manlapud saray Matatken diad panamegley na boses (mangibangon na talek ed baetan na gobyerno tan komunidad)",
+    sol3: "Asikasoen iray pasilidad ya nakaukolan ya apigeren",
+    measureTitle: "Pansukat na Itatagey",
+    meas1: "Kerewen so feedback na saray Matatken",
+    meas2: "Bilang na inatey (quantitative tracking)",
+    meas3: "% na kerew ed pan-evacuate ya agawaan",
+    limitTitle: "Saray Limitasyon",
+    lim1: "Limitado ya digital a pasilidad tan pikakabat",
+    lim2: "Nakaukolan na arum ni iran training pian nibangat so komunidad ya mangusar",
+    futureTitle: "Saray Plano ed Arapen",
+    fut1: "Onkerew na pondo manlapud gobyerno",
+    fut2: "Saray alternatibo na GoFundMe ed Pilipinas (singa say Daisy, BayanihanPH)",
   }
 };
 
@@ -1227,14 +1425,14 @@ export default function DisasterApp() {
                   <CardHeader className="pb-2 bg-[#fef2f2] dark:bg-[#450a0a]/30 border-b border-[#fee2e2] dark:border-[#7f1d1d]/30">
                     <h3 className="font-bold text-[#b91c1c] dark:text-[#f87171] flex items-center gap-2">
                       <AlertTriangle className="h-4 w-4" />
-                      Problems
+                      {t.problemsTitle}
                     </h3>
                   </CardHeader>
                   <CardContent className="pt-4">
                     <ul className="list-disc pl-5 text-sm text-gray-700 dark:text-gray-300 space-y-2">
-                      <li>Overlooked by the government</li>
-                      <li>Gap between indigenous knowledge and government initiatives</li>
-                      <li>Community is mostly illiterate due to lack of education (disconnected from modern communities)</li>
+                      <li>{t.prob1}</li>
+                      <li>{t.prob2}</li>
+                      <li>{t.prob3}</li>
                     </ul>
                   </CardContent>
                 </Card>
@@ -1244,14 +1442,14 @@ export default function DisasterApp() {
                   <CardHeader className="pb-2 bg-[#f0fdf4] dark:bg-[#052e16]/30 border-b border-[#dcfce3] dark:border-[#14532d]/30">
                     <h3 className="font-bold text-[#15803d] dark:text-[#4ade80] flex items-center gap-2">
                       <CheckCircle2 className="h-4 w-4" />
-                      Solution
+                      {t.solutionTitle}
                     </h3>
                   </CardHeader>
                   <CardContent className="pt-4">
                     <ul className="list-disc pl-5 text-sm text-gray-700 dark:text-gray-300 space-y-2">
-                      <li>Recovery supply map showing facilities so community members know where to go and government knows what to renovate</li>
-                      <li>News from Elders/Chiefs through voice recording (builds trust between government and community)</li>
-                      <li>Respond to facilities that need renovation</li>
+                      <li>{t.sol1}</li>
+                      <li>{t.sol2}</li>
+                      <li>{t.sol3}</li>
                     </ul>
                   </CardContent>
                 </Card>
@@ -1261,14 +1459,14 @@ export default function DisasterApp() {
                   <CardHeader className="pb-2 bg-[#eff6ff] dark:bg-[#1e3a8a]/30 border-b border-[#dbeafe] dark:border-[#1e3a8a]/50">
                     <h3 className="font-bold text-[#1d4ed8] dark:text-[#60a5fa] flex items-center gap-2">
                       <Activity className="h-4 w-4" />
-                      Measuring Success
+                      {t.measureTitle}
                     </h3>
                   </CardHeader>
                   <CardContent className="pt-4">
                     <ul className="list-disc pl-5 text-sm text-gray-700 dark:text-gray-300 space-y-2">
-                      <li>Asks Elder's feedback</li>
-                      <li>Death toll (quantitative tracking)</li>
-                      <li>% of evacuation requests executed (infrastructure implementation)</li>
+                      <li>{t.meas1}</li>
+                      <li>{t.meas2}</li>
+                      <li>{t.meas3}</li>
                     </ul>
                   </CardContent>
                 </Card>
@@ -1278,13 +1476,13 @@ export default function DisasterApp() {
                   <CardHeader className="pb-2 bg-[#fffbeb] dark:bg-[#78350f]/30 border-b border-[#fef3c7] dark:border-[#92400e]/30">
                     <h3 className="font-bold text-[#b45309] dark:text-[#fbbf24] flex items-center gap-2">
                       <ShieldAlert className="h-4 w-4" />
-                      Limitations
+                      {t.limitTitle}
                     </h3>
                   </CardHeader>
                   <CardContent className="pt-4">
                     <ul className="list-disc pl-5 text-sm text-gray-700 dark:text-gray-300 space-y-2">
-                      <li>Limited digital infrastructure & knowledge</li>
-                      <li>Need further training workshops to teach community to use</li>
+                      <li>{t.lim1}</li>
+                      <li>{t.lim2}</li>
                     </ul>
                   </CardContent>
                 </Card>
@@ -1294,13 +1492,13 @@ export default function DisasterApp() {
                   <CardHeader className="pb-2 bg-[#faf5ff] dark:bg-[#4c1d95]/30 border-b border-[#f3e8ff] dark:border-[#5b21b6]/30">
                     <h3 className="font-bold text-[#7e22ce] dark:text-[#c084fc] flex items-center gap-2">
                       <Star className="h-4 w-4" />
-                      Future Implementations
+                      {t.futureTitle}
                     </h3>
                   </CardHeader>
                   <CardContent className="pt-4">
                     <ul className="list-disc pl-5 text-sm text-gray-700 dark:text-gray-300 space-y-2">
-                      <li>Apply for government grants</li>
-                      <li>GoFundMe alternatives in Philippines (e.g., Daisy, BayanihanPH)</li>
+                      <li>{t.fut1}</li>
+                      <li>{t.fut2}</li>
                     </ul>
                   </CardContent>
                 </Card>
