@@ -6,7 +6,7 @@
     "dev:frontend": "npm run dev --prefix frontend",
     "dev:mobile": "npm run start --prefix mobile",
     "dev:backend": "cd backend && ./venv/bin/uvicorn main:app --reload --port 8000",
-    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\" \"npm run dev:mobile\""
+    "dev": "concurrently --names \"backend,frontend,mobile\" --prefix-colors \"blue,green,magenta\" \"npm run dev:backend\" \"npm run dev:frontend\" \"npm run dev:mobile\""
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
