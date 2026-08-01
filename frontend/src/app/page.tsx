@@ -1141,10 +1141,31 @@ export default function DisasterApp() {
     if ('speechSynthesis' in window) {
       const utterance = new SpeechSynthesisUtterance(transcript);
       
+      // Match voice to current app language
       const voices = window.speechSynthesis.getVoices();
-      const filipinoVoice = voices.find(v => v.lang.toLowerCase().includes('fil') || v.lang.toLowerCase().includes('ph') || v.lang.toLowerCase().includes('es'));
-      if (filipinoVoice) {
-        utterance.voice = filipinoVoice;
+      
+      if (language === 'english') {
+        const engVoice = voices.find(v => v.lang.toLowerCase().includes('en-us') || v.lang.toLowerCase().includes('en-gb') || v.lang.toLowerCase().includes('en'));
+        if (engVoice) {
+          utterance.voice = engVoice;
+          utterance.lang = engVoice.lang;
+        } else {
+          utterance.lang = 'en-US';
+        }
+      } else {
+        // Fallback to Filipino/Indonesian/Spanish for Philippine dialects
+        const filipinoVoice = voices.find(v => 
+          v.lang.toLowerCase().includes('fil') || 
+          v.lang.toLowerCase().includes('ph') || 
+          v.lang.toLowerCase().includes('id') || 
+          v.lang.toLowerCase().includes('es')
+        );
+        if (filipinoVoice) {
+          utterance.voice = filipinoVoice;
+          utterance.lang = filipinoVoice.lang;
+        } else {
+          utterance.lang = 'fil-PH';
+        }
       }
       
       utterance.rate = 0.95;
