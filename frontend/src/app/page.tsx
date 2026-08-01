@@ -611,7 +611,7 @@ export default function DisasterApp() {
     <div className="min-h-screen bg-[#fcfbf9] dark:bg-[#111827] text-[#1f2937] dark:text-[#f9fafb] flex flex-col transition-colors duration-300">
       
       {/* Sticky Header with Logo & Brand Colors */}
-      <header className="sticky top-0 z-50 w-full border-b border-[#e5e7eb] dark:border-[#1f2937] bg-[#ffffff]/95 dark:bg-[#111827]/95 backdrop-blur shadow-xs">
+      <header className="w-full border-b border-[#e5e7eb] dark:border-[#1f2937] bg-[#ffffff] dark:bg-[#111827] shadow-xs">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between gap-2">
           
           {/* Logo & Branding */}
@@ -767,7 +767,7 @@ export default function DisasterApp() {
         <Tabs defaultValue="sources" className="w-full">
           
           {/* 3 Main Header Tabs */}
-          <TabsList className="grid w-full grid-cols-3 h-14 mb-6 sticky top-[104px] z-40 bg-white/95 dark:bg-[#111827]/95 backdrop-blur shadow-xs border border-[#e5e7eb] dark:border-[#1f2937] rounded-xl p-1">
+          <TabsList className="grid w-full grid-cols-3 h-14 mb-6 bg-white/95 dark:bg-[#111827]/95 border border-[#e5e7eb] dark:border-[#1f2937] rounded-xl p-1 shadow-xs">
             <TabsTrigger 
               value="sources" 
               className="flex items-center justify-center gap-2 data-[state=active]:text-[#0038a8] dark:data-[state=active]:text-[#60a5fa] data-[state=active]:bg-[#eff6ff] dark:data-[state=active]:bg-[#1e3a8a]/40 font-bold text-xs sm:text-sm rounded-lg transition-all"
