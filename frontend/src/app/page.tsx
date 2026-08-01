@@ -101,6 +101,7 @@ const translations = {
     futureTitle: "Mga Umaabot nga Plano",
     fut1: "Mangayo nan tabang o grants sa gobyerno",
     fut2: "Alternatibo sa GoFundMe sa Pilipinas (pareho nan Daisy, BayanihanPH)",
+    registerInfo: "Kung gusto niyo magparehistro bilang Katiguyangan, Tribal Chief, o Lider nan Komunidad, palihog kontaka an officialpinoyta@gmail.com daw himoan ka namo nan opisyal nga account.",
   },
   bisaya: {
     statusLine: "Nagka-duol ang bagyo. Siguroha ang inyong mga balay ug pangandam sa pag-bakwit sa taas nga dapit.",
@@ -186,6 +187,7 @@ const translations = {
     futureTitle: "Mga Plano sa Umaabot",
     fut1: "Mang-apply alang sa grants gikan sa gobyerno",
     fut2: "Mga alternatibo sa GoFundMe sa Pilipinas (pananglitan, Daisy, BayanihanPH)",
+    registerInfo: "Kung gusto nimo magparehistro isip Katigulangan, Tribal Chief, o Lider sa Komunidad, palihog kontaka ang officialpinoyta@gmail.com ug himoan ka namo og opisyal nga account.",
   },
   tagalog: {
     statusLine: "Papalapit ang bagyo. Iseguro ang mga tahanan at maghandang lumipat sa mataas na lugar.",
@@ -271,6 +273,7 @@ const translations = {
     futureTitle: "Mga Hinaharap na Plano",
     fut1: "Mag-apply para sa mga pondo mula sa gobyerno",
     fut2: "Mga alternatibo sa GoFundMe sa Pilipinas (hal., Daisy, BayanihanPH)",
+    registerInfo: "Kung nais mong magparehistro bilang Nakatatanda, Pinuno ng Tribo, o Lider ng Komunidad, mangyaring makipag-ugnayan sa officialpinoyta@gmail.com at gagawan ka namin ng opisyal na account.",
   },
   english: {
     statusLine: "Typhoon approaching. Secure homes and prepare to move to high ground.",
@@ -356,6 +359,7 @@ const translations = {
     futureTitle: "Future Implementations",
     fut1: "Apply for government grants",
     fut2: "GoFundMe alternatives in Philippines (e.g., Daisy, BayanihanPH)",
+    registerInfo: "If you want to register as an Elder, Tribal Chief, or Community Leader, please reach out to officialpinoyta@gmail.com and we will set up an official account for you.",
   },
   cebuano: {
     statusLine: "Nagka-duol ang bagyo. Siguroha ang inyong mga balay ug pangandam sa pag-bakwit sa taas nga dapit.",
@@ -441,6 +445,7 @@ const translations = {
     futureTitle: "Mga Umaabot nga Plano",
     fut1: "Mag-apply alang sa mga grants sa gobyerno",
     fut2: "Mga alternatibo sa GoFundMe sa Pilipinas (e.g., Daisy, BayanihanPH)",
+    registerInfo: "Kung gusto nimo magparehistro isip Katigulangan, Tribal Chief, o Lider sa Komunidad, palihog kontaka ang officialpinoyta@gmail.com ug himoan ka namo og opisyal nga account.",
   },
   ilocano: {
     statusLine: "Umay ti bagyo. I-sigurado dagiti balay yo ken agsagana nga mapan iti nangato a lugar.",
@@ -526,6 +531,7 @@ const translations = {
     futureTitle: "Dagiti Masakbayan a Plano",
     fut1: "Agtulong para kadagiti pondo manipud iti gobyerno",
     fut2: "Dagiti alternatibo iti GoFundMe idiay Pilipinas (kas koma iti Daisy, BayanihanPH)",
+    registerInfo: "No kayat mo ti agparehistro a kas Lallakay, Tribal Chief, wenno Lider ti Komunidad, mabalin a kontakem ti officialpinoyta@gmail.com tapno maaramidan ka iti opisyal nga account.",
   },
   hiligaynon: {
     statusLine: "Hapit na ang bagyo. Siguraduha ang inyo mga balay kag maghanda sa pag-evacuate sa mataas nga lugar.",
@@ -611,6 +617,7 @@ const translations = {
     futureTitle: "Mga Plano sa Palaabuton",
     fut1: "Mag-apply para sa mga grant sang gobyerno",
     fut2: "Mga alternatibo sang GoFundMe sa Pilipinas (halimbawa, Daisy, BayanihanPH)",
+    registerInfo: "Kon luyag mo magparehistro bilang Katigulangan, Tribal Chief, ukon Lider sang Komunidad, palihug kontaka ang officialpinoyta@gmail.com kag himuan ka namon sang opisyal nga account.",
   },
   bicolano: {
     statusLine: "Haranihon na ang bagyo. Seguruhon ang mga harong asin mag-andam sa pagbalyo sa halangkaw na lugar.",
@@ -696,6 +703,7 @@ const translations = {
     futureTitle: "Mga Plano sa Nuanoy",
     fut1: "Mag-apply para sa mga pondo kan gobyerno",
     fut2: "Mga alternatibo kan GoFundMe sa Pilipinas (arog kan Daisy, BayanihanPH)",
+    registerInfo: "Kun gusto mong magparehistro bilang Gurang, Tribal Chief, o Lider kan Komunidad, mag-contact sa officialpinoyta@gmail.com asin tataw-an mi ika nin opisyal na account.",
   },
   waray: {
     statusLine: "Ti-arabot na iton bagyo. Siguruha iton iyo mga balay ngan pag-andam ha pagbakwit ngadto ha hitaas nga lugar.",
@@ -781,6 +789,7 @@ const translations = {
     futureTitle: "Mga Plano ha Kasiyahan",
     fut1: "Mag-apply para han mga pondo han gobyerno",
     fut2: "Mga alternatibo han GoFundMe ha Pilipinas (sugad han Daisy, BayanihanPH)",
+    registerInfo: "Kon karuyag niyo magparehistro komo Katigulangan, Tribal Chief, o Lider han Komunidad, alayon kontaka an officialpinoyta@gmail.com ug hihimuan ka namon hin opisyal nga account.",
   },
   kapampangan: {
     statusLine: "Darating ne ing bagyu. Siguradwan yo ring bale yo at magsadya kayong lumipat king matas a lugal.",
@@ -866,6 +875,7 @@ const translations = {
     futureTitle: "Deng Plano king Paintungulan",
     fut1: "Mag-apply para karing pondo ning gobyerno",
     fut2: "Deng alternatibo king GoFundMe king Pilipinas (kalupa ning Daisy, BayanihanPH)",
+    registerInfo: "Nung buri mung magparehistro bilang Makatua, Tribal Chief, o Lider ning Komunidad, makipag-ugnayan king officialpinoyta@gmail.com at igawan da kang opisyal a account.",
   },
   pangasinan: {
     statusLine: "Oonla so bagyo. Iseguro iray abong yo tan man-akseb ya onalis ed atagey ya pasen.",
@@ -951,6 +961,7 @@ const translations = {
     futureTitle: "Saray Plano ed Arapen",
     fut1: "Onkerew na pondo manlapud gobyerno",
     fut2: "Saray alternatibo na GoFundMe ed Pilipinas (singa say Daisy, BayanihanPH)",
+    registerInfo: "No labay moy on-rehistro bilang Matatken, Tribal Chief, o Lider na Komunidad, pakikontak so officialpinoyta@gmail.com tan igawaan mi ka na opisyal ya account.",
   }
 };
 
@@ -1037,6 +1048,35 @@ export default function DisasterApp() {
   const handleSubmitReport = (e: any) => {
     e.preventDefault();
     if (!reportText && !isRecording && !recordedAudioUrl) return;
+    
+    const newReport = {
+      id: `cr-${Date.now()}`,
+      author: reportName || "Anonymous",
+      role: "Community Member",
+      tag: "Citizen",
+      time: "Just now",
+      location: reportLocation || "Unknown",
+      transcripts: {
+        english: reportText || "[Voice Recording Submitted]",
+        tagalog: reportText || "[Voice Recording Submitted]",
+        bisaya: reportText || "[Voice Recording Submitted]",
+        cebuano: reportText || "[Voice Recording Submitted]",
+        mamanwa: reportText || "[Voice Recording Submitted]",
+        ilocano: reportText || "[Voice Recording Submitted]",
+        hiligaynon: reportText || "[Voice Recording Submitted]",
+        bicolano: reportText || "[Voice Recording Submitted]",
+        waray: reportText || "[Voice Recording Submitted]",
+        kapampangan: reportText || "[Voice Recording Submitted]",
+        pangasinan: reportText || "[Voice Recording Submitted]"
+      },
+      dialect: "Local",
+      audioUrl: recordedAudioUrl || "",
+      verified: false,
+      pinned: false
+    };
+
+    setCommunityReports(prev => [newReport, ...prev]);
+
     setSubmitSuccess(true);
     setTimeout(() => setSubmitSuccess(false), 3000);
     setReportName("");
@@ -1063,7 +1103,8 @@ export default function DisasterApp() {
     return `${m}:${s.toString().padStart(2, '0')}`;
   };
 
-  const { elderReports, communityReports } = dbData;
+  const elderReports = dbData.elderReports;
+  const [communityReports, setCommunityReports] = useState(dbData.communityReports);
 
   const stopCurrentAudio = () => {
     if (activeAudioRef.current) {
@@ -1503,6 +1544,18 @@ export default function DisasterApp() {
                   </CardContent>
                 </Card>
 
+              </div>
+
+              {/* Registration Notice */}
+              <div className="mt-6">
+                <Card className="bg-[#eff6ff] dark:bg-[#1e3a8a]/20 border-[#bfdbfe] dark:border-[#1e3a8a] shadow-sm">
+                  <CardContent className="pt-6 pb-6 flex items-start gap-3">
+                    <UserCheck className="h-5 w-5 text-[#0038a8] dark:text-[#60a5fa] shrink-0 mt-0.5" />
+                    <p className="text-sm font-medium text-[#1e3a8a] dark:text-[#bfdbfe] leading-relaxed">
+                      {t.registerInfo}
+                    </p>
+                  </CardContent>
+                </Card>
               </div>
 
               {/* Dashboard Footer */}
