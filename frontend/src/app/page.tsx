@@ -12,7 +12,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Switch } from "@/components/ui/switch";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { AlertTriangle, CheckCircle2, Play, Pause, Activity, Map, Settings, Volume2, ShieldAlert, FileText, UserCheck, Mic, HelpCircle, Sun, Star, Send, Pin, Menu, MapPin, Trash2 } from "lucide-react";
+import { AlertTriangle, CheckCircle2, Play, Pause, Activity, Map, Settings, Volume2, ShieldAlert, FileText, UserCheck, Mic, HelpCircle, Sun, Star, Send, Pin, Menu, MapPin, Trash2, Loader2 } from "lucide-react";
 import SupplyLiveMap from "@/components/supply-map";
 import dbData from "@/data/db.json";
 
@@ -848,11 +848,14 @@ export default function DisasterApp() {
     handleClearRecording();
   };
 
-  // Audio Playback via Web Speech API (speaks the translated transcript)
+  // Audio Playback via ElevenLabs API
   const [playingAudioId, setPlayingAudioId] = useState<string | null>(null);
+  const [loadingAudioId, setLoadingAudioId] = useState<string | null>(null);
   const [audioProgress, setAudioProgress] = useState(0);
   const [audioDuration, setAudioDuration] = useState(0);
-  const speechRef = useRef<SpeechSynthesisUtterance | null>(null);
+  
+  const audioCacheRef = useRef<Record<string, string>>({});
+  const activeAudioRef = useRef<HTMLAudioElement | null>(null);
   const progressIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const formatTime = (timeInSeconds: number) => {
@@ -864,109 +867,105 @@ export default function DisasterApp() {
 
   const { elderReports, communityReports } = dbData;
 
-  // Attempt to select the best available Filipino voice from the browser's voice list.
-  // Priority: fil-PH > tl-PH > tl > any "Filipino" named voice > en-US with tweaked pitch.
-  const getBestVoice = (lang: string): { voice: SpeechSynthesisVoice | null; lang: string } => {
-    const isFilipino = lang !== "english";
-    const voices = window.speechSynthesis.getVoices();
-
-    if (isFilipino) {
-      // Try exact fil-PH match first
-      const filPH = voices.find(v => v.lang === "fil-PH");
-      if (filPH) return { voice: filPH, lang: "fil-PH" };
-
-      // Try tl-PH (Tagalog Philippines)
-      const tlPH = voices.find(v => v.lang === "tl-PH");
-      if (tlPH) return { voice: tlPH, lang: "tl-PH" };
-
-      // Try any tl locale
-      const tl = voices.find(v => v.lang.startsWith("tl"));
-      if (tl) return { voice: tl, lang: tl.lang };
-
-      // Try any voice whose name contains Filipino keywords
-      const named = voices.find(v =>
-        ["Filipino", "Tagalog", "Pilipino"].some(k => v.name.includes(k))
-      );
-      if (named) return { voice: named, lang: named.lang };
+  const stopCurrentAudio = () => {
+    if (activeAudioRef.current) {
+      activeAudioRef.current.pause();
+      activeAudioRef.current.currentTime = 0;
+      activeAudioRef.current = null;
     }
-
-    // Fallback: en-US
-    const enUS = voices.find(v => v.lang === "en-US");
-    return { voice: enUS || null, lang: "en-US" };
+    if (progressIntervalRef.current) {
+      clearInterval(progressIntervalRef.current);
+      progressIntervalRef.current = null;
+    }
+    setPlayingAudioId(null);
+    setAudioProgress(0);
+    setAudioDuration(0);
   };
 
-  const handlePlayAudio = (id: string, transcript: string) => {
-    if (!window.speechSynthesis) return;
-
-    if (playingAudioId === id) {
-      window.speechSynthesis.cancel();
-      if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
-      setPlayingAudioId(null);
-      setAudioProgress(0);
-      setAudioDuration(0);
+  const handlePlayAudio = async (id: string, transcript: string) => {
+    // If the same audio is playing, stop it.
+    if (playingAudioId === id || loadingAudioId === id) {
+      stopCurrentAudio();
+      setLoadingAudioId(null);
       return;
     }
 
-    window.speechSynthesis.cancel();
-    if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
+    // Stop any currently playing audio before starting a new one
+    stopCurrentAudio();
 
-    const doSpeak = () => {
-      const utter = new SpeechSynthesisUtterance(transcript);
-      const isFilipino = language !== "english";
-      const { voice, lang } = getBestVoice(language);
+    const cacheKey = `${id}-${language}`;
+    let audioUrl = audioCacheRef.current[cacheKey];
 
-      if (voice) utter.voice = voice;
-      utter.lang = lang;
+    if (!audioUrl) {
+      try {
+        setLoadingAudioId(id);
+        const res = await fetch('/api/tts', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ 
+            text: transcript,
+            voiceId: '21m00Tcm4TlvDq8ikWAM' // Rachel voice ID
+          })
+        });
 
-      // Filipino speech characteristics: slightly slower pace, moderate pitch
-      utter.rate = isFilipino ? 0.85 : 0.9;
-      utter.pitch = isFilipino ? 1.1 : 1.0;  // slightly raised pitch sounds more natural for Filipino
-      utter.volume = 1.0;
-
-      // Estimate duration based on rate-adjusted word speed (~150 wpm at rate=1.0)
-      const wordCount = transcript.split(" ").length;
-      const estimatedDuration = Math.max(2, (wordCount / (150 * utter.rate)) * 60);
-
-      setPlayingAudioId(id);
-      setAudioProgress(0);
-      setAudioDuration(estimatedDuration);
-
-      let elapsed = 0;
-      progressIntervalRef.current = setInterval(() => {
-        elapsed += 0.25;
-        setAudioProgress(Math.min(elapsed, estimatedDuration));
-        if (elapsed >= estimatedDuration) {
-          if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
+        if (!res.ok) {
+          const errData = await res.json().catch(() => ({}));
+          console.error("ElevenLabs TTS failed:", errData);
+          alert(`Could not generate audio: ${errData.error || res.statusText}`);
+          setLoadingAudioId(null);
+          return;
         }
-      }, 250);
 
-      utter.onend = () => {
-        if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
-        setPlayingAudioId(null);
-        setAudioProgress(0);
-        setAudioDuration(0);
-      };
+        const blob = await res.blob();
+        audioUrl = URL.createObjectURL(blob);
+        audioCacheRef.current[cacheKey] = audioUrl;
+      } catch (err) {
+        console.error("Error fetching TTS:", err);
+        setLoadingAudioId(null);
+        return;
+      } finally {
+        setLoadingAudioId(null);
+      }
+    }
 
-      utter.onerror = () => {
-        if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
-        setPlayingAudioId(null);
-      };
-
-      speechRef.current = utter;
-      window.speechSynthesis.speak(utter);
+    // Play the audio
+    const audio = new Audio(audioUrl);
+    activeAudioRef.current = audio;
+    
+    // For blob URLs, duration might not be immediately available or accurate, but we try
+    audio.onloadedmetadata = () => {
+      // If duration is Infinity or NaN (common for streams), we can't show a progress bar easily, but blob URLs usually give a duration.
+      if (isFinite(audio.duration)) {
+        setAudioDuration(audio.duration);
+      }
     };
 
-    // Voices may not be loaded yet on first call — wait if needed
-    if (window.speechSynthesis.getVoices().length === 0) {
-      window.speechSynthesis.onvoiceschanged = () => {
-        window.speechSynthesis.onvoiceschanged = null;
-        doSpeak();
-      };
-    } else {
-      doSpeak();
-    }
-  };
+    audio.onplay = () => {
+      setPlayingAudioId(id);
+      if (isFinite(audio.duration)) setAudioDuration(audio.duration);
+      
+      progressIntervalRef.current = setInterval(() => {
+        setAudioProgress(audio.currentTime);
+        if (isFinite(audio.duration) && audio.duration !== audioDuration) {
+           setAudioDuration(audio.duration);
+        }
+      }, 250);
+    };
 
+    audio.onended = () => {
+      stopCurrentAudio();
+    };
+
+    audio.onerror = (e) => {
+      console.error("Audio playback error:", e);
+      stopCurrentAudio();
+    };
+
+    audio.play().catch(e => {
+      console.error("Failed to play audio:", e);
+      stopCurrentAudio();
+    });
+  };
 
   const t = translations[language] || translations.english;
 
@@ -1281,7 +1280,7 @@ export default function DisasterApp() {
                           onClick={() => handlePlayAudio(item.id, (item.transcripts as any)[language] || item.transcripts.english)}
                           className="h-8 w-8 rounded-full bg-[#ce2029] hover:bg-[#b91c1c] text-white shrink-0 shadow-2xs"
                         >
-                          {playingAudioId === item.id ? <Pause className="h-3.5 w-3.5" /> : <Play className="h-3.5 w-3.5 fill-current ml-0.5" />}
+                          {loadingAudioId === item.id ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : playingAudioId === item.id ? <Pause className="h-3.5 w-3.5" /> : <Play className="h-3.5 w-3.5 fill-current ml-0.5" />}
                         </Button>
                         <div className="flex-1">
                           <div className="flex justify-between text-[10px] text-gray-500 dark:text-gray-400 mb-1.5 font-mono">
@@ -1354,7 +1353,7 @@ export default function DisasterApp() {
                           onClick={() => handlePlayAudio(item.id, (item.transcripts as any)[language] || item.transcripts.english)}
                           className="h-8 w-8 rounded-full bg-[#ce2029] hover:bg-[#b91c1c] text-white shrink-0 shadow-2xs"
                         >
-                          {playingAudioId === item.id ? <Pause className="h-3.5 w-3.5" /> : <Play className="h-3.5 w-3.5 fill-current ml-0.5" />}
+                          {loadingAudioId === item.id ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : playingAudioId === item.id ? <Pause className="h-3.5 w-3.5" /> : <Play className="h-3.5 w-3.5 fill-current ml-0.5" />}
                         </Button>
                         <div className="flex-1">
                           <div className="flex justify-between text-[10px] text-gray-500 dark:text-gray-400 mb-1.5 font-mono">
