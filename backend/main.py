@@ -80,8 +80,22 @@ def get_community_messages(lang: str = "english") -> list[VoiceMessage]:
                 lang_instruction = "Tagalog"
             elif lang == "bisaya":
                 lang_instruction = "Cebuano/Bisaya"
+            elif lang == "cebuano":
+                lang_instruction = "Cebuano"
+            elif lang == "ilocano":
+                lang_instruction = "Ilocano"
+            elif lang == "hiligaynon":
+                lang_instruction = "Hiligaynon/Ilonggo"
+            elif lang == "bicolano":
+                lang_instruction = "Bicolano"
+            elif lang == "waray":
+                lang_instruction = "Waray-Waray"
+            elif lang == "kapampangan":
+                lang_instruction = "Kapampangan"
+            elif lang == "pangasinan":
+                lang_instruction = "Pangasinense/Pangasinan"
             elif lang == "mamanwa":
-                lang_instruction = "Minamanwa (or closely related Surigaonon/Bisaya)"
+                lang_instruction = "Minamanwa (or closely related Surigaonon/Bisaya)" 
                 
             prompt = f"""
             Generate 3 short, urgent community hazard reports from Lumad leaders during a severe typhoon in the Agusan-Surigao region, Philippines. 
@@ -156,6 +170,41 @@ def get_community_messages(lang: str = "english") -> list[VoiceMessage]:
             "Mataas ang suba ug kusog ang hangin. Pag-andam kamo sa pagbalhin sa taas nga dapit.",
             "Nagtambag ang konseho nga ang tanang pamilya duol sa sapa magtigom sa sentral nga shelter.",
             "Naabot na ang mga tambal sa taas. Unaha ang mga tigulang ug mga bata."
+        ],
+        "cebuano": [
+            "Nagtubo na ug paspas ang tubig sa sapa sa ubos. Hiposa na ang mga baka ug kahoy.",
+            "Nagtambag ang konseho nga ang tanang pamilya duol sa sapa magtigom sa sentral nga shelter.",
+            "Naabot na ang mga tambal sa taas. Unaha ang mga tigulang ug mga bata."
+        ],
+        "ilocano": [
+            "Pardas ti idadakkel ti danum iti karayan. I-sigurado dagiti ayup ita.",
+            "Ibagbaga ti konseho nga amin a pamilya iti abay ti sapa ket mapan iti sentral a pag-evacuate-an.",
+            "Nadanon dan dagiti agas. Un-unaen dagiti ubbing ken lallakay."
+        ],
+        "hiligaynon": [
+            "Madasig nga nagataas ang tubig sa suba sa idalom. Siguraduha ang inyo mga sapat subong.",
+            "Naglaygay ang konseho nga ang tanan nga pamilya lapit sa suba magtipon sa evacuation center.",
+            "Nag-abot na ang mga bulong. Unaha palihog ang mga tigulang kag kabataan."
+        ],
+        "bicolano": [
+            "Rikas an paglangkaw kan tubig sa salog sa ibaba. I-secure an mga atamang hayop ngunyan.",
+            "Nag-aabiso an konseho sa gabos na pamilya harani sa sapa na mag-iribahan sa central shelter.",
+            "Nakaabot na an mga bulong. Inuton tabi an mga gurang asin kaakian."
+        ],
+        "waray": [
+            "Malaksi an pagsaka han tubig ha salog ha ubos. Siguruha iton mga hayop yana.",
+            "Nagsasagdon an konseho ha ngatanan nga pamilya harani ha sapa nga magkatirok ha evacuation center.",
+            "Inmabot na iton mga bulong. Unaha niyo iton mga lagas ngan kabataan."
+        ],
+        "kapampangan": [
+            "Mabilis lang mangatas ring danum king sapa lalam. Siguradwan yo ring animal ngeni.",
+            "Papaywan ning konseho ding eganaganang pamilya siping sapa a tipun king central shelter.",
+            "Miras na la ring panulu. Unan yo ring mangatwa ampon anak."
+        ],
+        "pangasinan": [
+            "Mabilis so isasa-gep na danum ed ilog ed leksab. I-seguro ray ayep natan.",
+            "Mambabaga so konseho ed saray pamilya ya asingger ed sapa ya mantipon ed evacuation center.",
+            "Akasabi la ray tambal. Unain yo pa ray matatken tan ugugaw."
         ]
     }
     
