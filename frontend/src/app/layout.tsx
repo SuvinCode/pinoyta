@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Lumad Recovery App",
+  title: "Agta Recovery App",
   description: "Disaster recovery app for Mamanwa communities",
 };
 

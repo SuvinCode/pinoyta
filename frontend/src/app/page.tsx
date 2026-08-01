@@ -50,6 +50,29 @@ const translations = {
     humanReviewTitle: "Human Review Threshold (High Severity)",
     humanReviewDesc: "High severity alerts require local reviewer verification (Health Worker Maria) before unlocked.",
     verifiedReviewer: "VERIFIED REVIEWER",
+    elderReportsTitle: "Mga Taho sa Katigulangan",
+    communityReportsTitle: "Mga Taho sa Komunidad",
+    reportTitle: "Magpadala og Taho",
+    reportDesc: "Pahibawa ang komunidad mahitungod sa mga peligro sa inyong lugar.",
+    reportSuccess: "Kalampusan ang pagsumite sa taho!",
+    reportNameLabel: "Ngalan (Opsyonal)",
+    reportNamePlaceholder: "Anonimo",
+    reportLocationLabel: "Lokasyon",
+    reportLocationAuto: "Awtomatiko",
+    reportDetailsLabel: "Mga Detalye",
+    reportDetailsPlaceholder: "Unsa ang nahitabo? Nagkinahanglan ka ba og tabang?",
+    voiceRecord: "I-record ang Tingog",
+    stopRecording: "Hunong ang Pag-record...",
+    submitBtn: "Isumite",
+    noElderReports: "Wala pay mga taho gikan sa mga katigulangan.",
+    noCommunityReports: "Wala pay mga taho gikan sa komunidad.",
+    darkTheme: "Ngitngit nga Tema",
+    languageLabel: "Sinultihan",
+    preferencesLabel: "Mga Kagustuhan",
+    alertTribalConfirm: "Pagkumpirma sa Tribal Alert",
+    pinnedLabel: "PINNED",
+    originalRecording: "Orihinal nga Rekording",
+    audioReady: "Andam",
   },
   bisaya: {
     statusLine: "Nagka-duol ang bagyo. Siguroha ang inyong mga balay ug pangandam sa pag-bakwit sa taas nga dapit.",
@@ -84,6 +107,29 @@ const translations = {
     humanReviewTitle: "Gikinahanglan ang Pagsusi sa Tawo",
     humanReviewDesc: "Ang taas nga lebel sa peligro nanginahanglan ug pag-inspeksyon sa lokal nga trabahador sa panglawas (Health Worker Maria).",
     verifiedReviewer: "GIKUMPIRMANAY NGA NAGTAN-AW",
+    elderReportsTitle: "Mga Taho sa Katigulangan",
+    communityReportsTitle: "Mga Taho sa Komunidad",
+    reportTitle: "Magpadala og Taho",
+    reportDesc: "Pahibawa ang komunidad mahitungod sa mga peligro sa inyong lugar.",
+    reportSuccess: "Kalampusan ang pagsumite sa taho!",
+    reportNameLabel: "Ngalan (Opsyonal)",
+    reportNamePlaceholder: "Anonimo",
+    reportLocationLabel: "Lokasyon",
+    reportLocationAuto: "Awtomatiko",
+    reportDetailsLabel: "Mga Detalye",
+    reportDetailsPlaceholder: "Unsa ang nahitabo? Nagkinahanglan ka ba og tabang?",
+    voiceRecord: "I-record ang Tingog",
+    stopRecording: "Hunong ang Pag-record...",
+    submitBtn: "Isumite",
+    noElderReports: "Wala pay mga taho gikan sa mga katigulangan.",
+    noCommunityReports: "Wala pay mga taho gikan sa komunidad.",
+    darkTheme: "Ngitngit nga Tema",
+    languageLabel: "Sinultihan",
+    preferencesLabel: "Mga Kagustuhan",
+    alertTribalConfirm: "Pagkumpirma sa Tribal Alert",
+    pinnedLabel: "PINNED",
+    originalRecording: "Orihinal nga Rekording",
+    audioReady: "Andam",
   },
   tagalog: {
     statusLine: "Papalapit ang bagyo. Iseguro ang mga tahanan at maghandang lumipat sa mataas na lugar.",
@@ -118,6 +164,29 @@ const translations = {
     humanReviewTitle: "Pagsusuri ng Tao (Mataas na Panganib)",
     humanReviewDesc: "Ang mataas na panganib ay nangangailangan ng beripikasyon ng lokal na Health Worker (Maria) bago ilabas.",
     verifiedReviewer: "BERIPIKADONG TAGAPAGSURI",
+    elderReportsTitle: "Mga Ulat ng Matatanda",
+    communityReportsTitle: "Mga Ulat ng Komunidad",
+    reportTitle: "Magpadala ng Ulat",
+    reportDesc: "Balaan ang komunidad tungkol sa mga panganib sa inyong lugar.",
+    reportSuccess: "Matagumpay na naipadala ang ulat!",
+    reportNameLabel: "Pangalan (Opsyonal)",
+    reportNamePlaceholder: "Anonimo",
+    reportLocationLabel: "Lokasyon",
+    reportLocationAuto: "Auto",
+    reportDetailsLabel: "Detalye",
+    reportDetailsPlaceholder: "Ano ang nangyayari? Kailangan mo ba ng tulong?",
+    voiceRecord: "I-record ang Boses",
+    stopRecording: "Ihinto ang Pagre-record...",
+    submitBtn: "Isumite",
+    noElderReports: "Wala pang mga ulat mula sa matatanda.",
+    noCommunityReports: "Wala pang mga ulat mula sa komunidad.",
+    darkTheme: "Madilim na Tema",
+    languageLabel: "Wika",
+    preferencesLabel: "Mga Kagustuhan",
+    alertTribalConfirm: "Kumpirmasyon ng Tribal Alert",
+    pinnedLabel: "NAKA-PIN",
+    originalRecording: "Orihinal na Rekording",
+    audioReady: "Handa",
   },
   english: {
     statusLine: "Typhoon approaching. Secure homes and prepare to move to high ground.",
@@ -152,6 +221,29 @@ const translations = {
     humanReviewTitle: "Human Review Threshold (High Severity)",
     humanReviewDesc: "High severity alerts require local reviewer verification (Health Worker Maria) before unlocked.",
     verifiedReviewer: "VERIFIED REVIEWER",
+    elderReportsTitle: "Elder Reports",
+    communityReportsTitle: "Community Reports",
+    reportTitle: "Send a Report",
+    reportDesc: "Alert the community about hazards or needs in your area.",
+    reportSuccess: "Report submitted safely!",
+    reportNameLabel: "Name (Optional)",
+    reportNamePlaceholder: "Anonymous",
+    reportLocationLabel: "Location",
+    reportLocationAuto: "Auto",
+    reportDetailsLabel: "Details",
+    reportDetailsPlaceholder: "What is happening? Do you need help?",
+    voiceRecord: "Voice Record",
+    stopRecording: "Stop Recording...",
+    submitBtn: "Submit",
+    noElderReports: "No elder reports yet.",
+    noCommunityReports: "No community reports yet.",
+    darkTheme: "Dark Theme",
+    languageLabel: "Language",
+    preferencesLabel: "Preferences",
+    alertTribalConfirm: "Alert Tribal Confirmation",
+    pinnedLabel: "PINNED",
+    originalRecording: "Original Dialect Recording",
+    audioReady: "Ready",
   },
   cebuano: {
     statusLine: "Nagka-duol ang bagyo. Siguroha ang inyong mga balay ug pangandam sa pag-bakwit sa taas nga dapit.",
@@ -185,7 +277,30 @@ const translations = {
     testDisclosureBtn: "Subaya ang Pahibalo sa Tingog",
     humanReviewTitle: "Gikinahanglan ang Pagsusi sa Tawo",
     humanReviewDesc: "Ang taas nga lebel sa peligro nanginahanglan ug pag-inspeksyon sa lokal nga trabahador sa panglawas.",
-    verifiedReviewer: "GIKUMPIRMA NGA NAGTAN-AW"
+    verifiedReviewer: "GIKUMPIRMA NGA NAGTAN-AW",
+    elderReportsTitle: "Mga Taho sa Katigulangan",
+    communityReportsTitle: "Mga Taho sa Komunidad",
+    reportTitle: "Magpadala og Taho",
+    reportDesc: "Pahibawa ang komunidad mahitungod sa mga peligro sa inyong lugar.",
+    reportSuccess: "Kalampusan ang pagsumite sa taho!",
+    reportNameLabel: "Ngalan (Opsyonal)",
+    reportNamePlaceholder: "Anonimo",
+    reportLocationLabel: "Lokasyon",
+    reportLocationAuto: "Awtomatiko",
+    reportDetailsLabel: "Mga Detalye",
+    reportDetailsPlaceholder: "Unsa ang nahitabo? Nagkinahanglan ka ba og tabang?",
+    voiceRecord: "I-record ang Tingog",
+    stopRecording: "Hunong ang Pag-record...",
+    submitBtn: "Isumite",
+    noElderReports: "Wala pay mga taho gikan sa mga katigulangan.",
+    noCommunityReports: "Wala pay mga taho gikan sa komunidad.",
+    darkTheme: "Ngitngit nga Tema",
+    languageLabel: "Pinulongan",
+    preferencesLabel: "Mga Kagustuhan",
+    alertTribalConfirm: "Pagkumpirma sa Tribal Alert",
+    pinnedLabel: "PINNED",
+    originalRecording: "Orihinal nga Rekording",
+    audioReady: "Andam",
   },
   ilocano: {
     statusLine: "Umay ti bagyo. I-sigurado dagiti balay yo ken agsagana nga mapan iti nangato a lugar.",
@@ -219,7 +334,30 @@ const translations = {
     testDisclosureBtn: "Padasen Ti Pakaammo",
     humanReviewTitle: "Panangsuri Ti Tao (Nangato a Peggad)",
     humanReviewDesc: "Pasingkedan nga umuna ti lokal a Health Worker sakbay a maiparuar daytoy.",
-    verifiedReviewer: "NAPASINGKEDAN A NANGSURI"
+    verifiedReviewer: "NAPASINGKEDAN A NANGSURI",
+    elderReportsTitle: "Pakaammo Dagiti Lallakay",
+    communityReportsTitle: "Pakaammo Ti Komunidad",
+    reportTitle: "Mangted ti Pakaammo",
+    reportDesc: "Ipaaman ti komunidad maipapan kadagiti peligro iti lugar yo.",
+    reportSuccess: "Napalampas ti panagipan ti pakaammo!",
+    reportNameLabel: "Nagan (Opsyonal)",
+    reportNamePlaceholder: "Saan Napakaammo",
+    reportLocationLabel: "Lugar",
+    reportLocationAuto: "Awtomatiko",
+    reportDetailsLabel: "Detalye",
+    reportDetailsPlaceholder: "Ania ti napasamak? Kasapulan mo ti tulong?",
+    voiceRecord: "I-record Ti Boses",
+    stopRecording: "Iggam Ti Pag-record...",
+    submitBtn: "Ipan",
+    noElderReports: "Awan pay pakaammo dagiti lallakay.",
+    noCommunityReports: "Awan pay pakaammo dagiti komunidad.",
+    darkTheme: "Nangisit A Tema",
+    languageLabel: "Pagsasao",
+    preferencesLabel: "Kagustuan",
+    alertTribalConfirm: "Pagkumpirar Ti Tribal Alert",
+    pinnedLabel: "PINNED",
+    originalRecording: "Orihinal A Rekording",
+    audioReady: "Naanay",
   },
   hiligaynon: {
     statusLine: "Hapit na ang bagyo. Siguraduha ang inyo mga balay kag maghanda sa pag-evacuate sa mataas nga lugar.",
@@ -253,7 +391,30 @@ const translations = {
     testDisclosureBtn: "Testingi Ang Pahibalo",
     humanReviewTitle: "Pag-usisa Sang Tawo (Mataas Nga Peligro)",
     humanReviewDesc: "Kinahanglan ang kumpirmasyon sang lokal nga Health Worker bag-o ini ipagwa.",
-    verifiedReviewer: "GINKUMPIRMAR NGA TAGA-USISA"
+    verifiedReviewer: "GINKUMPIRMAR NGA TAGA-USISA",
+    elderReportsTitle: "Mga Taho sang Kamagurangan",
+    communityReportsTitle: "Mga Taho sang Komunidad",
+    reportTitle: "Magpadala sing Taho",
+    reportDesc: "Ipahibalo sa komunidad ang mga peligro sa inyo lugar.",
+    reportSuccess: "Nalampasan ang pagsumite sang taho!",
+    reportNameLabel: "Ngalan (Opsyonal)",
+    reportNamePlaceholder: "Anonimo",
+    reportLocationLabel: "Lokasyon",
+    reportLocationAuto: "Awtomatiko",
+    reportDetailsLabel: "Mga Detalye",
+    reportDetailsPlaceholder: "Ano ang nagakalatabo? Kinahanglan ka ba sing bulig?",
+    voiceRecord: "I-record ang Tingog",
+    stopRecording: "Hunong ang Pag-record...",
+    submitBtn: "Isumite",
+    noElderReports: "Wala pa mga taho gikan sa kamagurangan.",
+    noCommunityReports: "Wala pa mga taho gikan sa komunidad.",
+    darkTheme: "Maitum nga Tema",
+    languageLabel: "Hambal",
+    preferencesLabel: "Mga Kagustuhan",
+    alertTribalConfirm: "Kumpirmasyon sang Tribal Alert",
+    pinnedLabel: "PINNED",
+    originalRecording: "Orihinal nga Rekording",
+    audioReady: "Handa",
   },
   bicolano: {
     statusLine: "Haranihon na ang bagyo. Seguruhon ang mga harong asin mag-andam sa pagbalyo sa halangkaw na lugar.",
@@ -287,7 +448,30 @@ const translations = {
     testDisclosureBtn: "Testingon an Paisi",
     humanReviewTitle: "Pagsusuri kan Tawo (Halangkaw na Peligro)",
     humanReviewDesc: "Kaipuhan munang beripikaron kan Health Worker an peligro bago ipasabot.",
-    verifiedReviewer: "BERIPIKADONG TAGA-SURI"
+    verifiedReviewer: "BERIPIKADONG TAGA-SURI",
+    elderReportsTitle: "Mga Bareta kan mga Gurang",
+    communityReportsTitle: "Mga Bareta kan Komunidad",
+    reportTitle: "Magpadara nin Bareta",
+    reportDesc: "Ipaaram sa komunidad an mga peligro sa saindong lugar.",
+    reportSuccess: "Maogma na naipadara an bareta!",
+    reportNameLabel: "Ngaran (Opsyonal)",
+    reportNamePlaceholder: "Anonimo",
+    reportLocationLabel: "Lugar",
+    reportLocationAuto: "Awtomatiko",
+    reportDetailsLabel: "Mga Detalye",
+    reportDetailsPlaceholder: "Ano an nangyayari? Kaipuhan mo nin tabang?",
+    voiceRecord: "I-record an Boses",
+    stopRecording: "Iuntok an Pag-record...",
+    submitBtn: "Isumite",
+    noElderReports: "Mayong mga bareta pa hali sa mga gurang.",
+    noCommunityReports: "Mayong mga bareta pa hali sa komunidad.",
+    darkTheme: "Madiklom na Tema",
+    languageLabel: "Tataramon",
+    preferencesLabel: "Mga Kagustuhan",
+    alertTribalConfirm: "Kumpirmasyon kan Tribal Alert",
+    pinnedLabel: "PINNED",
+    originalRecording: "Orihinal na Rekording",
+    audioReady: "Handa",
   },
   waray: {
     statusLine: "Ti-arabot na iton bagyo. Siguruha iton iyo mga balay ngan pag-andam ha pagbakwit ngadto ha hitaas nga lugar.",
@@ -321,7 +505,30 @@ const translations = {
     testDisclosureBtn: "Testinga Iton Pahibaro",
     humanReviewTitle: "Pagsusi Han Tawo (Hitaas Nga Peligro)",
     humanReviewDesc: "Kinahanglan an pag-usisa han lokal nga Health Worker san-o ini ipagawas.",
-    verifiedReviewer: "KUMPIRMADO NGA TAGA-SUSI"
+    verifiedReviewer: "KUMPIRMADO NGA TAGA-SUSI",
+    elderReportsTitle: "Mga Sumat Han Katigulangan",
+    communityReportsTitle: "Mga Sumat Han Komunidad",
+    reportTitle: "Magpadara hin Sumat",
+    reportDesc: "Ipahibaro ha komunidad iton mga peligro ha iyo lugar.",
+    reportSuccess: "Kalampusan an pagsumite han sumat!",
+    reportNameLabel: "Ngaran (Opsyonal)",
+    reportNamePlaceholder: "Anonimo",
+    reportLocationLabel: "Lugar",
+    reportLocationAuto: "Awtomatiko",
+    reportDetailsLabel: "Mga Detalye",
+    reportDetailsPlaceholder: "Ano an nagkakalatabo? Kinahanglan ka ba hin bulig?",
+    voiceRecord: "I-record iton Tingog",
+    stopRecording: "Undanga an Pag-record...",
+    submitBtn: "Isumite",
+    noElderReports: "Waray pa mga sumat hali ha katigulangan.",
+    noCommunityReports: "Waray pa mga sumat hali ha komunidad.",
+    darkTheme: "Malangkob nga Tema",
+    languageLabel: "Yinaknan",
+    preferencesLabel: "Mga Kagustuhan",
+    alertTribalConfirm: "Pagkumpirma Han Tribal Alert",
+    pinnedLabel: "PINNED",
+    originalRecording: "Orihinal nga Rekording",
+    audioReady: "Andam",
   },
   kapampangan: {
     statusLine: "Darating ne ing bagyu. Siguradwan yo ring bale yo at magsadya kayong lumipat king matas a lugal.",
@@ -355,7 +562,30 @@ const translations = {
     testDisclosureBtn: "Testingan Ing Pasabi",
     humanReviewTitle: "Pamanuri Ning Tau (Matas A Peligru)",
     humanReviewDesc: "Kailangan neng suryan ning lokal a Health Worker bago ya ipalwal.",
-    verifiedReviewer: "BERIPIKADUNG TAGA-SURI"
+    verifiedReviewer: "BERIPIKADUNG TAGA-SURI",
+    elderReportsTitle: "Mga Balita Ning Matatua",
+    communityReportsTitle: "Mga Balita Ning Komunidad",
+    reportTitle: "Magpadala Ning Balita",
+    reportDesc: "Ipaalam king komunidad ing mga peligro king lugal yu.",
+    reportSuccess: "Malampus a naipamiye ing balita!",
+    reportNameLabel: "Lagyu (Opsyonal)",
+    reportNamePlaceholder: "Anonimo",
+    reportLocationLabel: "Lugal",
+    reportLocationAuto: "Awtomatiko",
+    reportDetailsLabel: "Mga Detalye",
+    reportDetailsPlaceholder: "Nanu ing nangyari? Kailangan mu ba ning tulung?",
+    voiceRecord: "I-record Ing Bosis",
+    stopRecording: "Ipalto Ing Pag-record...",
+    submitBtn: "Isumite",
+    noElderReports: "Ala pang mga balita manibat king matatua.",
+    noCommunityReports: "Ala pang mga balita manibat king komunidad.",
+    darkTheme: "Maitum A Tema",
+    languageLabel: "Amanu",
+    preferencesLabel: "Mga Kagustuan",
+    alertTribalConfirm: "Kumpirmasyon Ning Tribal Alert",
+    pinnedLabel: "PINNED",
+    originalRecording: "Orihinal A Rekording",
+    audioReady: "Maganap",
   },
   pangasinan: {
     statusLine: "Oonla so bagyo. Iseguro iray abong yo tan man-akseb ya onalis ed atagey ya pasen.",
@@ -389,7 +619,30 @@ const translations = {
     testDisclosureBtn: "Suboken So Pasakbay",
     humanReviewTitle: "Pangsuri Na Too (Atagey Ya Peligro)",
     humanReviewDesc: "Nakaukolan ya surien na Health Worker sakbay i-publish.",
-    verifiedReviewer: "AKUMPIRMAN TAGA-SURI"
+    verifiedReviewer: "AKUMPIRMAN TAGA-SURI",
+    elderReportsTitle: "Saray Tanda na Saray Matatken",
+    communityReportsTitle: "Saray Tanda na Komunidad",
+    reportTitle: "Mangipadara na Tanda",
+    reportDesc: "Ipaala ed komunidad iray peligro ed lugar yo.",
+    reportSuccess: "Maong ya naipan so tanda!",
+    reportNameLabel: "Ngaran (Opsyonal)",
+    reportNamePlaceholder: "Anonimo",
+    reportLocationLabel: "Lugar",
+    reportLocationAuto: "Awtomatiko",
+    reportDetailsLabel: "Saray Detalye",
+    reportDetailsPlaceholder: "Anto so nagagawa? Nankaukolan ka ba na tulong?",
+    voiceRecord: "I-record So Boses",
+    stopRecording: "Iuntok So Pag-record...",
+    submitBtn: "Isumite",
+    noElderReports: "Anggapo ni saray tanda manlapud saray matatken.",
+    noCommunityReports: "Anggapo ni saray tanda manlapud komunidad.",
+    darkTheme: "Maitom Na Tema",
+    languageLabel: "Salita",
+    preferencesLabel: "Saray Kagustoan",
+    alertTribalConfirm: "Kumpirmasyon Na Tribal Alert",
+    pinnedLabel: "PINNED",
+    originalRecording: "Orihinal Na Rekording",
+    audioReady: "Andam",
   }
 };
 
@@ -671,7 +924,7 @@ export default function DisasterApp() {
                 </SheetHeader>
                 <div className="py-6 space-y-6">
                   <div className="flex items-center justify-between">
-                    <span className="font-medium text-sm">Dark Theme</span>
+                    <span className="font-medium text-sm">{t.darkTheme}</span>
                     <Switch 
                       checked={theme === "dark"} 
                       onCheckedChange={(checked) => setTheme(checked ? "dark" : "light")}
@@ -681,7 +934,7 @@ export default function DisasterApp() {
                   <div className="pt-4 border-t border-gray-200 dark:border-gray-800">
                     <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider block mb-2">Simulated Governance State</span>
                     <div className="flex items-center justify-between bg-blue-50/50 dark:bg-blue-950/30 p-3 rounded-lg border border-blue-200/50 dark:border-blue-900/50">
-                      <span className="text-xs font-medium">Alert Tribal Confirmation</span>
+                      <span className="text-xs font-medium">{t.alertTribalConfirm}</span>
                       <Switch 
                         checked={isAlertConfirmed} 
                         onCheckedChange={setIsAlertConfirmed}
@@ -706,7 +959,7 @@ export default function DisasterApp() {
                 </SheetHeader>
                 <div className="space-y-6">
                   <div className="space-y-2">
-                    <label className="text-xs font-bold text-gray-500 uppercase tracking-wider">Language</label>
+                    <label className="text-xs font-bold text-gray-500 uppercase tracking-wider">{t.languageLabel}</label>
                     <Select value={language} onValueChange={(val) => {
                 if (val) {
                   localStorage.setItem("app_language", val);
@@ -733,7 +986,7 @@ export default function DisasterApp() {
                   </div>
 
                   <div className="pt-4 border-t border-gray-200 dark:border-gray-800 space-y-4">
-                    <label className="text-xs font-bold text-gray-500 uppercase tracking-wider">Preferences</label>
+                    <label className="text-xs font-bold text-gray-500 uppercase tracking-wider">{t.preferencesLabel}</label>
                     <div className="flex items-center justify-between">
                       <span className="font-medium text-sm">Dark Theme</span>
                       <Switch 
@@ -801,7 +1054,7 @@ export default function DisasterApp() {
             <div className="space-y-4">
               <div className="flex items-center gap-2 mb-2">
                 <ShieldAlert className="h-5 w-5 text-[#b45309]" />
-                <h2 className="text-lg font-bold text-[#111827] dark:text-[#f9fafb]">Elder Reports</h2>
+                <h2 className="text-lg font-bold text-[#111827] dark:text-[#f9fafb]">{t.elderReportsTitle}</h2>
               </div>
               <Card className="bg-white dark:bg-[#1f2937] border-[#e5e7eb] dark:border-[#374151] shadow-2xs">
                 <CardHeader className="pb-3 border-b border-[#e5e7eb] dark:border-[#374151] bg-[#f9fafb] dark:bg-[#111827]/50">
@@ -814,7 +1067,7 @@ export default function DisasterApp() {
                     <div key={item.id} className={`p-3.5 rounded-xl border ${item.pinned ? 'bg-[#fffbeb] dark:bg-[#422006]/30 border-2 border-[#fbbf24] dark:border-[#b45309]' : 'border-[#e5e7eb] dark:border-[#374151] bg-[#f9fafb] dark:bg-[#111827]'} space-y-3 relative overflow-hidden`}>
                       {item.pinned && (
                         <div className="absolute top-0 right-0 bg-[#fbbf24] text-amber-950 text-[10px] font-bold px-2 py-0.5 rounded-bl-lg flex items-center gap-1">
-                          <Pin className="h-3 w-3" /> PINNED
+                          <Pin className="h-3 w-3" /> {t.pinnedLabel}
                         </div>
                       )}
                       <div className="flex items-start justify-between">
@@ -869,7 +1122,7 @@ export default function DisasterApp() {
                     </div>
                   ))}
                   {elderReports.length === 0 && (
-                    <div className="text-center p-4 text-sm text-gray-500">No elder reports yet.</div>
+                    <div className="text-center p-4 text-sm text-gray-500">{t.noElderReports}</div>
                   )}
                 </CardContent>
               </Card>
@@ -879,7 +1132,7 @@ export default function DisasterApp() {
             <div className="space-y-4">
               <div className="flex items-center gap-2 mb-2">
                 <Activity className="h-5 w-5 text-[#ce2029]" />
-                <h2 className="text-lg font-bold text-[#111827] dark:text-[#f9fafb]">Community Reports</h2>
+                <h2 className="text-lg font-bold text-[#111827] dark:text-[#f9fafb]">{t.communityReportsTitle}</h2>
               </div>
               <Card className="bg-white dark:bg-[#1f2937] border-[#e5e7eb] dark:border-[#374151] shadow-2xs">
                 <CardContent className="p-4 space-y-4">
@@ -942,7 +1195,7 @@ export default function DisasterApp() {
                     </div>
                   ))}
                   {communityReports.length === 0 && (
-                    <div className="text-center p-4 text-sm text-gray-500">No community reports yet.</div>
+                    <div className="text-center p-4 text-sm text-gray-500">{t.noCommunityReports}</div>
                   )}
                 </CardContent>
               </Card>
@@ -957,22 +1210,22 @@ export default function DisasterApp() {
               {/* Submit Report Form */}
               <Card className="mt-6 bg-[#f8fafc] dark:bg-[#111827] border-[#e2e8f0] dark:border-[#1e293b] shadow-inner">
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-base text-[#111827] dark:text-[#f9fafb]">Send a Report</CardTitle>
-                  <CardDescription className="text-xs">Alert the community about hazards or needs in your area.</CardDescription>
+                  <CardTitle className="text-base text-[#111827] dark:text-[#f9fafb]">{t.reportTitle}</CardTitle>
+                  <CardDescription className="text-xs">{t.reportDesc}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   {submitSuccess ? (
                     <div className="bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-400 p-4 rounded-lg flex items-center justify-center gap-2 font-bold animate-in fade-in zoom-in duration-300">
-                      <CheckCircle2 className="h-5 w-5" /> Report submitted safely!
+                      <CheckCircle2 className="h-5 w-5" /> {t.reportSuccess}
                     </div>
                   ) : (
                     <form onSubmit={handleSubmitReport} className="space-y-3">
                       <div className="grid grid-cols-2 gap-3">
                         <div className="space-y-1">
-                          <label className="text-[10px] font-bold text-gray-500 uppercase">Name (Optional)</label>
+                          <label className="text-[10px] font-bold text-gray-500 uppercase">{t.reportNameLabel}</label>
                           <input 
                             type="text" 
-                            placeholder="Anonymous"
+                            placeholder={t.reportNamePlaceholder}
                             value={reportName}
                             onChange={(e) => setReportName(e.target.value)}
                             className="w-full text-sm p-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-[#1f2937] focus:outline-none focus:ring-2 focus:ring-[#0038a8]"
@@ -980,9 +1233,9 @@ export default function DisasterApp() {
                         </div>
                         <div className="space-y-1">
                           <label className="text-[10px] font-bold text-gray-500 uppercase flex justify-between">
-                            Location *
+                            {t.reportLocationLabel} *
                             <button type="button" onClick={handleGetLocation} className="text-[#0038a8] hover:underline flex items-center gap-1">
-                              <MapPin className="h-3 w-3" /> Auto
+                              <MapPin className="h-3 w-3" /> {t.reportLocationAuto}
                             </button>
                           </label>
                           <div className="flex gap-1">
@@ -999,10 +1252,10 @@ export default function DisasterApp() {
                       </div>
                       
                       <div className="space-y-1">
-                        <label className="text-[10px] font-bold text-gray-500 uppercase">Details</label>
+                        <label className="text-[10px] font-bold text-gray-500 uppercase">{t.reportDetailsLabel}</label>
                         <textarea 
                           rows={3}
-                          placeholder="What is happening? Do you need help?"
+                          placeholder={t.reportDetailsPlaceholder}
                           value={reportText}
                           onChange={(e) => setReportText(e.target.value)}
                           className="w-full text-sm p-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-[#1f2937] focus:outline-none focus:ring-2 focus:ring-[#0038a8] resize-none"
@@ -1035,7 +1288,7 @@ export default function DisasterApp() {
                           className="flex-1 bg-[#0038a8] hover:bg-[#1d4ed8] text-white font-bold"
                           disabled={!reportText.trim() && !recordedAudioUrl}
                         >
-                          <Send className="h-4 w-4 mr-2" /> Submit
+                          <Send className="h-4 w-4 mr-2" /> {t.submitBtn}
                         </Button>
                       </div>
                     </form>
