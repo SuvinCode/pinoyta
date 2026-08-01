@@ -393,20 +393,22 @@ const translations = {
   }
 };
 
-const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+// Language key saved in localStorage for persistence across reloads
+const STORAGE_KEY = "app_language";
+
+function getInitialLanguage(): keyof typeof translations {
+  if (typeof window !== "undefined") {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved && Object.keys(translations).includes(saved)) {
+      return saved as keyof typeof translations;
+    }
+  }
+  return "english";
+}
 
 export default function DisasterApp() {
   const { setTheme, theme } = useTheme();
-  const [language, setLanguage] = useState<keyof typeof translations>("english");
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-    const savedLang = localStorage.getItem("app_language");
-    if (savedLang && Object.keys(translations).includes(savedLang)) {
-      setLanguage(savedLang as keyof typeof translations);
-    }
-  }, []);
+  const [language, setLanguage] = useState<keyof typeof translations>(getInitialLanguage);
   const [selectedBarangay, setSelectedBarangay] = useState("san-roque");
   const [isAlertConfirmed, setIsAlertConfirmed] = useState(true);
 
@@ -483,12 +485,12 @@ export default function DisasterApp() {
     handleClearRecording();
   };
 
-  // Audio Playback states for simulation
+  // Audio Playback via Web Speech API (speaks the translated transcript)
   const [playingAudioId, setPlayingAudioId] = useState<string | null>(null);
   const [audioProgress, setAudioProgress] = useState(0);
   const [audioDuration, setAudioDuration] = useState(0);
-  
-  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const speechRef = useRef<SpeechSynthesisUtterance | null>(null);
+  const progressIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const formatTime = (timeInSeconds: number) => {
     if (isNaN(timeInSeconds) || !timeInSeconds) return "0:00";
@@ -497,49 +499,76 @@ export default function DisasterApp() {
     return `${m}:${s.toString().padStart(2, '0')}`;
   };
 
-
   const { elderReports, communityReports } = dbData;
 
-  const handlePlayAudio = (id: string, audioUrl?: string) => {
-    if (playingAudioId === id) {
-      // Pause
-      setPlayingAudioId(null);
-      if (audioRef.current) {
-        audioRef.current.pause();
-      }
-    } else {
-      // Play new
-      setPlayingAudioId(id);
-      if (audioUrl) {
-        const fullAudioUrl = audioUrl.startsWith('/') ? `${BACKEND_URL}${audioUrl}` : audioUrl;
-        if (!audioRef.current) {
-          audioRef.current = new Audio(fullAudioUrl);
-        } else {
-          audioRef.current.src = fullAudioUrl;
-        }
-        
-        setAudioProgress(0);
-        setAudioDuration(0);
-        
-        audioRef.current.ontimeupdate = () => {
-          setAudioProgress(audioRef.current?.currentTime || 0);
-        };
-        audioRef.current.onloadedmetadata = () => {
-          setAudioDuration(audioRef.current?.duration || 0);
-        };
-        audioRef.current.onended = () => {
-          setPlayingAudioId(null);
-          setAudioProgress(0);
-        };
+  // Map language key to BCP-47 locale for SpeechSynthesis
+  const getLangCode = (lang: string): string => {
+    const map: Record<string, string> = {
+      english: "en-US",
+      tagalog: "fil-PH",
+      bisaya: "fil-PH",
+      cebuano: "fil-PH",
+      hiligaynon: "fil-PH",
+      bicolano: "fil-PH",
+      waray: "fil-PH",
+      kapampangan: "fil-PH",
+      pangasinan: "fil-PH",
+      ilocano: "fil-PH",
+      mamanwa: "fil-PH",
+    };
+    return map[lang] || "en-US";
+  };
 
-        audioRef.current.play();
-      }
+  const handlePlayAudio = (id: string, transcript: string) => {
+    if (!window.speechSynthesis) return;
+
+    if (playingAudioId === id) {
+      // Stop current speech
+      window.speechSynthesis.cancel();
+      if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
+      setPlayingAudioId(null);
+      setAudioProgress(0);
+      setAudioDuration(0);
+      return;
     }
+
+    // Cancel any playing speech
+    window.speechSynthesis.cancel();
+    if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
+
+    const utter = new SpeechSynthesisUtterance(transcript);
+    utter.lang = getLangCode(language);
+    utter.rate = 0.9;
+
+    // Estimate duration: ~150 words per minute
+    const wordCount = transcript.split(" ").length;
+    const estimatedDuration = Math.max(2, (wordCount / 150) * 60);
+
+    setPlayingAudioId(id);
+    setAudioProgress(0);
+    setAudioDuration(estimatedDuration);
+
+    let elapsed = 0;
+    progressIntervalRef.current = setInterval(() => {
+      elapsed += 0.25;
+      setAudioProgress(Math.min(elapsed, estimatedDuration));
+      if (elapsed >= estimatedDuration) {
+        if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
+      }
+    }, 250);
+
+    utter.onend = () => {
+      if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
+      setPlayingAudioId(null);
+      setAudioProgress(0);
+      setAudioDuration(0);
+    };
+
+    speechRef.current = utter;
+    window.speechSynthesis.speak(utter);
   };
 
   const t = translations[language] || translations.english;
-
-  if (!mounted) return null;
 
   return (
     <div className="min-h-screen bg-[#fcfbf9] dark:bg-[#111827] text-[#1f2937] dark:text-[#f9fafb] flex flex-col transition-colors duration-300">
@@ -782,7 +811,7 @@ export default function DisasterApp() {
                       <div className={`flex items-center gap-3 p-2.5 rounded-lg border ml-11 ${item.pinned ? 'bg-white/50 dark:bg-black/20 border-[#fbbf24]/50' : 'bg-white dark:bg-[#1f2937] border-[#e5e7eb] dark:border-[#374151]'}`}>
                         <Button
                           size="icon"
-                          onClick={() => handlePlayAudio(item.id, item.audioUrl)}
+                          onClick={() => handlePlayAudio(item.id, (item.transcripts as any)[language] || item.transcripts.english)}
                           className="h-8 w-8 rounded-full bg-[#ce2029] hover:bg-[#b91c1c] text-white shrink-0 shadow-2xs"
                         >
                           {playingAudioId === item.id ? <Pause className="h-3.5 w-3.5" /> : <Play className="h-3.5 w-3.5 fill-current ml-0.5" />}
@@ -855,7 +884,7 @@ export default function DisasterApp() {
                       <div className={`flex items-center gap-3 p-2.5 rounded-lg border ml-11 ${item.pinned ? 'bg-white/50 dark:bg-black/20 border-[#fbbf24]/50' : 'bg-white dark:bg-[#1f2937] border-[#e5e7eb] dark:border-[#374151]'}`}>
                         <Button
                           size="icon"
-                          onClick={() => handlePlayAudio(item.id, item.audioUrl)}
+                          onClick={() => handlePlayAudio(item.id, (item.transcripts as any)[language] || item.transcripts.english)}
                           className="h-8 w-8 rounded-full bg-[#ce2029] hover:bg-[#b91c1c] text-white shrink-0 shadow-2xs"
                         >
                           {playingAudioId === item.id ? <Pause className="h-3.5 w-3.5" /> : <Play className="h-3.5 w-3.5 fill-current ml-0.5" />}
