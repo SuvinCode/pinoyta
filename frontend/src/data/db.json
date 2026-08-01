@@ -1,0 +1,71 @@
+{
+  "elderReports": [
+    {
+      "id": "er-1",
+      "author": "Datu Makusog",
+      "role": "Tribal Chieftain",
+      "tag": "Tribal Council",
+      "time": "5 mins ago",
+      "location": "San Roque Central",
+      "transcript": "The river has overflowed at the old bridge. Do not attempt to cross. Move immediately to the upland evacuation center!",
+      "dialect": "Agta",
+      "audioUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+      "verified": true,
+      "pinned": true
+    },
+    {
+      "id": "er-2",
+      "author": "Bae Inay",
+      "role": "Elder Healer",
+      "tag": "Elder Council",
+      "time": "18 mins ago",
+      "location": "Upland Ridge",
+      "transcript": "The birds are flying unusually low. A heavy storm is imminent. Gather your livestock now.",
+      "dialect": "Agta",
+      "audioUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+      "verified": true,
+      "pinned": false
+    }
+  ],
+  "communityReports": [
+    {
+      "id": "cr-1",
+      "author": "Anonymous",
+      "role": "Community Member",
+      "tag": "Citizen",
+      "time": "12 mins ago",
+      "location": "Purok 4",
+      "transcript": "We need drinking water here, the pipes are broken near the chapel.",
+      "dialect": "Tagalog",
+      "audioUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+      "verified": false,
+      "pinned": false
+    },
+    {
+      "id": "cr-2",
+      "author": "Juan Dela Cruz",
+      "role": "Relief Volunteer",
+      "tag": "NGO Based",
+      "time": "28 mins ago",
+      "location": "San Roque",
+      "transcript": "Trees fell down near the basketball court, road is blocked. Please send clearing operations if possible.",
+      "dialect": "English",
+      "audioUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+      "verified": false,
+      "pinned": false
+    },
+    {
+      "id": "cr-3",
+      "author": "Maria Santos",
+      "role": "Field Coordinator",
+      "tag": "Non-Profit Based",
+      "time": "45 mins ago",
+      "location": "Riverside Settlement",
+      "transcript": "We have successfully evacuated 30 families to the high ground shelter. We need more blankets and flashlights.",
+      "dialect": "Tagalog",
+      "audioUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+      "verified": true,
+      "pinned": false
+    }
+  ]
+}

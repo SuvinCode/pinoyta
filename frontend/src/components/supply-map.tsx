@@ -324,7 +324,7 @@ export default function SupplyLiveMap() {
               Live Google Maps Supply Tracker
               <Badge className="bg-[#2563eb] text-white text-[10px] px-1.5 py-0 font-bold">Google Maps</Badge>
             </h3>
-            <p className="text-[11px] text-gray-500 dark:text-gray-400 font-medium">Agusan-Surigao Region • High-Visibility GIS</p>
+            <p className="text-[11px] text-gray-500 dark:text-gray-400 font-medium">Agta Ancestral Domain • High-Visibility GIS</p>
           </div>
         </div>
 

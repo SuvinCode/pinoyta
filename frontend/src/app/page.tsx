@@ -14,6 +14,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { AlertTriangle, CheckCircle2, Play, Pause, Activity, Map, Settings, Volume2, ShieldAlert, FileText, UserCheck, Mic, HelpCircle, Sun, Star, Send, Pin, Menu, MapPin, Trash2 } from "lucide-react";
 import SupplyLiveMap from "@/components/supply-map";
+import dbData from "@/data/db.json";
 
 const translations = {
   mamanwa: {
@@ -28,7 +29,7 @@ const translations = {
     notConfirmedSub: "No local leader has confirmed the current alert for this area yet.",
     confirmButton: "Confirm Alert",
     signalTitle: "Barangay Signal Level 3",
-    signalSub: "Agusan-Surigao Upland Zone • Typhoon Track",
+    signalSub: "Agta Ancestral Domain • Typhoon Track",
     traditionalWarningTitle: "Traditional & Sensor Warning",
     traditionalWarningDesc: "Winds up to 120km/h expected tonight. Elders report unusual stream behavior from upper ridges. Mandatory evacuation recommended for flood-prone zones.",
     evacDirectiveTitle: "Evacuation Directive",
@@ -62,7 +63,7 @@ const translations = {
     notConfirmedSub: "Wala pay lokal nga lider nga nagkumpirma sa pahidaan sa kining dapita.",
     confirmButton: "Kumpirmaha ang Alert",
     signalTitle: "Barangay Signal Level 3",
-    signalSub: "Sona sa Kabukiran sa Agusan-Surigao • Dagan sa Bagyo",
+    signalSub: "Agta Ancestral Domain • Dagan sa Bagyo",
     traditionalWarningTitle: "Pahidaan sa Katigulangan ug Sensor",
     traditionalWarningDesc: "Kusog nga hangin hangtod 120km/h karong gabii. Nagtaho ang mga katigulangan bahin sa dili kasagaran nga pagtubo sa tubig sa sapa. Girekomendar ang pag-evacuate.",
     evacDirectiveTitle: "Direktiba sa Pag-Evacuate",
@@ -96,7 +97,7 @@ const translations = {
     notConfirmedSub: "Wala pang lokal na pinuno na nagpapatunay sa babalang ito para sa lugar na ito.",
     confirmButton: "Kumpirmahin ang Babala",
     signalTitle: "Barangay Signal Level 3",
-    signalSub: "Agusan-Surigao Upland Zone • Sundan ang Bagyo",
+    signalSub: "Agta Ancestral Domain • Sundan ang Bagyo",
     traditionalWarningTitle: "Babala ng Katutubo at Sensor",
     traditionalWarningDesc: "Malakas na hangin hanggang 120km/h ngayong gabi. Ulat ng mga katutubong nakakatanda ang mabilis na pagtaas ng tubig sa sapa. Mandatory ang paglikas.",
     evacDirectiveTitle: "Direktiba sa Paglikas",
@@ -130,7 +131,7 @@ const translations = {
     notConfirmedSub: "No local leader has confirmed the current alert for this area yet.",
     confirmButton: "Confirm Alert",
     signalTitle: "Barangay Signal Level 3",
-    signalSub: "Agusan-Surigao Upland Zone • Typhoon Track",
+    signalSub: "Agta Ancestral Domain • Typhoon Track",
     traditionalWarningTitle: "Traditional & Sensor Warning",
     traditionalWarningDesc: "Winds up to 120km/h expected tonight. Elders report unusual stream behavior from upper ridges. Mandatory evacuation recommended for flood-prone zones.",
     evacDirectiveTitle: "Evacuation Directive",
@@ -164,7 +165,7 @@ const translations = {
     notConfirmedSub: "Wala pay lokal nga lider nga nagkumpirma sa pahimangno niining dapita.",
     confirmButton: "Kumpirmaha ang Alert",
     signalTitle: "Barangay Signal Level 3",
-    signalSub: "Agusan-Surigao Upland Zone • Dagan sa Bagyo",
+    signalSub: "Agta Ancestral Domain • Dagan sa Bagyo",
     traditionalWarningTitle: "Pahimangno sa Katigulangan ug Sensor",
     traditionalWarningDesc: "Kusog nga hangin hangtod 120km/h karong gabii. Nagtaho ang mga katigulangan bahin sa dili kasagaran nga pagtubo sa tubig sa sapa. Girekomendar ang dinaliang pag-evacuate.",
     evacDirectiveTitle: "Direktiba sa Pag-Evacuate",
@@ -198,7 +199,7 @@ const translations = {
     notConfirmedSub: "Awan pay ti lokal a dadaulo a nangpasingked iti daytoy a pakaammo.",
     confirmButton: "Kumpirmaen Ti Alert",
     signalTitle: "Barangay Signal Level 3",
-    signalSub: "Agusan-Surigao Upland Zone • Dalan Ti Bagyo",
+    signalSub: "Agta Ancestral Domain • Dalan Ti Bagyo",
     traditionalWarningTitle: "Pakaammo Ti Lakay Ken Sensor",
     traditionalWarningDesc: "Pigsan ti angin inggana 120km/h itay rabii. Ibagbaga dagiti lallakay nga napardas ti idadakkel ti danum iti karayan. Masapul ti dagus nga panag-bakwit.",
     evacDirectiveTitle: "Bilin Ti Panag-Bakwit",
@@ -232,7 +233,7 @@ const translations = {
     notConfirmedSub: "Wala pa sang lokal nga lider nga nagkumpirmar sini nga paandam.",
     confirmButton: "Kumpirmaha Ang Paandam",
     signalTitle: "Barangay Signal Level 3",
-    signalSub: "Agusan-Surigao Upland Zone • Alagyan Sang Bagyo",
+    signalSub: "Agta Ancestral Domain • Alagyan Sang Bagyo",
     traditionalWarningTitle: "Paandam Sang Kamagurangan Kag Sensor",
     traditionalWarningDesc: "Mabaskog nga hangin tubtob 120km/h subong nga gab-i. Nagreport ang mga kamagurangan sang madasig nga pagtaas sang tubig sa suba. Kinahanglan gid mag-evacuate.",
     evacDirectiveTitle: "Direktiba Sa Pag-Evacuate",
@@ -266,7 +267,7 @@ const translations = {
     notConfirmedSub: "Mayong lokal na lider an nagkumpirma kan patanid na ini.",
     confirmButton: "Kumpirmahon an Patanid",
     signalTitle: "Barangay Signal Level 3",
-    signalSub: "Agusan-Surigao Upland Zone • Dalan kan Bagyo",
+    signalSub: "Agta Ancestral Domain • Dalan kan Bagyo",
     traditionalWarningTitle: "Patanid kan mga Gurang asin Sensor",
     traditionalWarningDesc: "Makusog na duros sagkod 120km/h ngunyan na banggi. Nagbareta an mga gurang na marikas an paglangkaw kan tubig sa salog. Mandatoryo an pag-evacuate.",
     evacDirectiveTitle: "Bilin sa Pag-Evacuate",
@@ -300,7 +301,7 @@ const translations = {
     notConfirmedSub: "Waray pa lokal nga lider nga nagkumpirma hini nga pahibaro.",
     confirmButton: "Kumpirmaha Iton Alert",
     signalTitle: "Barangay Signal Level 3",
-    signalSub: "Agusan-Surigao Upland Zone • Dalan Han Bagyo",
+    signalSub: "Agta Ancestral Domain • Dalan Han Bagyo",
     traditionalWarningTitle: "Pahibaro Han Katigulangan ngan Sensor",
     traditionalWarningDesc: "Makusog nga hangin tubtob 120km/h yana nga gab-i. Nagsumat iton mga katigulangan hin malaksi nga pagsaka han tubig ha salog. Kinahanglan mag-evacuate.",
     evacDirectiveTitle: "Direktiba Ha Pag-Evacuate",
@@ -334,7 +335,7 @@ const translations = {
     notConfirmedSub: "Ala pang lokal a pamuntuk a mikumpirma kening babala.",
     confirmButton: "Kumpirman Ya Ing Babala",
     signalTitle: "Barangay Signal Level 3",
-    signalSub: "Agusan-Surigao Upland Zone • Dalan Ning Bagyu",
+    signalSub: "Agta Ancestral Domain • Dalan Ning Bagyu",
     traditionalWarningTitle: "Babala Ding Mangatwa Ampon Sensor",
     traditionalWarningDesc: "Sikan angin anggang 120km/h ngening bengi. Mig-report la ring mangatwa king mabilis a pamangatas ning danum king sapa. Kailangan yeng mag-evacuate.",
     evacDirectiveTitle: "Utus Pamag-Evacuate",
@@ -368,7 +369,7 @@ const translations = {
     notConfirmedSub: "Anggapo ni'y lokal a lider ya akakumpirma ed sayan pasakbay.",
     confirmButton: "Kumpirmaen So Pasakbay",
     signalTitle: "Barangay Signal Level 3",
-    signalSub: "Agusan-Surigao Upland Zone • Dalan Na Bagyo",
+    signalSub: "Agta Ancestral Domain • Dalan Na Bagyo",
     traditionalWarningTitle: "Pasakbay Na Matatken Tan Sensor",
     traditionalWarningDesc: "Maksil ya dagem ya onabot ed 120km/h natan ya labi. Inkuan na saray matatken a mabilis so itatagey na danum. Nakaukolan lay man-evacuate.",
     evacDirectiveTitle: "Ganggay Pan-Evacuate",
@@ -477,7 +478,7 @@ export default function DisasterApp() {
   const [playingAudioId, setPlayingAudioId] = useState<string | null>(null);
   const [audioProgress, setAudioProgress] = useState(0);
   const [audioDuration, setAudioDuration] = useState(0);
-  const [communityMessages, setCommunityMessages] = useState<any[]>([]);
+  
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const formatTime = (timeInSeconds: number) => {
@@ -487,19 +488,8 @@ export default function DisasterApp() {
     return `${m}:${s.toString().padStart(2, '0')}`;
   };
 
-  useEffect(() => {
-    // Fetch mock messages from Mistral API backend
-    const fetchMessages = async () => {
-      try {
-        const res = await fetch(`${BACKEND_URL}/api/community-messages?lang=${language}`);
-        const data = await res.json();
-        setCommunityMessages(data);
-      } catch (e) {
-        console.error("Failed to fetch community messages", e);
-      }
-    };
-    fetchMessages();
-  }, [language]);
+
+  const { elderReports, communityReports } = dbData;
 
   const handlePlayAudio = (id: string, audioUrl?: string) => {
     if (playingAudioId === id) {
@@ -562,7 +552,7 @@ export default function DisasterApp() {
                 <span className="font-extrabold text-xl tracking-tight text-[#ce2029] dark:text-[#f87171]">ta</span>
                 <Star className="h-3.5 w-3.5 fill-[#fcd116] text-[#fcd116] ml-0.5" />
               </div>
-              <span className="text-[10px] text-muted-foreground font-semibold tracking-wide">Agusan-Surigao Lumad Network</span>
+              <span className="text-[10px] text-muted-foreground font-semibold tracking-wide">Agta People Network</span>
             </div>
           </div>
 
@@ -718,40 +708,14 @@ export default function DisasterApp() {
 
           {/* ==================== TAB 1: SOURCES ==================== */}
           <TabsContent value="sources" className="outline-none">
-            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="space-y-8">
+            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="space-y-8 mt-4">
             
             {/* --- ELDER REPORTS SECTION --- */}
-            <div className="space-y-4 mt-4">
+            <div className="space-y-4">
               <div className="flex items-center gap-2 mb-2">
                 <ShieldAlert className="h-5 w-5 text-[#b45309]" />
                 <h2 className="text-lg font-bold text-[#111827] dark:text-[#f9fafb]">Elder Reports</h2>
               </div>
-              {/* Pinned Official Post */}
-              <div className="bg-[#fffbeb] dark:bg-[#422006]/30 border-2 border-[#fbbf24] dark:border-[#b45309] p-4 rounded-xl shadow-sm relative overflow-hidden">
-                <div className="absolute top-0 right-0 bg-[#fbbf24] text-amber-950 text-[10px] font-bold px-2 py-0.5 rounded-bl-lg flex items-center gap-1">
-                  <Pin className="h-3 w-3" /> PINNED
-                </div>
-                <div className="flex gap-3">
-                  <Avatar className="h-10 w-10 border-2 border-[#fbbf24]">
-                    <AvatarFallback className="bg-[#f59e0b] text-white">DM</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <h4 className="font-bold text-[#b45309] dark:text-[#fde68a] text-sm flex items-center gap-1.5">
-                      Datu Makusog <Badge className="bg-[#fbbf24] hover:bg-[#fbbf24] text-amber-950 text-[9px] px-1 py-0 h-4 border-none">Tribal Chieftain</Badge>
-                    </h4>
-                    <span className="text-[10px] text-[#92400e] dark:text-[#fcd34d]/70 block mb-1.5">San Roque Central • 5 mins ago</span>
-                    <p className="text-sm font-medium text-amber-950 dark:text-[#fef3c7] leading-relaxed">
-                      "The river has overflowed at the old bridge. Do not attempt to cross. Move immediately to the upland evacuation center!"
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-
-            {/* 1. Community Intake */}
-            <div>
-
-
               <Card className="bg-white dark:bg-[#1f2937] border-[#e5e7eb] dark:border-[#374151] shadow-2xs">
                 <CardHeader className="pb-3 border-b border-[#e5e7eb] dark:border-[#374151] bg-[#f9fafb] dark:bg-[#111827]/50">
                   <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed font-medium">
@@ -759,21 +723,26 @@ export default function DisasterApp() {
                   </p>
                 </CardHeader>
                 <CardContent className="p-4 space-y-4">
-                  {communityMessages.map((item) => (
-                    <div key={item.id} className="p-3.5 rounded-xl border border-[#e5e7eb] dark:border-[#374151] bg-[#f9fafb] dark:bg-[#111827] space-y-3">
+                  {elderReports.map((item) => (
+                    <div key={item.id} className={`p-3.5 rounded-xl border ${item.pinned ? 'bg-[#fffbeb] dark:bg-[#422006]/30 border-2 border-[#fbbf24] dark:border-[#b45309]' : 'border-[#e5e7eb] dark:border-[#374151] bg-[#f9fafb] dark:bg-[#111827]'} space-y-3 relative overflow-hidden`}>
+                      {item.pinned && (
+                        <div className="absolute top-0 right-0 bg-[#fbbf24] text-amber-950 text-[10px] font-bold px-2 py-0.5 rounded-bl-lg flex items-center gap-1">
+                          <Pin className="h-3 w-3" /> PINNED
+                        </div>
+                      )}
                       <div className="flex items-start justify-between">
                         <div className="flex items-center gap-2.5">
-                          <Avatar className="h-9 w-9 border border-[#0038a8]">
-                            <AvatarFallback className="bg-[#0038a8] text-white text-xs font-bold">{item.author[0]}</AvatarFallback>
+                          <Avatar className={`h-9 w-9 border ${item.pinned ? 'border-[#fbbf24]' : 'border-[#0038a8]'}`}>
+                            <AvatarFallback className={`text-xs font-bold ${item.pinned ? 'bg-[#f59e0b] text-white' : 'bg-[#0038a8] text-white'}`}>{item.author[0]}</AvatarFallback>
                           </Avatar>
                           <div className="flex flex-col">
                             <div className="flex items-center gap-1.5">
                               <span className="text-sm font-bold leading-none">{item.author}</span>
                               <Badge className="bg-[#eff6ff] text-[#0038a8] dark:bg-[#1e3a8a] dark:text-[#93c5fd] border-none text-[9px] font-bold px-1.5 py-0 h-4">
-                                {item.dialect}
+                                {item.tag}
                               </Badge>
                             </div>
-                            <span className="text-[11px] text-gray-500 dark:text-gray-400 font-medium mt-1 leading-none">{item.role} • {item.time}</span>
+                            <span className="text-[11px] text-gray-500 dark:text-gray-400 font-medium mt-1 leading-none">{item.role} • {item.location} • {item.time}</span>
                           </div>
                         </div>
                         {item.verified && (
@@ -784,12 +753,12 @@ export default function DisasterApp() {
                       </div>
 
                       {/* Text Post Above Audio */}
-                      <p className="text-sm text-[#111827] dark:text-[#f9fafb] font-medium leading-relaxed pl-11">
+                      <p className={`text-sm font-medium leading-relaxed pl-11 ${item.pinned ? 'text-amber-950 dark:text-[#fef3c7]' : 'text-[#111827] dark:text-[#f9fafb]'}`}>
                         "{item.transcript}"
                       </p>
 
                       {/* Voice Player */}
-                      <div className="flex items-center gap-3 bg-white dark:bg-[#1f2937] p-2.5 rounded-lg border border-[#e5e7eb] dark:border-[#374151] ml-11">
+                      <div className={`flex items-center gap-3 p-2.5 rounded-lg border ml-11 ${item.pinned ? 'bg-white/50 dark:bg-black/20 border-[#fbbf24]/50' : 'bg-white dark:bg-[#1f2937] border-[#e5e7eb] dark:border-[#374151]'}`}>
                         <Button
                           size="icon"
                           onClick={() => handlePlayAudio(item.id, item.audioUrl)}
@@ -800,7 +769,7 @@ export default function DisasterApp() {
                         <div className="flex-1">
                           <div className="flex justify-between text-[10px] text-gray-500 dark:text-gray-400 mb-1.5 font-mono">
                             <span>{playingAudioId === item.id ? `${formatTime(audioProgress)} / ${formatTime(audioDuration)}` : "Original Dialect Recording"}</span>
-                            <span>{playingAudioId === item.id ? `📍 ${selectedBarangay.replace('-', ' ').toUpperCase()}` : "Ready"}</span>
+                            <span>{playingAudioId === item.id ? `📍 ${item.location}` : "Ready"}</span>
                           </div>
                           <div className="h-1.5 bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
                             <div 
@@ -812,13 +781,11 @@ export default function DisasterApp() {
                       </div>
                     </div>
                   ))}
-                  {communityMessages.length === 0 && (
-                    <div className="text-center p-4 text-sm text-gray-500">Loading community voices...</div>
+                  {elderReports.length === 0 && (
+                    <div className="text-center p-4 text-sm text-gray-500">No elder reports yet.</div>
                   )}
                 </CardContent>
               </Card>
-            </div>
-
             </div>
 
             {/* --- COMMUNITY REPORTS SECTION --- */}
@@ -827,37 +794,71 @@ export default function DisasterApp() {
                 <Activity className="h-5 w-5 text-[#ce2029]" />
                 <h2 className="text-lg font-bold text-[#111827] dark:text-[#f9fafb]">Community Reports</h2>
               </div>
-              {/* Recent Community Posts */}
-              <div className="space-y-3">
-                <div className="bg-white dark:bg-[#1f2937] border border-[#e5e7eb] dark:border-[#374151] p-4 rounded-xl shadow-sm flex gap-3">
-                  <Avatar className="h-9 w-9">
-                    <AvatarFallback className="bg-gray-200 text-gray-600 dark:bg-gray-700 dark:text-gray-300">A</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <h4 className="font-bold text-[#111827] dark:text-[#f9fafb] text-sm">Anonymous</h4>
-                    <span className="text-[10px] text-gray-500 block mb-1">Purok 4 • 12 mins ago</span>
-                    <p className="text-sm text-gray-800 dark:text-gray-200">
-                      "We need drinking water here, the pipes are broken near the chapel."
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="bg-white dark:bg-[#1f2937] border border-[#e5e7eb] dark:border-[#374151] p-4 rounded-xl shadow-sm flex gap-3">
-                  <Avatar className="h-9 w-9">
-                    <AvatarFallback className="bg-[#eff6ff] text-[#0038a8]">JC</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <h4 className="font-bold text-[#111827] dark:text-[#f9fafb] text-sm">Juan Dela Cruz</h4>
-                    <span className="text-[10px] text-gray-500 block mb-1">San Roque • 28 mins ago</span>
-                    <p className="text-sm text-gray-800 dark:text-gray-200">
-                      "Trees fell down near the basketball court, road is blocked. Please send clearing operations if possible."
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <Card className="bg-white dark:bg-[#1f2937] border-[#e5e7eb] dark:border-[#374151] shadow-2xs">
+                <CardContent className="p-4 space-y-4">
+                  {communityReports.map((item) => (
+                    <div key={item.id} className={`p-3.5 rounded-xl border ${item.pinned ? 'bg-[#fffbeb] dark:bg-[#422006]/30 border-2 border-[#fbbf24] dark:border-[#b45309]' : 'border-[#e5e7eb] dark:border-[#374151] bg-[#f9fafb] dark:bg-[#111827]'} space-y-3 relative overflow-hidden`}>
+                      {item.pinned && (
+                        <div className="absolute top-0 right-0 bg-[#fbbf24] text-amber-950 text-[10px] font-bold px-2 py-0.5 rounded-bl-lg flex items-center gap-1">
+                          <Pin className="h-3 w-3" /> PINNED
+                        </div>
+                      )}
+                      <div className="flex items-start justify-between">
+                        <div className="flex items-center gap-2.5">
+                          <Avatar className={`h-9 w-9 border ${item.pinned ? 'border-[#fbbf24]' : 'border-[#0038a8]'}`}>
+                            <AvatarFallback className={`text-xs font-bold ${item.pinned ? 'bg-[#f59e0b] text-white' : 'bg-[#0038a8] text-white'}`}>{item.author[0]}</AvatarFallback>
+                          </Avatar>
+                          <div className="flex flex-col">
+                            <div className="flex items-center gap-1.5">
+                              <span className="text-sm font-bold leading-none">{item.author}</span>
+                              <Badge className="bg-[#eff6ff] text-[#0038a8] dark:bg-[#1e3a8a] dark:text-[#93c5fd] border-none text-[9px] font-bold px-1.5 py-0 h-4">
+                                {item.tag}
+                              </Badge>
+                            </div>
+                            <span className="text-[11px] text-gray-500 dark:text-gray-400 font-medium mt-1 leading-none">{item.role} • {item.location} • {item.time}</span>
+                          </div>
+                        </div>
+                        {item.verified && (
+                          <span className="text-[10px] font-bold text-[#2563eb] dark:text-[#60a5fa] flex items-center gap-1 bg-[#eff6ff] dark:bg-[#1e3a8a]/50 px-2 py-1 rounded-md shrink-0">
+                            <CheckCircle2 className="h-3 w-3 text-[#2563eb]" /> {t.verifiedVoice}
+                          </span>
+                        )}
+                      </div>
 
+                      {/* Text Post Above Audio */}
+                      <p className={`text-sm font-medium leading-relaxed pl-11 ${item.pinned ? 'text-amber-950 dark:text-[#fef3c7]' : 'text-[#111827] dark:text-[#f9fafb]'}`}>
+                        "{item.transcript}"
+                      </p>
 
-
+                      {/* Voice Player */}
+                      <div className={`flex items-center gap-3 p-2.5 rounded-lg border ml-11 ${item.pinned ? 'bg-white/50 dark:bg-black/20 border-[#fbbf24]/50' : 'bg-white dark:bg-[#1f2937] border-[#e5e7eb] dark:border-[#374151]'}`}>
+                        <Button
+                          size="icon"
+                          onClick={() => handlePlayAudio(item.id, item.audioUrl)}
+                          className="h-8 w-8 rounded-full bg-[#ce2029] hover:bg-[#b91c1c] text-white shrink-0 shadow-2xs"
+                        >
+                          {playingAudioId === item.id ? <Pause className="h-3.5 w-3.5" /> : <Play className="h-3.5 w-3.5 fill-current ml-0.5" />}
+                        </Button>
+                        <div className="flex-1">
+                          <div className="flex justify-between text-[10px] text-gray-500 dark:text-gray-400 mb-1.5 font-mono">
+                            <span>{playingAudioId === item.id ? `${formatTime(audioProgress)} / ${formatTime(audioDuration)}` : "Original Dialect Recording"}</span>
+                            <span>{playingAudioId === item.id ? `📍 ${item.location}` : "Ready"}</span>
+                          </div>
+                          <div className="h-1.5 bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
+                            <div 
+                              className={`h-full bg-[#ce2029] transition-all duration-300 ${playingAudioId === item.id ? "" : "w-0"}`} 
+                              style={{ width: playingAudioId === item.id ? `${(audioProgress / (audioDuration || 1)) * 100}%` : '0%' }}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                  {communityReports.length === 0 && (
+                    <div className="text-center p-4 text-sm text-gray-500">No community reports yet.</div>
+                  )}
+                </CardContent>
+              </Card>
             </div>
 
             </motion.div>
