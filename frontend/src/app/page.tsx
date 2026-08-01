@@ -77,6 +77,7 @@ const translations = {
     tabSourcesFeed: "Balita",
     tabReportForm: "I-report",
     tabSupplyMap: "Mapa",
+    tabSettings: "Mga Setting",
     appTitle: "Pinoyta: Typhoon Preparation & Recovery App",
     appPurpose: "Usa ka aplikasyon sa komunidad nga naka-focus sa pag-ayo human sa katalagman, nagtabang sa mga lumad ug lokal nga komunidad nga magpaambit og importanteng impormasyon, mag-coordinate sa pagtabang, ug makakita sa supply maps panahon ug pagkahuman sa bagyo.",
     descDashboard: "Dashboard: Kinatibuk-ang pagtan-aw sa katuyoan sa aplikasyon ug giya sa pag-navigate.",
@@ -163,6 +164,7 @@ const translations = {
     tabSourcesFeed: "Mga Balita",
     tabReportForm: "I-report",
     tabSupplyMap: "Mapa",
+    tabSettings: "Mga Setting",
     appTitle: "Pinoyta: Typhoon Preparation & Recovery App",
     appPurpose: "Usa ka aplikasyon sa komunidad nga naka-focus sa pag-ayo human sa katalagman, nagtabang sa mga lumad ug lokal nga komunidad nga magpaambit og importanteng impormasyon, mag-coordinate sa pagtabang, ug makakita sa supply maps panahon ug pagkahuman sa bagyo.",
     descDashboard: "Dashboard: Kinatibuk-ang pagtan-aw sa katuyoan sa aplikasyon ug giya sa pag-navigate.",
@@ -249,6 +251,7 @@ const translations = {
     tabSourcesFeed: "Mga Balita",
     tabReportForm: "Mag-ulat",
     tabSupplyMap: "Mapa",
+    tabSettings: "Mga Setting",
     appTitle: "Pinoyta: Typhoon Preparation & Recovery App",
     appPurpose: "Isang aplikasyong pinapatakbo ng komunidad na nakatutok sa pagbangon pagkatapos ng sakuna, tumutulong sa mga katutubo at lokal na komunidad na magbahagi ng mahalagang impormasyon at mapa ng suplay sa panahon at pagkatapos ng bagyo.",
     descDashboard: "Dashboard: Pangkalahatang ideya ng layunin ng aplikasyon at gabay sa pag-navigate.",
@@ -335,6 +338,7 @@ const translations = {
     tabSourcesFeed: "Sources",
     tabReportForm: "Report",
     tabSupplyMap: "Recovery Map",
+    tabSettings: "Settings",
     appTitle: "Pinoyta: Typhoon Preparation & Recovery App",
     appPurpose: "A community-driven application focused on disaster recovery, helping indigenous and local communities share vital information, coordinate relief efforts, and access supply maps during and after typhoons.",
     descDashboard: "Dashboard: Overview of the application's purpose and navigation guide.",
@@ -421,6 +425,7 @@ const translations = {
     tabSourcesFeed: "Mga Balita",
     tabReportForm: "I-report",
     tabSupplyMap: "Mapa",
+    tabSettings: "Mga Setting",
     appTitle: "Pinoyta: Typhoon Preparation & Recovery App",
     appPurpose: "Usa ka aplikasyon nga nag-focus sa disaster recovery, nagtabang sa mga lumad nga magpaambit og importanteng impormasyon ug makakita sa supply maps pagkahuman sa bagyo.",
     descDashboard: "Dashboard: Kinatibuk-ang pagtan-aw sa aplikasyon ug giya.",
@@ -507,6 +512,7 @@ const translations = {
     tabSourcesFeed: "Damdamag",
     tabReportForm: "Ireport",
     tabSupplyMap: "Mapa",
+    tabSettings: "Pakaidulinan",
     appTitle: "Pinoyta: Typhoon Preparation & Recovery App",
     appPurpose: "Maysa nga aplikasyon ti komunidad para iti pannakabawi iti didigra, tumultulong kadagiti lallakay nga mangibingay iti napateg nga impormasion ken mapa ti suplay kabayatan ti bagyo.",
     descDashboard: "Dashboard: Pakabuklan ti panggep ti aplikasyon ken pagalagadan.",
@@ -593,6 +599,7 @@ const translations = {
     tabSourcesFeed: "Mga Balita",
     tabReportForm: "I-report",
     tabSupplyMap: "Mapa",
+    tabSettings: "Mga Setting",
     appTitle: "Pinoyta: Typhoon Preparation & Recovery App",
     appPurpose: "Isa ka aplikasyon sang komunidad para sa disaster recovery, nagabulig sa mga pumuluyo nga magpaambit sang impormasyon kag makita ang supply maps sa tion sang bagyo.",
     descDashboard: "Dashboard: Kabilugang pagtan-aw sa tinutuyo sang aplikasyon.",
@@ -679,6 +686,7 @@ const translations = {
     tabSourcesFeed: "Mga Bareta",
     tabReportForm: "I-report",
     tabSupplyMap: "Mapa",
+    tabSettings: "Mga Setting",
     appTitle: "Pinoyta: Typhoon Preparation & Recovery App",
     appPurpose: "Sarong aplikasyon kan komunidad para sa pagbangon sa kalamidad, nagtatabang sa mga namamanwaan na ipaabot an importanteng impormasyon asin supply maps sa panahon nin bagyo.",
     descDashboard: "Dashboard: Kabuuan na ideya kan aplikasyon.",
@@ -765,6 +773,7 @@ const translations = {
     tabSourcesFeed: "Mga Sumat",
     tabReportForm: "I-report",
     tabSupplyMap: "Mapa",
+    tabSettings: "Mga Setting",
     appTitle: "Pinoyta: Typhoon Preparation & Recovery App",
     appPurpose: "Usa nga aplikasyon han komunidad para han pagbangon ha kalamidad, nabulig ha mga mulupyo pagpakita hin impormasyon ug supply maps ha panahon han bagyo.",
     descDashboard: "Dashboard: Kabug-usan nga pag-abot han aplikasyon.",
@@ -851,6 +860,7 @@ const translations = {
     tabSourcesFeed: "Balita",
     tabReportForm: "I-report",
     tabSupplyMap: "Mapa",
+    tabSettings: "Deng Setting",
     appTitle: "Pinoyta: Typhoon Preparation & Recovery App",
     appPurpose: "Metung a aplikasyon ning komunidad para king pamibangon king kalamidad, sasaup kareng tau ban ipaalam ing impormasyon at supply maps kabang bagyo.",
     descDashboard: "Dashboard: Pangkabilugan a kaisipan ning aplikasyon.",
@@ -937,6 +947,7 @@ const translations = {
     tabSourcesFeed: "Balita",
     tabReportForm: "I-report",
     tabSupplyMap: "Mapa",
+    tabSettings: "Saray Setting",
     appTitle: "Pinoyta: Typhoon Preparation & Recovery App",
     appPurpose: "Sakey ya aplikasyon na komunidad para ed ibabangon ed kalamidad, ontutulong ed saray totoo ya ipaamta so impormasyon tan supply maps no walay bagyo.",
     descDashboard: "Dashboard: Kabuuan ya gagala na aplikasyon.",
@@ -979,6 +990,8 @@ function getInitialLanguage(): keyof typeof translations {
 }
 
 export default function DisasterApp() {
+  const [activeTab, setActiveTab] = useState("dashboard");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { setTheme, theme } = useTheme();
   const [language, setLanguage] = useState<keyof typeof translations>(getInitialLanguage);
   const [selectedBarangay, setSelectedBarangay] = useState("san-roque");
@@ -1110,7 +1123,7 @@ export default function DisasterApp() {
     if (activeAudioRef.current) {
       if ((activeAudioRef.current as any).isWebSpeech) {
         window.speechSynthesis.cancel();
-      } else {
+      } else if (!(activeAudioRef.current as any).isMock) {
         activeAudioRef.current.pause();
         activeAudioRef.current.currentTime = 0;
       }
@@ -1156,41 +1169,27 @@ export default function DisasterApp() {
           console.warn("ElevenLabs TTS failed, using mock data / Web Speech fallback", errData);
           setLoadingAudioId(null);
           
-          if ('speechSynthesis' in window) {
-            window.speechSynthesis.cancel();
-            const utterance = new SpeechSynthesisUtterance(transcript);
-            
-            // Try to find a Filipino or Spanish voice for accent if possible
-            const voices = window.speechSynthesis.getVoices();
-            const filipinoVoice = voices.find(v => v.lang.toLowerCase().includes('fil') || v.lang.toLowerCase().includes('ph') || v.lang.toLowerCase().includes('es'));
-            if (filipinoVoice) {
-              utterance.voice = filipinoVoice;
-            }
-            
-            utterance.rate = 0.95;
-            
-            setPlayingAudioId(id);
-            setAudioDuration(Math.max(2, transcript.length / 12)); // Rough estimation
-            setAudioProgress(0);
-            
-            utterance.onend = () => {
-              stopCurrentAudio();
-            };
-            
-            utterance.onerror = () => {
-              stopCurrentAudio();
-            }
-            
-            progressIntervalRef.current = setInterval(() => {
-              setAudioProgress(p => p + 0.1);
-            }, 100);
-            
-            window.speechSynthesis.speak(utterance);
-            
-            activeAudioRef.current = {
-              isWebSpeech: true
-            } as any;
-          }
+          // Visual Mock Simulation (No Browser Dependencies)
+          setPlayingAudioId(id);
+          const mockDuration = Math.max(2, transcript.length / 12);
+          setAudioDuration(mockDuration);
+          setAudioProgress(0);
+          
+          progressIntervalRef.current = setInterval(() => {
+            setAudioProgress(p => {
+              if (p + 0.1 >= mockDuration) {
+                stopCurrentAudio();
+                return 0;
+              }
+              return p + 0.1;
+            });
+          }, 100);
+          
+          activeAudioRef.current = {
+            isMock: true,
+            pause: () => {},
+            currentTime: 0
+          } as any;
           return;
         }
 
@@ -1202,22 +1201,27 @@ export default function DisasterApp() {
         setLoadingAudioId(null);
         
         // Fallback identical logic if fetch throws an error (e.g. network failure)
-        if ('speechSynthesis' in window) {
-          window.speechSynthesis.cancel();
-          const utterance = new SpeechSynthesisUtterance(transcript);
-          const voices = window.speechSynthesis.getVoices();
-          const filipinoVoice = voices.find(v => v.lang.toLowerCase().includes('fil') || v.lang.toLowerCase().includes('ph') || v.lang.toLowerCase().includes('es'));
-          if (filipinoVoice) utterance.voice = filipinoVoice;
-          utterance.rate = 0.95;
+          // Visual Mock Simulation (No Browser Dependencies)
           setPlayingAudioId(id);
-          setAudioDuration(Math.max(2, transcript.length / 12));
+          const mockDuration = Math.max(2, transcript.length / 12);
+          setAudioDuration(mockDuration);
           setAudioProgress(0);
-          utterance.onend = () => stopCurrentAudio();
-          utterance.onerror = () => stopCurrentAudio();
-          progressIntervalRef.current = setInterval(() => setAudioProgress(p => p + 0.1), 100);
-          window.speechSynthesis.speak(utterance);
-          activeAudioRef.current = { isWebSpeech: true } as any;
-        }
+          
+          progressIntervalRef.current = setInterval(() => {
+            setAudioProgress(p => {
+              if (p + 0.1 >= mockDuration) {
+                stopCurrentAudio();
+                return 0;
+              }
+              return p + 0.1;
+            });
+          }, 100);
+          
+          activeAudioRef.current = {
+            isMock: true,
+            pause: () => {},
+            currentTime: 0
+          } as any;
         return;
       } finally {
         setLoadingAudioId(null);
@@ -1422,10 +1426,10 @@ export default function DisasterApp() {
 
       {/* Main Content Area */}
       <main className="flex-1 container mx-auto p-4 max-w-3xl">
-        <Tabs defaultValue="dashboard" className="w-full">
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           
           {/* 4 Main Header Tabs */}
-          <TabsList className="grid w-full grid-cols-4 h-14 mb-6 bg-white/95 dark:bg-[#111827]/95 border border-[#e5e7eb] dark:border-[#1f2937] rounded-xl p-1 shadow-xs">
+          <TabsList className="hidden md:grid w-full grid-cols-5 h-14 mb-6 bg-white/95 dark:bg-[#111827]/95 border border-[#e5e7eb] dark:border-[#1f2937] rounded-xl p-1 shadow-xs">
             <TabsTrigger 
               value="dashboard" 
               className="flex items-center justify-center gap-1 sm:gap-2 data-[state=active]:text-[#0038a8] dark:data-[state=active]:text-[#60a5fa] data-[state=active]:bg-[#eff6ff] dark:data-[state=active]:bg-[#1e3a8a]/40 font-bold text-[10px] sm:text-sm rounded-lg transition-all"
@@ -1456,6 +1460,14 @@ export default function DisasterApp() {
             >
               <Map className="h-3 w-3 sm:h-4 sm:w-4 text-[#eab308]" />
               <span className="hidden sm:inline">{t.tabSupplyMap}</span>
+            </TabsTrigger>
+
+            <TabsTrigger 
+              value="settings" 
+              className="flex items-center justify-center gap-1 sm:gap-2 data-[state=active]:text-[#0038a8] dark:data-[state=active]:text-[#60a5fa] data-[state=active]:bg-[#eff6ff] dark:data-[state=active]:bg-[#1e3a8a]/40 font-bold text-[10px] sm:text-sm rounded-lg transition-all"
+            >
+              <Settings className="h-3 w-3 sm:h-4 sm:w-4 text-gray-500" />
+              <span className="hidden sm:inline">{t.tabSettings}</span>
             </TabsTrigger>
           </TabsList>
 
@@ -1889,6 +1901,73 @@ export default function DisasterApp() {
             <motion.div initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4 }} className="space-y-4">
             <SupplyLiveMap />
           </motion.div>
+          </TabsContent>
+
+          {/* ==================== TAB 4: SETTINGS ==================== */}
+          <TabsContent value="settings" className="outline-none">
+            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="space-y-6 mt-4">
+              <Card className="bg-white dark:bg-[#1f2937] border-[#e5e7eb] dark:border-[#374151] shadow-sm">
+                <CardHeader className="pb-4 border-b border-[#e5e7eb] dark:border-[#374151]">
+                  <CardTitle className="flex items-center gap-2">
+                    <Settings className="h-5 w-5 text-gray-500" />
+                    {t.tabSettings}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="pt-6 space-y-6">
+                  {/* Language Setting */}
+                  <div className="space-y-2">
+                    <label className="text-sm font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wider">{t.languageLabel}</label>
+                    <Select value={language} onValueChange={(val) => {
+                        if (val) {
+                          localStorage.setItem("app_language", val);
+                          window.location.reload();
+                        }
+                      }}>
+                      <SelectTrigger className="w-full md:w-[240px] h-10 border-[#d1d5db] dark:border-[#374151] bg-white dark:bg-[#111827]">
+                        <SelectValue placeholder="Language" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="mamanwa">Minamanwa (Native)</SelectItem>
+                        <SelectItem value="bisaya">Bisaya</SelectItem>
+                        <SelectItem value="cebuano">Cebuano</SelectItem>
+                        <SelectItem value="ilocano">Ilocano</SelectItem>
+                        <SelectItem value="hiligaynon">Hiligaynon</SelectItem>
+                        <SelectItem value="bicolano">Bicolano</SelectItem>
+                        <SelectItem value="waray">Waray-Waray</SelectItem>
+                        <SelectItem value="kapampangan">Kapampangan</SelectItem>
+                        <SelectItem value="pangasinan">Pangasinan</SelectItem>
+                        <SelectItem value="tagalog">Tagalog</SelectItem>
+                        <SelectItem value="english">English</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  {/* Dark Mode */}
+                  <div className="pt-6 border-t border-[#e5e7eb] dark:border-[#374151] flex items-center justify-between">
+                    <div className="flex items-center gap-2 text-sm font-bold text-gray-700 dark:text-gray-300">
+                      {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Settings className="h-4 w-4" />}
+                      <span>{t.darkTheme || "Dark Mode"}</span>
+                    </div>
+                    <Switch 
+                      checked={theme === "dark"} 
+                      onCheckedChange={(c) => setTheme(c ? "dark" : "light")} 
+                    />
+                  </div>
+
+                  {/* Governance */}
+                  <div className="pt-6 border-t border-[#e5e7eb] dark:border-[#374151]">
+                    <span className="text-xs font-bold text-gray-500 uppercase tracking-wider block mb-2">Simulated Governance State</span>
+                    <div className="flex items-center justify-between bg-blue-50/50 dark:bg-blue-950/30 p-3 rounded-lg border border-blue-200/50 dark:border-blue-900/50">
+                      <span className="text-sm font-medium">{t.alertTribalConfirm}</span>
+                      <Switch 
+                        checked={isAlertConfirmed} 
+                        onCheckedChange={setIsAlertConfirmed}
+                      />
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
           </TabsContent>
 
         </Tabs>
