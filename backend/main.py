@@ -20,7 +20,11 @@ app.mount("/audio", StaticFiles(directory="audio"), name="audio")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:1111", "http://localhost:3000"],
+    allow_origins=[
+        "http://localhost:1111", 
+        "http://localhost:3000", 
+        "https://pinoyta-frontend.onrender.com"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
