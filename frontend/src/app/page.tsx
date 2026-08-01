@@ -1504,6 +1504,21 @@ export default function DisasterApp() {
                 </Card>
 
               </div>
+
+              {/* Dashboard Footer */}
+              <div className="mt-8 pt-6 border-t border-[#e5e7eb] dark:border-[#374151] flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500 dark:text-gray-400">
+                <div>
+                  &copy; {new Date().getFullYear()} Pinoyta. All rights reserved.
+                </div>
+                <div className="flex gap-2">
+                  <span className="px-2.5 py-1 bg-[#eff6ff] dark:bg-[#1e3a8a]/30 text-[#0038a8] dark:text-[#60a5fa] rounded-full text-xs font-bold border border-[#bfdbfe] dark:border-[#1e3a8a]">
+                    NGO Initiative
+                  </span>
+                  <span className="px-2.5 py-1 bg-[#fffbeb] dark:bg-[#78350f]/30 text-[#b45309] dark:text-[#fbbf24] rounded-full text-xs font-bold border border-[#fef3c7] dark:border-[#92400e]/30">
+                    Prototype
+                  </span>
+                </div>
+              </div>
             </motion.div>
           </TabsContent>
 
