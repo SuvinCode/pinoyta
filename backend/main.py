@@ -10,8 +10,8 @@ from mistralai.client import Mistral
 from pydantic import BaseModel
 from gtts import gTTS
 
-load_dotenv()
-
+env_path = os.path.join(os.path.dirname(__file__), '../.env')
+load_dotenv(dotenv_path=env_path)
 app = FastAPI()
 
 # Mount audio directory to serve generated files
