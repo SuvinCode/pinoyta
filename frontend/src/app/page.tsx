@@ -162,6 +162,8 @@ const translations = {
   }
 };
 
+const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+
 export default function DisasterApp() {
   const { setTheme, theme } = useTheme();
   const [language, setLanguage] = useState<keyof typeof translations>("english");
@@ -177,7 +179,7 @@ export default function DisasterApp() {
     // Fetch mock messages from Mistral API backend
     const fetchMessages = async () => {
       try {
-        const res = await fetch("http://localhost:8000/api/community-messages");
+        const res = await fetch(`${BACKEND_URL}/api/community-messages`);
         const data = await res.json();
         setCommunityMessages(data);
       } catch (e) {
@@ -198,10 +200,11 @@ export default function DisasterApp() {
       // Play new
       setPlayingAudioId(id);
       if (audioUrl) {
+        const fullAudioUrl = audioUrl.startsWith('/') ? `${BACKEND_URL}${audioUrl}` : audioUrl;
         if (!audioRef.current) {
-          audioRef.current = new Audio(audioUrl);
+          audioRef.current = new Audio(fullAudioUrl);
         } else {
-          audioRef.current.src = audioUrl;
+          audioRef.current.src = fullAudioUrl;
         }
         audioRef.current.play();
         audioRef.current.onended = () => setPlayingAudioId(null);

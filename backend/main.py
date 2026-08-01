@@ -54,7 +54,7 @@ def generate_audio(text: str, author_id: str, lang: str = 'en') -> str:
             print(f"Failed to generate audio for {author_id}: {e}")
             return ""
             
-    return f"http://localhost:8000/audio/{filename}"
+    return f"/audio/{filename}"
 
 @app.get("/")
 def read_root():
