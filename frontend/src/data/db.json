@@ -7,7 +7,12 @@
       "tag": "Tribal Council",
       "time": "5 mins ago",
       "location": "San Roque Central",
-      "transcript": "The river has overflowed at the old bridge. Do not attempt to cross. Move immediately to the upland evacuation center!",
+      "transcripts": {
+        "english": "The river has overflowed at the old bridge. Do not attempt to cross. Move immediately to the upland evacuation center!",
+        "tagalog": "Umapaw na ang ilog sa lumang tulay. Huwag subukang tumawid. Lumikas agad sa upland evacuation center!",
+        "bisaya": "Niawas na ang suba sa daang tulay. Ayaw pugsa pagtabok. Balhin dayon sa upland evacuation center!",
+        "cebuano": "Niawas na ang suba sa daang tulay. Ayaw pugsa pagtabok. Balhin dayon sa upland evacuation center!"
+      },
       "dialect": "Agta",
       "audioUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
       "verified": true,
@@ -20,7 +25,12 @@
       "tag": "Elder Council",
       "time": "18 mins ago",
       "location": "Upland Ridge",
-      "transcript": "The birds are flying unusually low. A heavy storm is imminent. Gather your livestock now.",
+      "transcripts": {
+        "english": "The birds are flying unusually low. A heavy storm is imminent. Gather your livestock now.",
+        "tagalog": "Mababa ang lipad ng mga ibon. May paparating na malakas na bagyo. Tipunin na ang inyong mga alagang hayop.",
+        "bisaya": "Mubo ra ang lupad sa mga langgam. Naay kusog nga bagyo padulong. Tapoka na ang inyong mga kahayupan.",
+        "cebuano": "Mubo ra ang lupad sa mga langgam. Naay kusog nga bagyo padulong. Tapoka na ang inyong mga kahayupan."
+      },
       "dialect": "Agta",
       "audioUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
       "verified": true,
@@ -35,7 +45,12 @@
       "tag": "Citizen",
       "time": "12 mins ago",
       "location": "Purok 4",
-      "transcript": "We need drinking water here, the pipes are broken near the chapel.",
+      "transcripts": {
+        "english": "We need drinking water here, the pipes are broken near the chapel.",
+        "tagalog": "Kailangan namin ng inuming tubig dito, sira ang mga tubo malapit sa kapilya.",
+        "bisaya": "Nagkinahanglan mi og mainom nga tubig diri, guba ang mga tubo duol sa kapilya.",
+        "cebuano": "Nagkinahanglan mi og mainom nga tubig diri, guba ang mga tubo duol sa kapilya."
+      },
       "dialect": "Tagalog",
       "audioUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
       "verified": false,
@@ -48,7 +63,12 @@
       "tag": "NGO Based",
       "time": "28 mins ago",
       "location": "San Roque",
-      "transcript": "Trees fell down near the basketball court, road is blocked. Please send clearing operations if possible.",
+      "transcripts": {
+        "english": "Trees fell down near the basketball court, road is blocked. Please send clearing operations if possible.",
+        "tagalog": "May mga natumbang puno malapit sa basketball court, harang sa daan. Paki-padala ang clearing operations kung maaari.",
+        "bisaya": "Naay mga natumbang kahoy duol sa basketball court, na-block ang dalan. Palihog pagpadala og clearing operations kung mahimo.",
+        "cebuano": "Naay mga natumbang kahoy duol sa basketball court, na-block ang dalan. Palihog pagpadala og clearing operations kung mahimo."
+      },
       "dialect": "English",
       "audioUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
       "verified": false,
@@ -61,7 +81,12 @@
       "tag": "Non-Profit Based",
       "time": "45 mins ago",
       "location": "Riverside Settlement",
-      "transcript": "We have successfully evacuated 30 families to the high ground shelter. We need more blankets and flashlights.",
+      "transcripts": {
+        "english": "We have successfully evacuated 30 families to the high ground shelter. We need more blankets and flashlights.",
+        "tagalog": "Matagumpay naming nailikas ang 30 pamilya sa mataas na shelter. Kailangan pa namin ng mga kumot at flashlight.",
+        "bisaya": "Malamposon namo nga na-evacuate ang 30 ka pamilya ngadto sa high ground shelter. Nagkinahanglan pa mi og dugang habol ug flashlight.",
+        "cebuano": "Malamposon namo nga na-evacuate ang 30 ka pamilya ngadto sa high ground shelter. Nagkinahanglan pa mi og dugang habol ug flashlight."
+      },
       "dialect": "Tagalog",
       "audioUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
       "verified": true,

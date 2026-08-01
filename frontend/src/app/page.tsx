@@ -398,6 +398,15 @@ const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 export default function DisasterApp() {
   const { setTheme, theme } = useTheme();
   const [language, setLanguage] = useState<keyof typeof translations>("english");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    const savedLang = localStorage.getItem("app_language");
+    if (savedLang && Object.keys(translations).includes(savedLang)) {
+      setLanguage(savedLang as keyof typeof translations);
+    }
+  }, []);
   const [selectedBarangay, setSelectedBarangay] = useState("san-roque");
   const [isAlertConfirmed, setIsAlertConfirmed] = useState(true);
 
@@ -530,6 +539,8 @@ export default function DisasterApp() {
 
   const t = translations[language] || translations.english;
 
+  if (!mounted) return null;
+
   return (
     <div className="min-h-screen bg-[#fcfbf9] dark:bg-[#111827] text-[#1f2937] dark:text-[#f9fafb] flex flex-col transition-colors duration-300">
       
@@ -558,7 +569,12 @@ export default function DisasterApp() {
 
           {/* Desktop: Sticky Language Selector & Settings */}
           <div className="hidden md:flex items-center gap-2">
-            <Select value={language} onValueChange={(val) => val && setLanguage(val as keyof typeof translations)}>
+            <Select value={language} onValueChange={(val) => {
+                if (val) {
+                  localStorage.setItem("app_language", val);
+                  window.location.reload();
+                }
+              }}>
               <SelectTrigger className="w-[145px] h-9 text-xs border-[#d1d5db] dark:border-[#374151] bg-white dark:bg-[#1f2937] font-semibold shadow-2xs text-[#111827] dark:text-[#f9fafb]">
                 <SelectValue placeholder="Language" />
               </SelectTrigger>
@@ -625,7 +641,12 @@ export default function DisasterApp() {
                 <div className="space-y-6">
                   <div className="space-y-2">
                     <label className="text-xs font-bold text-gray-500 uppercase tracking-wider">Language</label>
-                    <Select value={language} onValueChange={(val) => val && setLanguage(val as keyof typeof translations)}>
+                    <Select value={language} onValueChange={(val) => {
+                if (val) {
+                  localStorage.setItem("app_language", val);
+                  window.location.reload();
+                }
+              }}>
                       <SelectTrigger className="w-full h-10 text-sm border-[#d1d5db] dark:border-[#374151] bg-white dark:bg-[#1f2937] font-semibold text-[#111827] dark:text-[#f9fafb]">
                         <SelectValue placeholder="Language" />
                       </SelectTrigger>
@@ -754,7 +775,7 @@ export default function DisasterApp() {
 
                       {/* Text Post Above Audio */}
                       <p className={`text-sm font-medium leading-relaxed pl-11 ${item.pinned ? 'text-amber-950 dark:text-[#fef3c7]' : 'text-[#111827] dark:text-[#f9fafb]'}`}>
-                        "{item.transcript}"
+                        "{(item.transcripts as any)[language] || item.transcripts.english}"
                       </p>
 
                       {/* Voice Player */}
@@ -827,7 +848,7 @@ export default function DisasterApp() {
 
                       {/* Text Post Above Audio */}
                       <p className={`text-sm font-medium leading-relaxed pl-11 ${item.pinned ? 'text-amber-950 dark:text-[#fef3c7]' : 'text-[#111827] dark:text-[#f9fafb]'}`}>
-                        "{item.transcript}"
+                        "{(item.transcripts as any)[language] || item.transcripts.english}"
                       </p>
 
                       {/* Voice Player */}
