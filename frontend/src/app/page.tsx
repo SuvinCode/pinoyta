@@ -1108,8 +1108,12 @@ export default function DisasterApp() {
 
   const stopCurrentAudio = () => {
     if (activeAudioRef.current) {
-      activeAudioRef.current.pause();
-      activeAudioRef.current.currentTime = 0;
+      if ((activeAudioRef.current as any).isWebSpeech) {
+        window.speechSynthesis.cancel();
+      } else {
+        activeAudioRef.current.pause();
+        activeAudioRef.current.currentTime = 0;
+      }
       activeAudioRef.current = null;
     }
     if (progressIntervalRef.current) {
@@ -1149,9 +1153,44 @@ export default function DisasterApp() {
 
         if (!res.ok) {
           const errData = await res.json().catch(() => ({}));
-          console.error("ElevenLabs TTS failed:", errData);
-          alert(`Could not generate audio: ${errData.error || res.statusText}`);
+          console.warn("ElevenLabs TTS failed, using mock data / Web Speech fallback", errData);
           setLoadingAudioId(null);
+          
+          if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(transcript);
+            
+            // Try to find a Filipino or Spanish voice for accent if possible
+            const voices = window.speechSynthesis.getVoices();
+            const filipinoVoice = voices.find(v => v.lang.toLowerCase().includes('fil') || v.lang.toLowerCase().includes('ph') || v.lang.toLowerCase().includes('es'));
+            if (filipinoVoice) {
+              utterance.voice = filipinoVoice;
+            }
+            
+            utterance.rate = 0.95;
+            
+            setPlayingAudioId(id);
+            setAudioDuration(Math.max(2, transcript.length / 12)); // Rough estimation
+            setAudioProgress(0);
+            
+            utterance.onend = () => {
+              stopCurrentAudio();
+            };
+            
+            utterance.onerror = () => {
+              stopCurrentAudio();
+            }
+            
+            progressIntervalRef.current = setInterval(() => {
+              setAudioProgress(p => p + 0.1);
+            }, 100);
+            
+            window.speechSynthesis.speak(utterance);
+            
+            activeAudioRef.current = {
+              isWebSpeech: true
+            } as any;
+          }
           return;
         }
 
@@ -1159,8 +1198,26 @@ export default function DisasterApp() {
         audioUrl = URL.createObjectURL(blob);
         audioCacheRef.current[cacheKey] = audioUrl;
       } catch (err) {
-        console.error("Error fetching TTS:", err);
+        console.warn("Error fetching TTS, using mock data / Web Speech fallback:", err);
         setLoadingAudioId(null);
+        
+        // Fallback identical logic if fetch throws an error (e.g. network failure)
+        if ('speechSynthesis' in window) {
+          window.speechSynthesis.cancel();
+          const utterance = new SpeechSynthesisUtterance(transcript);
+          const voices = window.speechSynthesis.getVoices();
+          const filipinoVoice = voices.find(v => v.lang.toLowerCase().includes('fil') || v.lang.toLowerCase().includes('ph') || v.lang.toLowerCase().includes('es'));
+          if (filipinoVoice) utterance.voice = filipinoVoice;
+          utterance.rate = 0.95;
+          setPlayingAudioId(id);
+          setAudioDuration(Math.max(2, transcript.length / 12));
+          setAudioProgress(0);
+          utterance.onend = () => stopCurrentAudio();
+          utterance.onerror = () => stopCurrentAudio();
+          progressIntervalRef.current = setInterval(() => setAudioProgress(p => p + 0.1), 100);
+          window.speechSynthesis.speak(utterance);
+          activeAudioRef.current = { isWebSpeech: true } as any;
+        }
         return;
       } finally {
         setLoadingAudioId(null);
