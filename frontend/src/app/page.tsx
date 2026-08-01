@@ -15,9 +15,156 @@ import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTr
 import { AlertTriangle, CheckCircle2, Play, Pause, Activity, Map, Settings, Volume2, ShieldAlert, FileText, UserCheck, Mic, HelpCircle, Sun, Star } from "lucide-react";
 import SupplyLiveMap from "@/components/supply-map";
 
+const translations = {
+  mamanwa: {
+    statusLine: "Mataas ang suba ug kusog ang hangin. Pag-andam kamo sa pagbalhin sa taas nga dapit.",
+    tabDashboard: "1. Main Dashboard",
+    tabSources: "2. Sources",
+    tabSupply: "3. Recovery Map",
+    barangayFocus: "Barangay Focus:",
+    confirmedTitle: "CONFIRMED BY TRIBAL COUNCIL",
+    confirmedSub: "Verified by Datu Makusog for",
+    notConfirmedTitle: "NOT YET CONFIRMED",
+    notConfirmedSub: "No local leader has confirmed the current alert for this area yet.",
+    confirmButton: "Confirm Alert",
+    signalTitle: "Barangay Signal Level 3",
+    signalSub: "Agusan-Surigao Upland Zone • Typhoon Track",
+    traditionalWarningTitle: "Traditional & Sensor Warning",
+    traditionalWarningDesc: "Winds up to 120km/h expected tonight. Elders report unusual stream behavior from upper ridges. Mandatory evacuation recommended for flood-prone zones.",
+    evacDirectiveTitle: "Evacuation Directive",
+    evacDirectiveValue: "MANDATORY / BALHIN",
+    estWindowTitle: "Estimated Window",
+    estWindowValue: "~3 to 4 Hours",
+    communityVoiceTitle: "Community Voice Intake (Native Dialect)",
+    unresynthesized: "Unresynthesized",
+    communityVoiceDesc: "🗣️ Elders, barangay leaders, and IP council members submit hazard reports by voice in Minamanwa dialect. Recordings play back as-is — never resynthesized.",
+    verifiedVoice: "VERIFIED VOICE",
+    officialIntakeTitle: "Official Intake (PAGASA / NDRRMC)",
+    bulletinTitle: "PAGASA Severe Weather Bulletin #14",
+    regionalFeed: "Regional Feed",
+    aiDisclosureTitle: "AI Spoken Disclosure Mandatory",
+    aiDisclosureDesc: "AI-translated content always opens with a mandatory audio tag before playback:",
+    aiAudioTag: '🔊 "PAGASA bulletin, translated, not from your barangay."',
+    testDisclosureBtn: "Test Spoken Disclosure",
+    humanReviewTitle: "Human Review Threshold (High Severity)",
+    humanReviewDesc: "High severity alerts require local reviewer verification (Health Worker Maria) before unlocked.",
+    verifiedReviewer: "VERIFIED REVIEWER",
+    voice1Transcript: "The mountain streams are rising fast near the lower bend. Secure livestock now.",
+    voice2Transcript: "Council advises all families near San Roque creek to assemble at the central shelter.",
+  },
+  bisaya: {
+    statusLine: "Nagka-duol ang bagyo. Siguroha ang inyong mga balay ug pangandam sa pag-bakwit sa taas nga dapit.",
+    tabDashboard: "1. Pangunang Dashboard",
+    tabSources: "2. Mga Gikanan",
+    tabSupply: "3. Mapa sa Tabang",
+    barangayFocus: "Gipunting nga Barangay:",
+    confirmedTitle: "GIKUMPIRMA SA KATAWHANG TRIBAL",
+    confirmedSub: "Gikumpirma ni Datu Makusog alang sa",
+    notConfirmedTitle: "WALA PA GIKUMPIRMA",
+    notConfirmedSub: "Wala pay lokal nga lider nga nagkumpirma sa pahidaan sa kining dapita.",
+    confirmButton: "Kumpirmaha ang Alert",
+    signalTitle: "Barangay Signal Level 3",
+    signalSub: "Sona sa Kabukiran sa Agusan-Surigao • Dagan sa Bagyo",
+    traditionalWarningTitle: "Pahidaan sa Katigulangan ug Sensor",
+    traditionalWarningDesc: "Kusog nga hangin hangtod 120km/h karong gabii. Nagtaho ang mga katigulangan bahin sa dili kasagaran nga pagtubo sa tubig sa sapa. Girekomendar ang pag-evacuate.",
+    evacDirectiveTitle: "Direktiba sa Pag-Evacuate",
+    evacDirectiveValue: "PAHILAYO / KINAHANGLAN",
+    estWindowTitle: "Gibanabana nga Oras",
+    estWindowValue: "~3 hangtod 4 ka Oras",
+    communityVoiceTitle: "Taho sa Tingog sa Komunidad (Lumad nga Lengguwahe)",
+    unresynthesized: "Dili Gituhog nga Tingog",
+    communityVoiceDesc: "🗣️ Ang mga katigulangan ug lider sa tribal nagsumite sa taho pinaagi sa tingog sa ilang lumad nga lengguwahe. Ipatugtog kini kung unsa gyud—dili bag-ohon sa AI.",
+    verifiedVoice: "GIKUMPIRMA NG TINGOG",
+    officialIntakeTitle: "Opisyal nga Intake (PAGASA / NDRRMC)",
+    bulletinTitle: "PAGASA Severe Weather Bulletin #14",
+    regionalFeed: "Rehiyonal nga Feed",
+    aiDisclosureTitle: "Pahibalo sa AI nga Tingog",
+    aiDisclosureDesc: "Ang gi-translate sa AI mag-abli gyud sa pamasidaan nga tag sa dili pa ipatugtog:",
+    aiAudioTag: '🔊 "PAGASA bulletin, gi-hubad, dili gikan sa inyong barangay."',
+    testDisclosureBtn: "Subaya ang Pahibalo sa Tingog",
+    humanReviewTitle: "Gikinahanglan ang Pagsusi sa Tawo",
+    humanReviewDesc: "Ang taas nga lebel sa peligro nanginahanglan ug pag-inspeksyon sa lokal nga trabahador sa panglawas (Health Worker Maria).",
+    verifiedReviewer: "GIKUMPIRMANAY NGA NAGTAN-AW",
+    voice1Transcript: "Nagtubo na ug paspas ang tubig sa sapa sa ubos. Hiposa na ang mga baka ug kahoy.",
+    voice2Transcript: "Nagtambag ang konseho nga ang tanang pamilya duol sa sapa magtigom sa sentral nga shelter.",
+  },
+  tagalog: {
+    statusLine: "Papalapit ang bagyo. Iseguro ang mga tahanan at maghandang lumipat sa mataas na lugar.",
+    tabDashboard: "1. Pangunahing Dashboard",
+    tabSources: "2. Pinagmulan ng Balita",
+    tabSupply: "3. Mapa ng Tulong",
+    barangayFocus: "Nakatutok sa Barangay:",
+    confirmedTitle: "KUMPIRMADO NG KONSEHO NG IP/KATUTUBO",
+    confirmedSub: "Kinumpirma ni Datu Makusog para sa",
+    notConfirmedTitle: "HINDI PA KUMPIRMADO",
+    notConfirmedSub: "Wala pang lokal na pinuno na nagpapatunay sa babalang ito para sa lugar na ito.",
+    confirmButton: "Kumpirmahin ang Babala",
+    signalTitle: "Barangay Signal Level 3",
+    signalSub: "Agusan-Surigao Upland Zone • Sundan ang Bagyo",
+    traditionalWarningTitle: "Babala ng Katutubo at Sensor",
+    traditionalWarningDesc: "Malakas na hangin hanggang 120km/h ngayong gabi. Ulat ng mga katutubong nakakatanda ang mabilis na pagtaas ng tubig sa sapa. Mandatory ang paglikas.",
+    evacDirectiveTitle: "Direktiba sa Paglikas",
+    evacDirectiveValue: "MANDATORY / LIKAS",
+    estWindowTitle: "Tantyang Oras",
+    estWindowValue: "~3 hanggang 4 na Oras",
+    communityVoiceTitle: "Boses ng Komunidad (Katutubong Wika)",
+    unresynthesized: "Tunay na Boses",
+    communityVoiceDesc: "🗣️ Ang mga nakakatanda at lider ay nagpapadala ng ulat gamit ang kanilang sariling boses. I-play nang walang pagbabago—hindi AI voice.",
+    verifiedVoice: "BERIPIKADONG BOSES",
+    officialIntakeTitle: "Opisyal na Ulat (PAGASA / NDRRMC)",
+    bulletinTitle: "PAGASA Severe Weather Bulletin #14",
+    regionalFeed: "Rehiyonal na Balita",
+    aiDisclosureTitle: "Mandatong Paghahayag ng AI Translation",
+    aiDisclosureDesc: "Ang nilalamang isinalin ng AI ay laging magsisimula sa pampublikong tag bago i-play:",
+    aiAudioTag: '🔊 "PAGASA bulletin, isinalin, hindi mula sa inyong barangay."',
+    testDisclosureBtn: "Subukan ang Paghahayag",
+    humanReviewTitle: "Pagsusuri ng Tao (Mataas na Panganib)",
+    humanReviewDesc: "Ang mataas na panganib ay nangangailangan ng beripikasyon ng lokal na Health Worker (Maria) bago ilabas.",
+    verifiedReviewer: "BERIPIKADONG TAGAPAGSURI",
+    voice1Transcript: "Mabilis na tumataas ang tubig sa ilog sa ibaba. Iseguro ang mga alagang hayop ngayon din.",
+    voice2Transcript: "Pinapayuhan ng konseho ang lahat ng pamilya malapit sa sapa na magtipon sa evacuation center.",
+  },
+  english: {
+    statusLine: "Typhoon approaching. Secure homes and prepare to move to high ground.",
+    tabDashboard: "1. Main Dashboard",
+    tabSources: "2. Sources",
+    tabSupply: "3. Recovery Map",
+    barangayFocus: "Barangay Focus:",
+    confirmedTitle: "CONFIRMED BY TRIBAL COUNCIL",
+    confirmedSub: "Verified by Datu Makusog for",
+    notConfirmedTitle: "NOT YET CONFIRMED",
+    notConfirmedSub: "No local leader has confirmed the current alert for this area yet.",
+    confirmButton: "Confirm Alert",
+    signalTitle: "Barangay Signal Level 3",
+    signalSub: "Agusan-Surigao Upland Zone • Typhoon Track",
+    traditionalWarningTitle: "Traditional & Sensor Warning",
+    traditionalWarningDesc: "Winds up to 120km/h expected tonight. Elders report unusual stream behavior from upper ridges. Mandatory evacuation recommended for flood-prone zones.",
+    evacDirectiveTitle: "Evacuation Directive",
+    evacDirectiveValue: "MANDATORY",
+    estWindowTitle: "Estimated Window",
+    estWindowValue: "~3 to 4 Hours",
+    communityVoiceTitle: "Community Voice Intake (Native Dialect)",
+    unresynthesized: "Unresynthesized",
+    communityVoiceDesc: "🗣️ Elders, barangay leaders, and IP council members submit hazard reports by voice in Minamanwa dialect. Recordings play back as-is — never resynthesized.",
+    verifiedVoice: "VERIFIED VOICE",
+    officialIntakeTitle: "Official Intake (PAGASA / NDRRMC)",
+    bulletinTitle: "PAGASA Severe Weather Bulletin #14",
+    regionalFeed: "Regional Feed",
+    aiDisclosureTitle: "AI Spoken Disclosure Mandatory",
+    aiDisclosureDesc: "AI-translated content always opens with a mandatory audio tag before playback:",
+    aiAudioTag: '🔊 "PAGASA bulletin, translated, not from your barangay."',
+    testDisclosureBtn: "Test Spoken Disclosure",
+    humanReviewTitle: "Human Review Threshold (High Severity)",
+    humanReviewDesc: "High severity alerts require local reviewer verification (Health Worker Maria) before unlocked.",
+    verifiedReviewer: "VERIFIED REVIEWER",
+    voice1Transcript: "The mountain streams are rising fast near the lower bend. Secure livestock now.",
+    voice2Transcript: "Council advises all families near San Roque creek to assemble at the central shelter.",
+  }
+};
+
 export default function DisasterApp() {
   const { setTheme, theme } = useTheme();
-  const [language, setLanguage] = useState("mamanwa");
+  const [language, setLanguage] = useState<keyof typeof translations>("mamanwa");
   const [selectedBarangay, setSelectedBarangay] = useState("san-roque");
   const [isAlertConfirmed, setIsAlertConfirmed] = useState(true);
 
@@ -27,6 +174,8 @@ export default function DisasterApp() {
   const handlePlayAudio = (id: string) => {
     setPlayingAudioId(playingAudioId === id ? null : id);
   };
+
+  const t = translations[language] || translations.english;
 
   return (
     <div className="min-h-screen bg-[#fcfbf9] dark:bg-[#111827] text-[#1f2937] dark:text-[#f9fafb] flex flex-col transition-colors duration-300">
@@ -56,7 +205,7 @@ export default function DisasterApp() {
 
           {/* Sticky Language Selector & Settings */}
           <div className="flex items-center gap-2">
-            <Select value={language} onValueChange={(val) => val && setLanguage(val)}>
+            <Select value={language} onValueChange={(val) => val && setLanguage(val as keyof typeof translations)}>
               <SelectTrigger className="w-[145px] h-9 text-xs border-[#d1d5db] dark:border-[#374151] bg-white dark:bg-[#1f2937] font-semibold shadow-2xs text-[#111827] dark:text-[#f9fafb]">
                 <SelectValue placeholder="Language" />
               </SelectTrigger>
@@ -103,11 +252,11 @@ export default function DisasterApp() {
           </div>
         </div>
         
-        {/* Plain-Language Status Line with Light Yellow Accent */}
+        {/* Plain-Language Status Line with Dynamic Translation */}
         <div className="bg-[#fefce8] dark:bg-[#422006]/50 border-b border-[#fef08a] dark:border-[#713f12] px-4 py-2">
           <p className="text-xs sm:text-sm text-[#854d0e] dark:text-[#fef08a] font-bold text-center leading-snug flex items-center justify-center gap-1.5">
             <Sun className="h-4 w-4 text-[#eab308] fill-[#eab308] shrink-0" />
-            Typhoon approaching. Secure homes and prepare to move to high ground.
+            {t.statusLine}
           </p>
         </div>
       </header>
@@ -116,14 +265,14 @@ export default function DisasterApp() {
       <main className="flex-1 container mx-auto p-4 max-w-3xl">
         <Tabs defaultValue="dashboard" className="w-full">
           
-          {/* 3 Main Header Tabs with Lighter Logo Colors */}
+          {/* 3 Main Header Tabs */}
           <TabsList className="grid w-full grid-cols-3 h-14 mb-6 sticky top-[104px] z-40 bg-white/95 dark:bg-[#111827]/95 backdrop-blur shadow-xs border border-[#e5e7eb] dark:border-[#1f2937] rounded-xl p-1">
             <TabsTrigger 
               value="dashboard" 
               className="flex items-center justify-center gap-2 data-[state=active]:text-[#0038a8] dark:data-[state=active]:text-[#60a5fa] data-[state=active]:bg-[#eff6ff] dark:data-[state=active]:bg-[#1e3a8a]/40 font-bold text-xs sm:text-sm rounded-lg transition-all"
             >
               <Activity className="h-4 w-4 text-[#ce2029]" />
-              <span>1. Main Dashboard</span>
+              <span>{t.tabDashboard}</span>
             </TabsTrigger>
 
             <TabsTrigger 
@@ -131,7 +280,7 @@ export default function DisasterApp() {
               className="flex items-center justify-center gap-2 data-[state=active]:text-[#0038a8] dark:data-[state=active]:text-[#60a5fa] data-[state=active]:bg-[#eff6ff] dark:data-[state=active]:bg-[#1e3a8a]/40 font-bold text-xs sm:text-sm rounded-lg transition-all"
             >
               <Volume2 className="h-4 w-4 text-[#0038a8]" />
-              <span>2. Sources</span>
+              <span>{t.tabSources}</span>
             </TabsTrigger>
 
             <TabsTrigger 
@@ -139,7 +288,7 @@ export default function DisasterApp() {
               className="flex items-center justify-center gap-2 data-[state=active]:text-[#0038a8] dark:data-[state=active]:text-[#60a5fa] data-[state=active]:bg-[#eff6ff] dark:data-[state=active]:bg-[#1e3a8a]/40 font-bold text-xs sm:text-sm rounded-lg transition-all"
             >
               <Map className="h-4 w-4 text-[#eab308]" />
-              <span>3. Recovery Map</span>
+              <span>{t.tabSupply}</span>
             </TabsTrigger>
           </TabsList>
 
@@ -150,7 +299,7 @@ export default function DisasterApp() {
             <div className="flex items-center justify-between p-3.5 bg-white dark:bg-[#1f2937] border border-[#e5e7eb] dark:border-[#374151] rounded-xl shadow-2xs">
               <div className="flex items-center gap-2">
                 <Map className="h-4 w-4 text-[#0038a8] dark:text-[#60a5fa]" />
-                <span className="text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wider">Barangay Focus:</span>
+                <span className="text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wider">{t.barangayFocus}</span>
               </div>
               <Select value={selectedBarangay} onValueChange={(val) => val && setSelectedBarangay(val)}>
                 <SelectTrigger className="w-[210px] h-8 text-xs font-bold border-[#d1d5db] dark:border-[#4b5563] bg-white dark:bg-[#111827]">
@@ -165,7 +314,7 @@ export default function DisasterApp() {
               </Select>
             </div>
 
-            {/* Verification Row Up Top - Royal Blue & Sun Yellow accents */}
+            {/* Verification Row Up Top */}
             <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}>
               {isAlertConfirmed ? (
                 <div className="flex items-center gap-3.5 p-4 bg-[#eff6ff] dark:bg-[#1e3a8a]/30 border-2 border-[#2563eb]/40 rounded-xl shadow-2xs">
@@ -176,14 +325,14 @@ export default function DisasterApp() {
                   <div className="flex-1">
                     <div className="flex items-center gap-2">
                       <p className="text-sm font-bold text-[#0038a8] dark:text-[#60a5fa] flex items-center gap-1">
-                        <CheckCircle2 className="h-4 w-4 text-[#2563eb]" /> CONFIRMED BY TRIBAL COUNCIL
+                        <CheckCircle2 className="h-4 w-4 text-[#2563eb]" /> {t.confirmedTitle}
                       </p>
                       <Badge className="bg-[#2563eb] text-white text-[10px] font-bold border-none">
                         Active Trust
                       </Badge>
                     </div>
                     <p className="text-xs font-medium text-gray-700 dark:text-gray-300 mt-0.5">
-                      Verified by <span className="font-bold text-[#111827] dark:text-white">Datu Makusog</span> for {selectedBarangay === "san-roque" ? "Brgy. San Roque" : "Selected Area"}
+                      {t.confirmedSub} <span className="font-bold text-[#111827] dark:text-white">Datu Makusog</span> ({selectedBarangay === "san-roque" ? "Brgy. San Roque" : "Selected Area"})
                     </p>
                   </div>
                 </div>
@@ -194,10 +343,10 @@ export default function DisasterApp() {
                   </div>
                   <div className="flex-1">
                     <p className="text-sm font-bold text-[#be123c] dark:text-[#fda4af] flex items-center gap-1">
-                      <AlertTriangle className="h-4 w-4 text-[#e11d48]" /> NOT YET CONFIRMED
+                      <AlertTriangle className="h-4 w-4 text-[#e11d48]" /> {t.notConfirmedTitle}
                     </p>
                     <p className="text-xs text-gray-700 dark:text-gray-300 mt-0.5">
-                      No local leader has confirmed the current alert for this area yet.
+                      {t.notConfirmedSub}
                     </p>
                   </div>
                   <Button 
@@ -205,22 +354,22 @@ export default function DisasterApp() {
                     onClick={() => setIsAlertConfirmed(true)} 
                     className="text-xs h-8 bg-[#2563eb] hover:bg-[#1d4ed8] text-white shrink-0 font-bold"
                   >
-                    Confirm Alert
+                    {t.confirmButton}
                   </Button>
                 </div>
               )}
             </motion.div>
 
-            {/* Signal Level Card in Lighter Philippine Red/Blue Theme */}
+            {/* Signal Level Card */}
             <Card className="bg-white dark:bg-[#1f2937] border-[#e5e7eb] dark:border-[#374151] shadow-2xs">
               <CardHeader className="border-b border-[#e5e7eb] dark:border-[#374151] pb-4">
                 <div className="flex items-center justify-between">
                   <div>
                     <CardTitle className="text-xl text-[#ce2029] dark:text-[#f87171] flex items-center gap-2 font-extrabold">
-                      <AlertTriangle className="h-5 w-5 text-[#ce2029]" /> Barangay Signal Level 3
+                      <AlertTriangle className="h-5 w-5 text-[#ce2029]" /> {t.signalTitle}
                     </CardTitle>
                     <CardDescription className="text-xs font-semibold text-gray-500 dark:text-gray-400 mt-1">
-                      Agusan-Surigao Upland Zone • Typhoon Track
+                      {t.signalSub}
                     </CardDescription>
                   </div>
                   <Badge className="bg-[#ce2029] text-white font-bold px-2.5 py-1 text-xs">
@@ -231,21 +380,21 @@ export default function DisasterApp() {
 
               <CardContent className="pt-5 space-y-4">
                 <div className="p-3.5 bg-[#f8fafc] dark:bg-[#111827] rounded-xl border border-[#e2e8f0] dark:border-[#1e293b]">
-                  <p className="text-xs font-bold text-[#0038a8] dark:text-[#60a5fa] uppercase tracking-wider mb-1">Traditional & Sensor Warning</p>
+                  <p className="text-xs font-bold text-[#0038a8] dark:text-[#60a5fa] uppercase tracking-wider mb-1">{t.traditionalWarningTitle}</p>
                   <p className="text-sm leading-relaxed text-gray-800 dark:text-gray-200">
-                    Winds up to 120km/h expected tonight. Elders report unusual stream behavior from upper ridges. Mandatory evacuation recommended for flood-prone zones.
+                    {t.traditionalWarningDesc}
                   </p>
                 </div>
 
                 <div className="grid grid-cols-2 gap-3 text-center">
                   <div className="bg-[#eff6ff] dark:bg-[#1e3a8a]/30 p-3.5 rounded-xl border border-blue-200 dark:border-blue-900">
-                    <p className="text-[10px] text-[#1d4ed8] dark:text-[#93c5fd] uppercase font-bold tracking-wider">Evacuation Directive</p>
-                    <p className="font-extrabold text-lg mt-0.5 text-[#ce2029] dark:text-[#f87171]">MANDATORY</p>
+                    <p className="text-[10px] text-[#1d4ed8] dark:text-[#93c5fd] uppercase font-bold tracking-wider">{t.evacDirectiveTitle}</p>
+                    <p className="font-extrabold text-base sm:text-lg mt-0.5 text-[#ce2029] dark:text-[#f87171]">{t.evacDirectiveValue}</p>
                   </div>
 
                   <div className="bg-[#fefce8] dark:bg-[#422006]/30 p-3.5 rounded-xl border border-yellow-200 dark:border-yellow-900">
-                    <p className="text-[10px] text-[#a16207] dark:text-[#fde047] uppercase font-bold tracking-wider">Estimated Window</p>
-                    <p className="font-extrabold text-lg mt-0.5 text-[#ca8a04] dark:text-[#facc15]">~3 to 4 Hours</p>
+                    <p className="text-[10px] text-[#a16207] dark:text-[#fde047] uppercase font-bold tracking-wider">{t.estWindowTitle}</p>
+                    <p className="font-extrabold text-base sm:text-lg mt-0.5 text-[#ca8a04] dark:text-[#facc15]">{t.estWindowValue}</p>
                   </div>
                 </div>
               </CardContent>
@@ -259,17 +408,17 @@ export default function DisasterApp() {
             <div>
               <div className="flex items-center justify-between mb-3">
                 <h3 className="font-bold text-base flex items-center gap-2 text-[#111827] dark:text-[#f9fafb]">
-                  <Mic className="h-5 w-5 text-[#ce2029]" /> Community Voice Intake (Native Dialect)
+                  <Mic className="h-5 w-5 text-[#ce2029]" /> {t.communityVoiceTitle}
                 </h3>
                 <Badge variant="outline" className="text-[11px] font-bold border-[#ce2029]/30 text-[#ce2029] bg-[#fff1f2] dark:bg-[#881337]/20">
-                  Unresynthesized
+                  {t.unresynthesized}
                 </Badge>
               </div>
 
               <Card className="bg-white dark:bg-[#1f2937] border-[#e5e7eb] dark:border-[#374151] shadow-2xs">
                 <CardHeader className="pb-3 border-b border-[#e5e7eb] dark:border-[#374151] bg-[#f9fafb] dark:bg-[#111827]/50">
                   <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed font-medium">
-                    🗣️ Elders, barangay leaders, and IP council members submit hazard reports by voice in Minamanwa dialect. <span className="font-bold text-[#111827] dark:text-white">Recordings play back as-is — never resynthesized.</span>
+                    {t.communityVoiceDesc}
                   </p>
                 </CardHeader>
                 <CardContent className="p-4 space-y-4">
@@ -280,7 +429,7 @@ export default function DisasterApp() {
                       role: "IP Council Member",
                       dialect: "Minamanwa",
                       time: "15 mins ago",
-                      transcript: "The mountain streams are rising fast near the lower bend. Secure livestock now.",
+                      transcript: t.voice1Transcript,
                       verified: true,
                     },
                     {
@@ -289,7 +438,7 @@ export default function DisasterApp() {
                       role: "Tribal Chieftain",
                       dialect: "Minamanwa",
                       time: "40 mins ago",
-                      transcript: "Council advises all families near San Roque creek to assemble at the central shelter.",
+                      transcript: t.voice2Transcript,
                       verified: true,
                     },
                   ].map((item) => (
@@ -311,7 +460,7 @@ export default function DisasterApp() {
                         </div>
                         {item.verified && (
                           <span className="text-[11px] font-bold text-[#2563eb] dark:text-[#60a5fa] flex items-center gap-1 bg-[#eff6ff] dark:bg-[#1e3a8a]/50 px-2 py-0.5 rounded-md">
-                            <CheckCircle2 className="h-3.5 w-3.5 text-[#2563eb]" /> VERIFIED VOICE
+                            <CheckCircle2 className="h-3.5 w-3.5 text-[#2563eb]" /> {t.verifiedVoice}
                           </span>
                         )}
                       </div>
@@ -345,7 +494,7 @@ export default function DisasterApp() {
             {/* 2. Official Intake & AI Disclosures */}
             <div>
               <h3 className="font-bold text-base flex items-center gap-2 mb-3 text-[#111827] dark:text-[#f9fafb]">
-                <ShieldAlert className="h-5 w-5 text-[#0038a8]" /> Official Intake (PAGASA / NDRRMC)
+                <ShieldAlert className="h-5 w-5 text-[#0038a8]" /> {t.officialIntakeTitle}
               </h3>
 
               <Card className="bg-white dark:bg-[#1f2937] border-[#e5e7eb] dark:border-[#374151] shadow-2xs">
@@ -353,10 +502,10 @@ export default function DisasterApp() {
                   <div className="flex items-center justify-between border-b border-gray-200 dark:border-gray-800 pb-3">
                     <div className="flex items-center gap-2">
                       <FileText className="h-4 w-4 text-[#0038a8]" />
-                      <span className="text-xs font-bold">PAGASA Severe Weather Bulletin #14</span>
+                      <span className="text-xs font-bold">{t.bulletinTitle}</span>
                     </div>
                     <Badge variant="outline" className="text-[10px] border-[#0038a8] text-[#0038a8] bg-[#eff6ff] dark:bg-[#1e3a8a]/30 font-bold">
-                      Regional Feed
+                      {t.regionalFeed}
                     </Badge>
                   </div>
 
@@ -365,14 +514,14 @@ export default function DisasterApp() {
                     <div className="flex items-center gap-2">
                       <Volume2 className="h-4 w-4 text-[#ca8a04] shrink-0" />
                       <p className="text-xs font-bold text-[#854d0e] dark:text-[#fde047]">
-                        AI Spoken Disclosure Mandatory
+                        {t.aiDisclosureTitle}
                       </p>
                     </div>
                     <p className="text-xs text-gray-700 dark:text-gray-300 leading-relaxed font-medium">
-                      AI-translated content always opens with a mandatory audio tag before playback:
+                      {t.aiDisclosureDesc}
                     </p>
                     <div className="p-2 bg-white dark:bg-[#111827] rounded-md border border-[#fef08a] dark:border-[#713f12] text-xs font-mono text-[#0038a8] dark:text-[#60a5fa] font-bold">
-                      🔊 "PAGASA bulletin, translated, not from your barangay."
+                      {t.aiAudioTag}
                     </div>
 
                     <Button
@@ -381,7 +530,7 @@ export default function DisasterApp() {
                       className="mt-2 bg-[#0038a8] hover:bg-[#1d4ed8] text-white text-xs h-8 font-bold"
                     >
                       {playingAudioId === "official-ai" ? <Pause className="h-3 w-3 mr-1" /> : <Play className="h-3 w-3 mr-1 fill-current" />}
-                      Test Spoken Disclosure
+                      {t.testDisclosureBtn}
                     </Button>
                   </div>
 
@@ -389,12 +538,12 @@ export default function DisasterApp() {
                   <div className="p-3.5 bg-[#eff6ff] dark:bg-[#1e3a8a]/30 border border-[#bfdbfe] dark:border-[#1e40af] rounded-xl space-y-2">
                     <div className="flex items-center justify-between">
                       <span className="text-xs font-bold text-[#0038a8] dark:text-[#60a5fa] flex items-center gap-1.5">
-                        <UserCheck className="h-4 w-4 text-[#2563eb]" /> Human Review Threshold (High Severity)
+                        <UserCheck className="h-4 w-4 text-[#2563eb]" /> {t.humanReviewTitle}
                       </span>
-                      <Badge className="bg-[#2563eb] text-white text-[10px] font-bold">VERIFIED REVIEWER</Badge>
+                      <Badge className="bg-[#2563eb] text-white text-[10px] font-bold">{t.verifiedReviewer}</Badge>
                     </div>
                     <p className="text-xs text-gray-700 dark:text-gray-300 leading-relaxed font-medium">
-                      High severity alerts require local reviewer verification <span className="font-bold text-[#111827] dark:text-white">(Health Worker Maria)</span> before unlocked.
+                      {t.humanReviewDesc}
                     </p>
                   </div>
                 </CardContent>
