@@ -1200,86 +1200,87 @@ export default function DisasterApp() {
             </div>
           </div>
 
-          {/* Desktop: Sticky Language Selector & Settings */}
-          <div className="hidden md:flex items-center gap-2">
-            <Select value={language} onValueChange={(val) => {
-                if (val) {
-                  localStorage.setItem("app_language", val);
-                  window.location.reload();
-                }
-              }}>
-              <SelectTrigger className="w-[145px] h-9 text-xs border-[#d1d5db] dark:border-[#374151] bg-white dark:bg-[#1f2937] font-semibold shadow-2xs text-[#111827] dark:text-[#f9fafb]">
-                <SelectValue placeholder="Language" />
-              </SelectTrigger>
-              <SelectContent className="bg-white dark:bg-[#1f2937] border-[#e5e7eb] dark:border-[#374151]">
-                <SelectItem value="mamanwa">Minamanwa (Native)</SelectItem>
-                <SelectItem value="bisaya">Bisaya</SelectItem>
-                <SelectItem value="cebuano">Cebuano</SelectItem>
-                <SelectItem value="ilocano">Ilocano</SelectItem>
-                <SelectItem value="hiligaynon">Hiligaynon</SelectItem>
-                <SelectItem value="bicolano">Bicolano</SelectItem>
-                <SelectItem value="waray">Waray-Waray</SelectItem>
-                <SelectItem value="kapampangan">Kapampangan</SelectItem>
-                <SelectItem value="pangasinan">Pangasinan</SelectItem>
-                <SelectItem value="tagalog">Tagalog</SelectItem>
-                <SelectItem value="english">English</SelectItem>
-              </SelectContent>
-            </Select>
+          {/* Right Side Controls */}
+          <div className="flex items-center gap-2">
+            
+            {/* Desktop Only: Sticky Language Selector */}
+            <div className="hidden md:block">
+              <Select value={language} onValueChange={(val) => {
+                  if (val) {
+                    localStorage.setItem("app_language", val);
+                    window.location.reload();
+                  }
+                }}>
+                <SelectTrigger className="w-[145px] h-9 text-xs border-[#d1d5db] dark:border-[#374151] bg-white dark:bg-[#1f2937] font-semibold shadow-2xs text-[#111827] dark:text-[#f9fafb]">
+                  <SelectValue placeholder="Language" />
+                </SelectTrigger>
+                <SelectContent className="bg-white dark:bg-[#1f2937] border-[#e5e7eb] dark:border-[#374151]">
+                  <SelectItem value="mamanwa">Minamanwa (Native)</SelectItem>
+                  <SelectItem value="bisaya">Bisaya</SelectItem>
+                  <SelectItem value="cebuano">Cebuano</SelectItem>
+                  <SelectItem value="ilocano">Ilocano</SelectItem>
+                  <SelectItem value="hiligaynon">Hiligaynon</SelectItem>
+                  <SelectItem value="bicolano">Bicolano</SelectItem>
+                  <SelectItem value="waray">Waray-Waray</SelectItem>
+                  <SelectItem value="kapampangan">Kapampangan</SelectItem>
+                  <SelectItem value="pangasinan">Pangasinan</SelectItem>
+                  <SelectItem value="tagalog">Tagalog</SelectItem>
+                  <SelectItem value="english">English</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
 
+            {/* Mobile Only: Hamburger Menu for Navigation Tabs */}
+            <div className="md:hidden block">
+              <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+                <SheetTrigger className="h-9 w-9 rounded-md hover:bg-gray-100 dark:hover:bg-[#1f2937] text-gray-700 dark:text-gray-200 inline-flex items-center justify-center transition-colors">
+                  <Menu className="h-5 w-5" />
+                  <span className="sr-only">Menu</span>
+                </SheetTrigger>
+                <SheetContent side="left" className="bg-white dark:bg-[#111827] border-[#e5e7eb] dark:border-[#1f2937] w-[280px]">
+                  <SheetHeader className="mb-6">
+                    <SheetTitle className="text-[#0038a8] dark:text-[#60a5fa] font-bold text-left">Navigation</SheetTitle>
+                  </SheetHeader>
+                  <div className="flex flex-col gap-2 mt-4">
+                    <Button variant={activeTab === "dashboard" ? "default" : "ghost"} className="justify-start w-full text-left" onClick={() => { setActiveTab("dashboard"); setIsMenuOpen(false); }}>
+                      <Activity className="mr-2 h-4 w-4 text-[#10b981]" /> {t.tabDashboardInfo}
+                    </Button>
+                    <Button variant={activeTab === "sources" ? "default" : "ghost"} className="justify-start w-full text-left" onClick={() => { setActiveTab("sources"); setIsMenuOpen(false); }}>
+                      <Activity className="mr-2 h-4 w-4 text-[#ce2029]" /> {t.tabSourcesFeed}
+                    </Button>
+                    <Button variant={activeTab === "report" ? "default" : "ghost"} className="justify-start w-full text-left" onClick={() => { setActiveTab("report"); setIsMenuOpen(false); }}>
+                      <Volume2 className="mr-2 h-4 w-4 text-[#0038a8]" /> {t.tabReportForm}
+                    </Button>
+                    <Button variant={activeTab === "supply" ? "default" : "ghost"} className="justify-start w-full text-left" onClick={() => { setActiveTab("supply"); setIsMenuOpen(false); }}>
+                      <Map className="mr-2 h-4 w-4 text-[#eab308]" /> {t.tabSupplyMap}
+                    </Button>
+                  </div>
+                </SheetContent>
+              </Sheet>
+            </div>
+
+            {/* Mobile & Desktop: Settings Gear */}
             <Sheet>
-              <SheetTrigger className="h-9 w-9 rounded-full hover:bg-gray-100 dark:hover:bg-[#1f2937] text-gray-700 dark:text-gray-200 inline-flex items-center justify-center transition-colors">
-                <Settings className="h-4 w-4" />
+              <SheetTrigger className="h-9 w-9 rounded-md hover:bg-gray-100 dark:hover:bg-[#1f2937] text-gray-700 dark:text-gray-200 inline-flex items-center justify-center transition-colors border md:border-transparent md:hover:border-[#e5e7eb] dark:md:hover:border-[#374151]">
+                <Settings className="h-5 w-5 md:h-4 md:w-4 text-gray-600 dark:text-gray-300" />
                 <span className="sr-only">Settings</span>
               </SheetTrigger>
-              <SheetContent className="bg-white dark:bg-[#111827] border-[#e5e7eb] dark:border-[#1f2937]">
+              <SheetContent className="bg-white dark:bg-[#111827] border-[#e5e7eb] dark:border-[#1f2937] w-[300px]">
                 <SheetHeader>
-                  <SheetTitle className="text-[#0038a8] dark:text-[#60a5fa] font-bold">Preferences & Governance</SheetTitle>
-                  <SheetDescription>Indigenous Community & App Settings</SheetDescription>
+                  <SheetTitle className="text-[#0038a8] dark:text-[#60a5fa] font-bold text-left">{t.preferencesLabel || "Preferences"}</SheetTitle>
+                  <SheetDescription className="text-left">Indigenous Community & App Settings</SheetDescription>
                 </SheetHeader>
+                
                 <div className="py-6 space-y-6">
-                  <div className="flex items-center justify-between">
-                    <span className="font-medium text-sm">{t.darkTheme}</span>
-                    <Switch 
-                      checked={theme === "dark"} 
-                      onCheckedChange={(checked) => setTheme(checked ? "dark" : "light")}
-                    />
-                  </div>
-
-                  <div className="pt-4 border-t border-gray-200 dark:border-gray-800">
-                    <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider block mb-2">Simulated Governance State</span>
-                    <div className="flex items-center justify-between bg-blue-50/50 dark:bg-blue-950/30 p-3 rounded-lg border border-blue-200/50 dark:border-blue-900/50">
-                      <span className="text-xs font-medium">{t.alertTribalConfirm}</span>
-                      <Switch 
-                        checked={isAlertConfirmed} 
-                        onCheckedChange={setIsAlertConfirmed}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </SheetContent>
-            </Sheet>
-          </div>
-
-          {/* Mobile: Hamburger Menu */}
-          <div className="md:hidden flex items-center">
-            <Sheet>
-              <SheetTrigger className="h-9 w-9 rounded-md hover:bg-gray-100 dark:hover:bg-[#1f2937] text-gray-700 dark:text-gray-200 inline-flex items-center justify-center transition-colors">
-                <Menu className="h-5 w-5" />
-                <span className="sr-only">Menu</span>
-              </SheetTrigger>
-              <SheetContent className="bg-white dark:bg-[#111827] border-[#e5e7eb] dark:border-[#1f2937] w-[280px]">
-                <SheetHeader className="mb-6">
-                  <SheetTitle className="text-[#0038a8] dark:text-[#60a5fa] font-bold text-left">App Menu</SheetTitle>
-                </SheetHeader>
-                <div className="space-y-6">
-                  <div className="space-y-2">
+                  {/* Language Selector (Visible in settings for mobile since it's hidden in header) */}
+                  <div className="space-y-2 md:hidden">
                     <label className="text-xs font-bold text-gray-500 uppercase tracking-wider">{t.languageLabel}</label>
                     <Select value={language} onValueChange={(val) => {
-                if (val) {
-                  localStorage.setItem("app_language", val);
-                  window.location.reload();
-                }
-              }}>
+                        if (val) {
+                          localStorage.setItem("app_language", val);
+                          window.location.reload();
+                        }
+                      }}>
                       <SelectTrigger className="w-full h-10 text-sm border-[#d1d5db] dark:border-[#374151] bg-white dark:bg-[#1f2937] font-semibold text-[#111827] dark:text-[#f9fafb]">
                         <SelectValue placeholder="Language" />
                       </SelectTrigger>
@@ -1299,21 +1300,23 @@ export default function DisasterApp() {
                     </Select>
                   </div>
 
-                  <div className="pt-4 border-t border-gray-200 dark:border-gray-800 space-y-4">
-                    <label className="text-xs font-bold text-gray-500 uppercase tracking-wider">{t.preferencesLabel}</label>
-                    <div className="flex items-center justify-between">
-                      <span className="font-medium text-sm">Dark Theme</span>
-                      <Switch 
-                        checked={theme === "dark"} 
-                        onCheckedChange={(checked) => setTheme(checked ? "dark" : "light")}
-                      />
-                    </div>
+                  {/* Dark Mode */}
+                  <div className="pt-4 border-t md:border-none border-gray-200 dark:border-gray-800 flex items-center justify-between">
+                    <span className="font-medium text-sm flex items-center gap-2">
+                      {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Settings className="h-4 w-4" />}
+                      {t.darkTheme || "Dark Mode"}
+                    </span>
+                    <Switch 
+                      checked={theme === "dark"} 
+                      onCheckedChange={(checked) => setTheme(checked ? "dark" : "light")}
+                    />
                   </div>
 
+                  {/* Governance */}
                   <div className="pt-4 border-t border-gray-200 dark:border-gray-800">
-                    <span className="text-xs font-bold text-gray-500 uppercase tracking-wider block mb-2">Simulated Governance State</span>
+                    <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider block mb-2">Simulated Governance State</span>
                     <div className="flex items-center justify-between bg-blue-50/50 dark:bg-blue-950/30 p-3 rounded-lg border border-blue-200/50 dark:border-blue-900/50">
-                      <span className="text-xs font-medium">Alert Tribal Confirmation</span>
+                      <span className="text-xs font-medium">{t.alertTribalConfirm || "Alert Tribal Confirmation"}</span>
                       <Switch 
                         checked={isAlertConfirmed} 
                         onCheckedChange={setIsAlertConfirmed}
@@ -1323,10 +1326,9 @@ export default function DisasterApp() {
                 </div>
               </SheetContent>
             </Sheet>
+
           </div>
         </div>
-        
-
       </header>
 
       {/* Main Content Area */}
