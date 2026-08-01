@@ -163,6 +163,44 @@ export default function SupplyLiveMap() {
   const tileLayerRef = useRef<any>(null);
   const markersRef = useRef<any[]>([]);
 
+  const findNearestSupply = () => {
+    if (!navigator.geolocation) {
+      alert("Geolocation is not supported by your browser.");
+      return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const userLat = position.coords.latitude;
+        const userLng = position.coords.longitude;
+
+        let nearestDrop = mockDrops[0];
+        let minDistance = Infinity;
+
+        mockDrops.forEach((drop) => {
+          // Haversine approximation or simple distance for localized search
+          const latDiff = drop.lat - userLat;
+          const lngDiff = drop.lng - userLng;
+          const distance = Math.sqrt(latDiff * latDiff + lngDiff * lngDiff);
+
+          if (distance < minDistance) {
+            minDistance = distance;
+            nearestDrop = drop;
+          }
+        });
+
+        setSelectedDrop(nearestDrop);
+        if (mapInstanceRef.current) {
+          mapInstanceRef.current.panTo([nearestDrop.lat, nearestDrop.lng]);
+          mapInstanceRef.current.setZoom(13);
+        }
+      },
+      () => {
+        alert("Unable to retrieve your location. Please ensure location services are enabled.");
+      }
+    );
+  };
+
   const googleTileUrls = {
     roadmap: "https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}",
     satellite: "https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}",
@@ -414,12 +452,21 @@ export default function SupplyLiveMap() {
               </div>
             </div>
 
-            <Button
-              className="w-full mt-3 bg-[#ce2029] hover:bg-[#b91c1c] text-white font-bold h-10 shadow-md transition-all"
-              onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=${selectedDrop.lat},${selectedDrop.lng}`, "_blank")}
-            >
-              <Navigation className="h-4 w-4 mr-2" /> View in Google Maps
-            </Button>
+            <div className="flex flex-col gap-2 mt-3">
+              <Button
+                className="w-full bg-[#ce2029] hover:bg-[#b91c1c] text-white font-bold h-10 shadow-md transition-all"
+                onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=${selectedDrop.lat},${selectedDrop.lng}`, "_blank")}
+              >
+                <Navigation className="h-4 w-4 mr-2" /> View in Google Maps
+              </Button>
+              <Button
+                variant="outline"
+                className="w-full font-bold h-10 border-[#0038a8] text-[#0038a8] hover:bg-[#eff6ff] transition-all"
+                onClick={findNearestSupply}
+              >
+                <MapPin className="h-4 w-4 mr-2" /> Find Nearest Supply
+              </Button>
+            </div>
           </CardContent>
         </Card>
       )}
