@@ -501,29 +501,41 @@ export default function DisasterApp() {
 
   const { elderReports, communityReports } = dbData;
 
-  // Map language key to BCP-47 locale for SpeechSynthesis
-  const getLangCode = (lang: string): string => {
-    const map: Record<string, string> = {
-      english: "en-US",
-      tagalog: "fil-PH",
-      bisaya: "fil-PH",
-      cebuano: "fil-PH",
-      hiligaynon: "fil-PH",
-      bicolano: "fil-PH",
-      waray: "fil-PH",
-      kapampangan: "fil-PH",
-      pangasinan: "fil-PH",
-      ilocano: "fil-PH",
-      mamanwa: "fil-PH",
-    };
-    return map[lang] || "en-US";
+  // Attempt to select the best available Filipino voice from the browser's voice list.
+  // Priority: fil-PH > tl-PH > tl > any "Filipino" named voice > en-US with tweaked pitch.
+  const getBestVoice = (lang: string): { voice: SpeechSynthesisVoice | null; lang: string } => {
+    const isFilipino = lang !== "english";
+    const voices = window.speechSynthesis.getVoices();
+
+    if (isFilipino) {
+      // Try exact fil-PH match first
+      const filPH = voices.find(v => v.lang === "fil-PH");
+      if (filPH) return { voice: filPH, lang: "fil-PH" };
+
+      // Try tl-PH (Tagalog Philippines)
+      const tlPH = voices.find(v => v.lang === "tl-PH");
+      if (tlPH) return { voice: tlPH, lang: "tl-PH" };
+
+      // Try any tl locale
+      const tl = voices.find(v => v.lang.startsWith("tl"));
+      if (tl) return { voice: tl, lang: tl.lang };
+
+      // Try any voice whose name contains Filipino keywords
+      const named = voices.find(v =>
+        ["Filipino", "Tagalog", "Pilipino"].some(k => v.name.includes(k))
+      );
+      if (named) return { voice: named, lang: named.lang };
+    }
+
+    // Fallback: en-US
+    const enUS = voices.find(v => v.lang === "en-US");
+    return { voice: enUS || null, lang: "en-US" };
   };
 
   const handlePlayAudio = (id: string, transcript: string) => {
     if (!window.speechSynthesis) return;
 
     if (playingAudioId === id) {
-      // Stop current speech
       window.speechSynthesis.cancel();
       if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
       setPlayingAudioId(null);
@@ -532,41 +544,66 @@ export default function DisasterApp() {
       return;
     }
 
-    // Cancel any playing speech
     window.speechSynthesis.cancel();
     if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
 
-    const utter = new SpeechSynthesisUtterance(transcript);
-    utter.lang = getLangCode(language);
-    utter.rate = 0.9;
+    const doSpeak = () => {
+      const utter = new SpeechSynthesisUtterance(transcript);
+      const isFilipino = language !== "english";
+      const { voice, lang } = getBestVoice(language);
 
-    // Estimate duration: ~150 words per minute
-    const wordCount = transcript.split(" ").length;
-    const estimatedDuration = Math.max(2, (wordCount / 150) * 60);
+      if (voice) utter.voice = voice;
+      utter.lang = lang;
 
-    setPlayingAudioId(id);
-    setAudioProgress(0);
-    setAudioDuration(estimatedDuration);
+      // Filipino speech characteristics: slightly slower pace, moderate pitch
+      utter.rate = isFilipino ? 0.85 : 0.9;
+      utter.pitch = isFilipino ? 1.1 : 1.0;  // slightly raised pitch sounds more natural for Filipino
+      utter.volume = 1.0;
 
-    let elapsed = 0;
-    progressIntervalRef.current = setInterval(() => {
-      elapsed += 0.25;
-      setAudioProgress(Math.min(elapsed, estimatedDuration));
-      if (elapsed >= estimatedDuration) {
-        if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
-      }
-    }, 250);
+      // Estimate duration based on rate-adjusted word speed (~150 wpm at rate=1.0)
+      const wordCount = transcript.split(" ").length;
+      const estimatedDuration = Math.max(2, (wordCount / (150 * utter.rate)) * 60);
 
-    utter.onend = () => {
-      if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
-      setPlayingAudioId(null);
+      setPlayingAudioId(id);
       setAudioProgress(0);
-      setAudioDuration(0);
+      setAudioDuration(estimatedDuration);
+
+      let elapsed = 0;
+      progressIntervalRef.current = setInterval(() => {
+        elapsed += 0.25;
+        setAudioProgress(Math.min(elapsed, estimatedDuration));
+        if (elapsed >= estimatedDuration) {
+          if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
+        }
+      }, 250);
+
+      utter.onend = () => {
+        if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
+        setPlayingAudioId(null);
+        setAudioProgress(0);
+        setAudioDuration(0);
+      };
+
+      utter.onerror = () => {
+        if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
+        setPlayingAudioId(null);
+      };
+
+      speechRef.current = utter;
+      window.speechSynthesis.speak(utter);
     };
 
-    speechRef.current = utter;
-    window.speechSynthesis.speak(utter);
+    // Voices may not be loaded yet on first call — wait if needed
+    if (window.speechSynthesis.getVoices().length === 0) {
+      window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.onvoiceschanged = null;
+        doSpeak();
+      };
+    } else {
+      doSpeak();
+    }
   };
+
 
   const t = translations[language] || translations.english;
 
