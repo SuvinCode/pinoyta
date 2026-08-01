@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -164,15 +164,49 @@ const translations = {
 
 export default function DisasterApp() {
   const { setTheme, theme } = useTheme();
-  const [language, setLanguage] = useState<keyof typeof translations>("mamanwa");
+  const [language, setLanguage] = useState<keyof typeof translations>("english");
   const [selectedBarangay, setSelectedBarangay] = useState("san-roque");
   const [isAlertConfirmed, setIsAlertConfirmed] = useState(true);
 
   // Audio Playback states for simulation
   const [playingAudioId, setPlayingAudioId] = useState<string | null>(null);
+  const [communityMessages, setCommunityMessages] = useState<any[]>([]);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  const handlePlayAudio = (id: string) => {
-    setPlayingAudioId(playingAudioId === id ? null : id);
+  useEffect(() => {
+    // Fetch mock messages from Mistral API backend
+    const fetchMessages = async () => {
+      try {
+        const res = await fetch("http://localhost:8000/api/community-messages");
+        const data = await res.json();
+        setCommunityMessages(data);
+      } catch (e) {
+        console.error("Failed to fetch community messages", e);
+      }
+    };
+    fetchMessages();
+  }, []);
+
+  const handlePlayAudio = (id: string, audioUrl?: string) => {
+    if (playingAudioId === id) {
+      // Pause
+      setPlayingAudioId(null);
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
+    } else {
+      // Play new
+      setPlayingAudioId(id);
+      if (audioUrl) {
+        if (!audioRef.current) {
+          audioRef.current = new Audio(audioUrl);
+        } else {
+          audioRef.current.src = audioUrl;
+        }
+        audioRef.current.play();
+        audioRef.current.onended = () => setPlayingAudioId(null);
+      }
+    }
   };
 
   const t = translations[language] || translations.english;
@@ -422,71 +456,59 @@ export default function DisasterApp() {
                   </p>
                 </CardHeader>
                 <CardContent className="p-4 space-y-4">
-                  {[
-                    {
-                      id: "voice-1",
-                      author: "Elder Tano",
-                      role: "IP Council Member",
-                      dialect: "Minamanwa",
-                      time: "15 mins ago",
-                      transcript: t.voice1Transcript,
-                      verified: true,
-                    },
-                    {
-                      id: "voice-2",
-                      author: "Datu Makusog",
-                      role: "Tribal Chieftain",
-                      dialect: "Minamanwa",
-                      time: "40 mins ago",
-                      transcript: t.voice2Transcript,
-                      verified: true,
-                    },
-                  ].map((item) => (
-                    <div key={item.id} className="p-3.5 rounded-xl border border-[#e5e7eb] dark:border-[#374151] bg-[#f9fafb] dark:bg-[#111827] space-y-2.5">
-                      <div className="flex items-center justify-between">
+                  {communityMessages.map((item) => (
+                    <div key={item.id} className="p-3.5 rounded-xl border border-[#e5e7eb] dark:border-[#374151] bg-[#f9fafb] dark:bg-[#111827] space-y-3">
+                      <div className="flex items-start justify-between">
                         <div className="flex items-center gap-2.5">
-                          <Avatar className="h-8 w-8 border border-[#0038a8]">
+                          <Avatar className="h-9 w-9 border border-[#0038a8]">
                             <AvatarFallback className="bg-[#0038a8] text-white text-xs font-bold">{item.author[0]}</AvatarFallback>
                           </Avatar>
-                          <div>
+                          <div className="flex flex-col">
                             <div className="flex items-center gap-1.5">
-                              <span className="text-sm font-bold">{item.author}</span>
-                              <Badge className="bg-[#eff6ff] text-[#0038a8] dark:bg-[#1e3a8a] dark:text-[#93c5fd] border-none text-[10px] font-bold">
+                              <span className="text-sm font-bold leading-none">{item.author}</span>
+                              <Badge className="bg-[#eff6ff] text-[#0038a8] dark:bg-[#1e3a8a] dark:text-[#93c5fd] border-none text-[9px] font-bold px-1.5 py-0 h-4">
                                 {item.dialect}
                               </Badge>
                             </div>
-                            <span className="text-[11px] text-gray-500 dark:text-gray-400 font-medium">{item.role}</span>
+                            <span className="text-[11px] text-gray-500 dark:text-gray-400 font-medium mt-1 leading-none">{item.role} • {item.time}</span>
                           </div>
                         </div>
                         {item.verified && (
-                          <span className="text-[11px] font-bold text-[#2563eb] dark:text-[#60a5fa] flex items-center gap-1 bg-[#eff6ff] dark:bg-[#1e3a8a]/50 px-2 py-0.5 rounded-md">
-                            <CheckCircle2 className="h-3.5 w-3.5 text-[#2563eb]" /> {t.verifiedVoice}
+                          <span className="text-[10px] font-bold text-[#2563eb] dark:text-[#60a5fa] flex items-center gap-1 bg-[#eff6ff] dark:bg-[#1e3a8a]/50 px-2 py-1 rounded-md shrink-0">
+                            <CheckCircle2 className="h-3 w-3 text-[#2563eb]" /> {t.verifiedVoice}
                           </span>
                         )}
                       </div>
 
+                      {/* Text Post Above Audio */}
+                      <p className="text-sm text-[#111827] dark:text-[#f9fafb] font-medium leading-relaxed pl-11">
+                        "{item.transcript}"
+                      </p>
+
                       {/* Voice Player */}
-                      <div className="flex items-center gap-3 bg-white dark:bg-[#1f2937] p-2.5 rounded-lg border border-[#e5e7eb] dark:border-[#374151]">
+                      <div className="flex items-center gap-3 bg-white dark:bg-[#1f2937] p-2.5 rounded-lg border border-[#e5e7eb] dark:border-[#374151] ml-11">
                         <Button
                           size="icon"
-                          onClick={() => handlePlayAudio(item.id)}
+                          onClick={() => handlePlayAudio(item.id, item.audioUrl)}
                           className="h-8 w-8 rounded-full bg-[#ce2029] hover:bg-[#b91c1c] text-white shrink-0 shadow-2xs"
                         >
-                          {playingAudioId === item.id ? <Pause className="h-3.5 w-3.5" /> : <Play className="h-3.5 w-3.5 fill-current" />}
+                          {playingAudioId === item.id ? <Pause className="h-3.5 w-3.5" /> : <Play className="h-3.5 w-3.5 fill-current ml-0.5" />}
                         </Button>
                         <div className="flex-1">
-                          <div className="flex justify-between text-[10px] text-gray-500 dark:text-gray-400 mb-1 font-mono">
+                          <div className="flex justify-between text-[10px] text-gray-500 dark:text-gray-400 mb-1.5 font-mono">
                             <span>{playingAudioId === item.id ? "Playing Native Voice..." : "Original Dialect Recording"}</span>
-                            <span>0:24</span>
+                            <span>{playingAudioId === item.id ? "Live" : "Ready"}</span>
                           </div>
-                          <div className="h-2 bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
-                            <div className={`h-full bg-[#ce2029] transition-all duration-300 ${playingAudioId === item.id ? "w-2/3 animate-pulse" : "w-0"}`} />
+                          <div className="h-1.5 bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
+                            <div className={`h-full bg-[#ce2029] transition-all duration-300 ${playingAudioId === item.id ? "w-full animate-pulse" : "w-0"}`} />
                           </div>
                         </div>
                       </div>
-                      <p className="text-xs text-gray-600 dark:text-gray-300 italic font-medium">"{item.transcript}"</p>
                     </div>
                   ))}
+                  {communityMessages.length === 0 && (
+                    <div className="text-center p-4 text-sm text-gray-500">Loading community voices...</div>
+                  )}
                 </CardContent>
               </Card>
             </div>

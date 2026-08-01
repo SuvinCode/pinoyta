@@ -87,6 +87,71 @@ const mockDrops: SupplyDrop[] = [
     verified: false,
     timestamp: "2 hours ago",
   },
+  {
+    id: "6",
+    lat: 9.778,
+    lng: 125.492,
+    locationName: "Surigao City Central Gym",
+    barangay: "Taft",
+    items: "500 Relief Packs, Generator Sets",
+    capacity: "800 / 1000 Families",
+    submittedBy: "Mayor's Office",
+    role: "LGU Official",
+    verified: true,
+    timestamp: "5 mins ago",
+  },
+  {
+    id: "7",
+    lat: 9.610,
+    lng: 125.450,
+    locationName: "Malimono Tribal Post",
+    barangay: "Cagtinae",
+    items: "Solar Lamps, Canned Goods",
+    capacity: "45 / 50 Families",
+    submittedBy: "Datu Kalinaw",
+    role: "Tribal Elder",
+    verified: true,
+    timestamp: "30 mins ago",
+  },
+  {
+    id: "8",
+    lat: 9.250,
+    lng: 125.550,
+    locationName: "Cabadbaran Response Hub",
+    barangay: "Mabini",
+    items: "Tents, Medical Supplies",
+    capacity: "320 / 400 Families",
+    submittedBy: "Red Cross Chapter",
+    role: "NGO Partner",
+    verified: true,
+    timestamp: "1 hour ago",
+  },
+  {
+    id: "9",
+    lat: 9.380,
+    lng: 125.680,
+    locationName: "Lake Mainit Eastern Shore",
+    barangay: "San Roque (Mainit)",
+    items: "Fishing Boat Evacuation Requests",
+    capacity: "Unknown",
+    submittedBy: "Citizen Text Line",
+    role: "Unverified Report",
+    verified: false,
+    timestamp: "2 hours ago",
+  },
+  {
+    id: "10",
+    lat: 9.850,
+    lng: 125.590,
+    locationName: "Dinagat Crossing Terminal",
+    barangay: "San Juan",
+    items: "Stranded Passengers Relief (Unconfirmed)",
+    capacity: "Full",
+    submittedBy: "Facebook Post",
+    role: "Social Media",
+    verified: false,
+    timestamp: "3 hours ago",
+  },
 ];
 
 export default function SupplyLiveMap() {
@@ -284,7 +349,7 @@ export default function SupplyLiveMap() {
 
         {selectedDrop && (
           <a
-            href={`https://www.google.com/maps?q=${selectedDrop.lat},${selectedDrop.lng}`}
+            href={`https://www.google.com/maps/dir/?api=1&destination=${selectedDrop.lat},${selectedDrop.lng}`}
             target="_blank"
             rel="noopener noreferrer"
             className="absolute top-3 right-3 z-20 bg-white dark:bg-[#111827] hover:bg-blue-50 text-[#2563eb] px-3 py-1.5 rounded-lg border border-[#e5e7eb] dark:border-[#374151] shadow-2xs text-xs font-bold flex items-center gap-1.5 transition-all"
@@ -348,6 +413,13 @@ export default function SupplyLiveMap() {
                 <p className="text-[10px] text-gray-500 dark:text-gray-400 truncate font-medium">{selectedDrop.role}</p>
               </div>
             </div>
+
+            <Button
+              className="w-full mt-3 bg-[#ce2029] hover:bg-[#b91c1c] text-white font-bold h-10 shadow-md transition-all"
+              onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=${selectedDrop.lat},${selectedDrop.lng}`, "_blank")}
+            >
+              <Navigation className="h-4 w-4 mr-2" /> View in Google Maps
+            </Button>
           </CardContent>
         </Card>
       )}
