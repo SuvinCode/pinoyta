@@ -716,17 +716,16 @@ export default function DisasterApp() {
             </TabsTrigger>
           </TabsList>
 
-          {/* ==================== TAB 1: SOURCES (COMMUNITY TEXT + VOICE) ==================== */}
+          {/* ==================== TAB 1: SOURCES ==================== */}
           <TabsContent value="sources" className="outline-none">
-            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="space-y-6">
-            {/* --- NEW COMMUNITY REPORTING SECTION --- */}
+            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="space-y-8">
             
-            <div className="mt-8 space-y-4">
+            {/* --- ELDER REPORTS SECTION --- */}
+            <div className="space-y-4 mt-4">
               <div className="flex items-center gap-2 mb-2">
-                <Activity className="h-5 w-5 text-[#ce2029]" />
-                <h2 className="text-lg font-bold text-[#111827] dark:text-[#f9fafb]">Community Reports</h2>
+                <ShieldAlert className="h-5 w-5 text-[#b45309]" />
+                <h2 className="text-lg font-bold text-[#111827] dark:text-[#f9fafb]">Elder Reports</h2>
               </div>
-
               {/* Pinned Official Post */}
               <div className="bg-[#fffbeb] dark:bg-[#422006]/30 border-2 border-[#fbbf24] dark:border-[#b45309] p-4 rounded-xl shadow-sm relative overflow-hidden">
                 <div className="absolute top-0 right-0 bg-[#fbbf24] text-amber-950 text-[10px] font-bold px-2 py-0.5 rounded-bl-lg flex items-center gap-1">
@@ -748,47 +747,10 @@ export default function DisasterApp() {
                 </div>
               </div>
 
-              {/* Recent Community Posts */}
-              <div className="space-y-3">
-                <div className="bg-white dark:bg-[#1f2937] border border-[#e5e7eb] dark:border-[#374151] p-4 rounded-xl shadow-sm flex gap-3">
-                  <Avatar className="h-9 w-9">
-                    <AvatarFallback className="bg-gray-200 text-gray-600 dark:bg-gray-700 dark:text-gray-300">A</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <h4 className="font-bold text-[#111827] dark:text-[#f9fafb] text-sm">Anonymous</h4>
-                    <span className="text-[10px] text-gray-500 block mb-1">Purok 4 • 12 mins ago</span>
-                    <p className="text-sm text-gray-800 dark:text-gray-200">
-                      "We need drinking water here, the pipes are broken near the chapel."
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="bg-white dark:bg-[#1f2937] border border-[#e5e7eb] dark:border-[#374151] p-4 rounded-xl shadow-sm flex gap-3">
-                  <Avatar className="h-9 w-9">
-                    <AvatarFallback className="bg-[#eff6ff] text-[#0038a8]">JC</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <h4 className="font-bold text-[#111827] dark:text-[#f9fafb] text-sm">Juan Dela Cruz</h4>
-                    <span className="text-[10px] text-gray-500 block mb-1">San Roque • 28 mins ago</span>
-                    <p className="text-sm text-gray-800 dark:text-gray-200">
-                      "Trees fell down near the basketball court, road is blocked. Please send clearing operations if possible."
-                    </p>
-                  </div>
-                </div>
-              </div>
 
-
-            </div>
             {/* 1. Community Intake */}
             <div>
-              <div className="flex items-center justify-between mb-3">
-                <h3 className="font-bold text-base flex items-center gap-2 text-[#111827] dark:text-[#f9fafb]">
-                  <Mic className="h-5 w-5 text-[#ce2029]" /> {t.communityVoiceTitle}
-                </h3>
-                <Badge variant="outline" className="text-[11px] font-bold border-[#ce2029]/30 text-[#ce2029] bg-[#fff1f2] dark:bg-[#881337]/20">
-                  {t.unresynthesized}
-                </Badge>
-              </div>
+
 
               <Card className="bg-white dark:bg-[#1f2937] border-[#e5e7eb] dark:border-[#374151] shadow-2xs">
                 <CardHeader className="pb-3 border-b border-[#e5e7eb] dark:border-[#374151] bg-[#f9fafb] dark:bg-[#111827]/50">
@@ -856,6 +818,48 @@ export default function DisasterApp() {
                 </CardContent>
               </Card>
             </div>
+
+            </div>
+
+            {/* --- COMMUNITY REPORTS SECTION --- */}
+            <div className="space-y-4">
+              <div className="flex items-center gap-2 mb-2">
+                <Activity className="h-5 w-5 text-[#ce2029]" />
+                <h2 className="text-lg font-bold text-[#111827] dark:text-[#f9fafb]">Community Reports</h2>
+              </div>
+              {/* Recent Community Posts */}
+              <div className="space-y-3">
+                <div className="bg-white dark:bg-[#1f2937] border border-[#e5e7eb] dark:border-[#374151] p-4 rounded-xl shadow-sm flex gap-3">
+                  <Avatar className="h-9 w-9">
+                    <AvatarFallback className="bg-gray-200 text-gray-600 dark:bg-gray-700 dark:text-gray-300">A</AvatarFallback>
+                  </Avatar>
+                  <div>
+                    <h4 className="font-bold text-[#111827] dark:text-[#f9fafb] text-sm">Anonymous</h4>
+                    <span className="text-[10px] text-gray-500 block mb-1">Purok 4 • 12 mins ago</span>
+                    <p className="text-sm text-gray-800 dark:text-gray-200">
+                      "We need drinking water here, the pipes are broken near the chapel."
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="bg-white dark:bg-[#1f2937] border border-[#e5e7eb] dark:border-[#374151] p-4 rounded-xl shadow-sm flex gap-3">
+                  <Avatar className="h-9 w-9">
+                    <AvatarFallback className="bg-[#eff6ff] text-[#0038a8]">JC</AvatarFallback>
+                  </Avatar>
+                  <div>
+                    <h4 className="font-bold text-[#111827] dark:text-[#f9fafb] text-sm">Juan Dela Cruz</h4>
+                    <span className="text-[10px] text-gray-500 block mb-1">San Roque • 28 mins ago</span>
+                    <p className="text-sm text-gray-800 dark:text-gray-200">
+                      "Trees fell down near the basketball court, road is blocked. Please send clearing operations if possible."
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+
+
+            </div>
+
             </motion.div>
           </TabsContent>
 
