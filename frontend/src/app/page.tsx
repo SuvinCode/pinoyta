@@ -172,8 +172,17 @@ export default function DisasterApp() {
 
   // Audio Playback states for simulation
   const [playingAudioId, setPlayingAudioId] = useState<string | null>(null);
+  const [audioProgress, setAudioProgress] = useState(0);
+  const [audioDuration, setAudioDuration] = useState(0);
   const [communityMessages, setCommunityMessages] = useState<any[]>([]);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  const formatTime = (timeInSeconds: number) => {
+    if (isNaN(timeInSeconds) || !timeInSeconds) return "0:00";
+    const m = Math.floor(timeInSeconds / 60);
+    const s = Math.floor(timeInSeconds % 60);
+    return `${m}:${s.toString().padStart(2, '0')}`;
+  };
 
   useEffect(() => {
     // Fetch mock messages from Mistral API backend
@@ -206,8 +215,22 @@ export default function DisasterApp() {
         } else {
           audioRef.current.src = fullAudioUrl;
         }
+        
+        setAudioProgress(0);
+        setAudioDuration(0);
+        
+        audioRef.current.ontimeupdate = () => {
+          setAudioProgress(audioRef.current?.currentTime || 0);
+        };
+        audioRef.current.onloadedmetadata = () => {
+          setAudioDuration(audioRef.current?.duration || 0);
+        };
+        audioRef.current.onended = () => {
+          setPlayingAudioId(null);
+          setAudioProgress(0);
+        };
+
         audioRef.current.play();
-        audioRef.current.onended = () => setPlayingAudioId(null);
       }
     }
   };
@@ -499,11 +522,14 @@ export default function DisasterApp() {
                         </Button>
                         <div className="flex-1">
                           <div className="flex justify-between text-[10px] text-gray-500 dark:text-gray-400 mb-1.5 font-mono">
-                            <span>{playingAudioId === item.id ? "Playing Native Voice..." : "Original Dialect Recording"}</span>
-                            <span>{playingAudioId === item.id ? "Live" : "Ready"}</span>
+                            <span>{playingAudioId === item.id ? `${formatTime(audioProgress)} / ${formatTime(audioDuration)}` : "Original Dialect Recording"}</span>
+                            <span>{playingAudioId === item.id ? `📍 ${selectedBarangay.replace('-', ' ').toUpperCase()}` : "Ready"}</span>
                           </div>
                           <div className="h-1.5 bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
-                            <div className={`h-full bg-[#ce2029] transition-all duration-300 ${playingAudioId === item.id ? "w-full animate-pulse" : "w-0"}`} />
+                            <div 
+                              className={`h-full bg-[#ce2029] transition-all duration-300 ${playingAudioId === item.id ? "" : "w-0"}`} 
+                              style={{ width: playingAudioId === item.id ? `${(audioProgress / (audioDuration || 1)) * 100}%` : '0%' }}
+                            />
                           </div>
                         </div>
                       </div>
