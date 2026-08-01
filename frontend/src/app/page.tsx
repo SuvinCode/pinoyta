@@ -1099,14 +1099,12 @@ export default function DisasterApp() {
     handleClearRecording();
   };
 
-  // Audio Playback via ElevenLabs API
+  // Audio Playback via Web Speech API
   const [playingAudioId, setPlayingAudioId] = useState<string | null>(null);
   const [loadingAudioId, setLoadingAudioId] = useState<string | null>(null);
   const [audioProgress, setAudioProgress] = useState(0);
   const [audioDuration, setAudioDuration] = useState(0);
   
-  const audioCacheRef = useRef<Record<string, string>>({});
-  const activeAudioRef = useRef<HTMLAudioElement | null>(null);
   const progressIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const formatTime = (timeInSeconds: number) => {
@@ -1120,14 +1118,8 @@ export default function DisasterApp() {
   const [communityReports, setCommunityReports] = useState(dbData.communityReports);
 
   const stopCurrentAudio = () => {
-    if (activeAudioRef.current) {
-      if ((activeAudioRef.current as any).isWebSpeech) {
-        window.speechSynthesis.cancel();
-      } else if (!(activeAudioRef.current as any).isMock) {
-        activeAudioRef.current.pause();
-        activeAudioRef.current.currentTime = 0;
-      }
-      activeAudioRef.current = null;
+    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
     }
     if (progressIntervalRef.current) {
       clearInterval(progressIntervalRef.current);
@@ -1138,134 +1130,47 @@ export default function DisasterApp() {
     setAudioDuration(0);
   };
 
-  const handlePlayAudio = async (id: string, transcript: string) => {
-    // If the same audio is playing, stop it.
-    if (playingAudioId === id || loadingAudioId === id) {
+  const handlePlayAudio = (id: string, transcript: string) => {
+    if (playingAudioId === id) {
       stopCurrentAudio();
-      setLoadingAudioId(null);
       return;
     }
 
-    // Stop any currently playing audio before starting a new one
     stopCurrentAudio();
 
-    const cacheKey = `${id}-${language}`;
-    let audioUrl = audioCacheRef.current[cacheKey];
-
-    if (!audioUrl) {
-      try {
-        setLoadingAudioId(id);
-        const res = await fetch('/api/tts', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ 
-            text: transcript,
-            voiceId: '21m00Tcm4TlvDq8ikWAM' // Rachel voice ID
-          })
-        });
-
-        if (!res.ok) {
-          const errData = await res.json().catch(() => ({}));
-          console.warn("ElevenLabs TTS failed, using mock data / Web Speech fallback", errData);
-          setLoadingAudioId(null);
-          
-          // Visual Mock Simulation (No Browser Dependencies)
-          setPlayingAudioId(id);
-          const mockDuration = Math.max(2, transcript.length / 12);
-          setAudioDuration(mockDuration);
-          setAudioProgress(0);
-          
-          progressIntervalRef.current = setInterval(() => {
-            setAudioProgress(p => {
-              if (p + 0.1 >= mockDuration) {
-                stopCurrentAudio();
-                return 0;
-              }
-              return p + 0.1;
-            });
-          }, 100);
-          
-          activeAudioRef.current = {
-            isMock: true,
-            pause: () => {},
-            currentTime: 0
-          } as any;
-          return;
-        }
-
-        const blob = await res.blob();
-        audioUrl = URL.createObjectURL(blob);
-        audioCacheRef.current[cacheKey] = audioUrl;
-      } catch (err) {
-        console.warn("Error fetching TTS, using mock data / Web Speech fallback:", err);
-        setLoadingAudioId(null);
-        
-        // Fallback identical logic if fetch throws an error (e.g. network failure)
-          // Visual Mock Simulation (No Browser Dependencies)
-          setPlayingAudioId(id);
-          const mockDuration = Math.max(2, transcript.length / 12);
-          setAudioDuration(mockDuration);
-          setAudioProgress(0);
-          
-          progressIntervalRef.current = setInterval(() => {
-            setAudioProgress(p => {
-              if (p + 0.1 >= mockDuration) {
-                stopCurrentAudio();
-                return 0;
-              }
-              return p + 0.1;
-            });
-          }, 100);
-          
-          activeAudioRef.current = {
-            isMock: true,
-            pause: () => {},
-            currentTime: 0
-          } as any;
-        return;
-      } finally {
-        setLoadingAudioId(null);
+    if ('speechSynthesis' in window) {
+      const utterance = new SpeechSynthesisUtterance(transcript);
+      
+      const voices = window.speechSynthesis.getVoices();
+      const filipinoVoice = voices.find(v => v.lang.toLowerCase().includes('fil') || v.lang.toLowerCase().includes('ph') || v.lang.toLowerCase().includes('es'));
+      if (filipinoVoice) {
+        utterance.voice = filipinoVoice;
       }
-    }
-
-    // Play the audio
-    const audio = new Audio(audioUrl);
-    activeAudioRef.current = audio;
-    
-    // For blob URLs, duration might not be immediately available or accurate, but we try
-    audio.onloadedmetadata = () => {
-      // If duration is Infinity or NaN (common for streams), we can't show a progress bar easily, but blob URLs usually give a duration.
-      if (isFinite(audio.duration)) {
-        setAudioDuration(audio.duration);
-      }
-    };
-
-    audio.onplay = () => {
+      
+      utterance.rate = 0.95;
+      
       setPlayingAudioId(id);
-      if (isFinite(audio.duration)) setAudioDuration(audio.duration);
+      const estDuration = Math.max(2, transcript.length / 12);
+      setAudioDuration(estDuration);
+      setAudioProgress(0);
+      
+      utterance.onend = () => {
+        stopCurrentAudio();
+      };
+      
+      utterance.onerror = () => {
+        stopCurrentAudio();
+      };
       
       progressIntervalRef.current = setInterval(() => {
-        setAudioProgress(audio.currentTime);
-        if (isFinite(audio.duration) && audio.duration !== audioDuration) {
-           setAudioDuration(audio.duration);
-        }
-      }, 250);
-    };
-
-    audio.onended = () => {
-      stopCurrentAudio();
-    };
-
-    audio.onerror = (e) => {
-      console.error("Audio playback error:", e);
-      stopCurrentAudio();
-    };
-
-    audio.play().catch(e => {
-      console.error("Failed to play audio:", e);
-      stopCurrentAudio();
-    });
-  };
+        setAudioProgress(p => p + 0.1);
+      }, 100);
+      
+      window.speechSynthesis.speak(utterance);
+    } else {
+      alert("Text-to-speech is not supported in your browser.");
+    }
+  };;
 
   const t = translations[language] || translations.english;
 
