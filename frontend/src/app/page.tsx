@@ -18,8 +18,8 @@ import SupplyLiveMap from "@/components/supply-map";
 const translations = {
   mamanwa: {
     statusLine: "Mataas ang suba ug kusog ang hangin. Pag-andam kamo sa pagbalhin sa taas nga dapit.",
-    tabDashboard: "Main Dashboard",
-    tabSources: "Sources",
+    tabDashboard: "Sources",
+    tabSources: "Report",
     tabSupply: "Recovery Map",
     barangayFocus: "Barangay Focus:",
     confirmedTitle: "CONFIRMED BY TRIBAL COUNCIL",
@@ -52,9 +52,9 @@ const translations = {
   },
   bisaya: {
     statusLine: "Nagka-duol ang bagyo. Siguroha ang inyong mga balay ug pangandam sa pag-bakwit sa taas nga dapit.",
-    tabDashboard: "Pangunang Dashboard",
-    tabSources: "Mga Gikanan",
-    tabSupply: "Mapa sa Tabang",
+    tabDashboard: "Sources",
+    tabSources: "Report",
+    tabSupply: "Recovery Map",
     barangayFocus: "Gipunting nga Barangay:",
     confirmedTitle: "GIKUMPIRMA SA KATAWHANG TRIBAL",
     confirmedSub: "Gikumpirma ni Datu Makusog alang sa",
@@ -86,9 +86,9 @@ const translations = {
   },
   tagalog: {
     statusLine: "Papalapit ang bagyo. Iseguro ang mga tahanan at maghandang lumipat sa mataas na lugar.",
-    tabDashboard: "Pangunahing Dashboard",
-    tabSources: "Pinagmulan ng Balita",
-    tabSupply: "Mapa ng Tulong",
+    tabDashboard: "Sources",
+    tabSources: "Report",
+    tabSupply: "Recovery Map",
     barangayFocus: "Nakatutok sa Barangay:",
     confirmedTitle: "KUMPIRMADO NG KONSEHO NG IP/KATUTUBO",
     confirmedSub: "Kinumpirma ni Datu Makusog para sa",
@@ -120,8 +120,8 @@ const translations = {
   },
   english: {
     statusLine: "Typhoon approaching. Secure homes and prepare to move to high ground.",
-    tabDashboard: "Main Dashboard",
-    tabSources: "Sources",
+    tabDashboard: "Sources",
+    tabSources: "Report",
     tabSupply: "Recovery Map",
     barangayFocus: "Barangay Focus:",
     confirmedTitle: "CONFIRMED BY TRIBAL COUNCIL",
@@ -154,9 +154,9 @@ const translations = {
   },
   cebuano: {
     statusLine: "Nagka-duol ang bagyo. Siguroha ang inyong mga balay ug pangandam sa pag-bakwit sa taas nga dapit.",
-    tabDashboard: "Pangunang Dashboard",
-    tabSources: "Mga Tinubdan",
-    tabSupply: "Mapa sa Tabang",
+    tabDashboard: "Sources",
+    tabSources: "Report",
+    tabSupply: "Recovery Map",
     barangayFocus: "Gipunting nga Barangay:",
     confirmedTitle: "GIKUMPIRMA SA KONSEHO SA TRIBAL",
     confirmedSub: "Gikumpirma ni Datu Makusog alang sa",
@@ -188,9 +188,9 @@ const translations = {
   },
   ilocano: {
     statusLine: "Umay ti bagyo. I-sigurado dagiti balay yo ken agsagana nga mapan iti nangato a lugar.",
-    tabDashboard: "Kangrunaan a Dashboard",
-    tabSources: "Paggapuan Ti Damag",
-    tabSupply: "Mapa Ti Tulong",
+    tabDashboard: "Sources",
+    tabSources: "Report",
+    tabSupply: "Recovery Map",
     barangayFocus: "Nakatutukan a Barangay:",
     confirmedTitle: "KINUMPIRMA TI KONSEHO TI IP",
     confirmedSub: "Kinumpirma ni Datu Makusog para iti",
@@ -222,9 +222,9 @@ const translations = {
   },
   hiligaynon: {
     statusLine: "Hapit na ang bagyo. Siguraduha ang inyo mga balay kag maghanda sa pag-evacuate sa mataas nga lugar.",
-    tabDashboard: "Pangunang Dashboard",
-    tabSources: "Ginhalinan Sang Impormasyon",
-    tabSupply: "Mapa Sang Bulig",
+    tabDashboard: "Sources",
+    tabSources: "Report",
+    tabSupply: "Recovery Map",
     barangayFocus: "Ginapokus Nga Barangay:",
     confirmedTitle: "GINKUMPIRMAR SANG KONSEHO",
     confirmedSub: "Ginkumpirmar ni Datu Makusog para sa",
@@ -256,9 +256,9 @@ const translations = {
   },
   bicolano: {
     statusLine: "Haranihon na ang bagyo. Seguruhon ang mga harong asin mag-andam sa pagbalyo sa halangkaw na lugar.",
-    tabDashboard: "Panginot na Dashboard",
-    tabSources: "Mga Ginikanan nin Bareta",
-    tabSupply: "Mapa nin Tabang",
+    tabDashboard: "Sources",
+    tabSources: "Report",
+    tabSupply: "Recovery Map",
     barangayFocus: "Tinututukan na Barangay:",
     confirmedTitle: "KUMPIRMADO KAN KONSEHO",
     confirmedSub: "Kinumpirma ni Datu Makusog para sa",
@@ -290,9 +290,9 @@ const translations = {
   },
   waray: {
     statusLine: "Ti-arabot na iton bagyo. Siguruha iton iyo mga balay ngan pag-andam ha pagbakwit ngadto ha hitaas nga lugar.",
-    tabDashboard: "Pangunahon nga Dashboard",
-    tabSources: "Gintikangan Han Impormasyon",
-    tabSupply: "Mapa Han Bulig",
+    tabDashboard: "Sources",
+    tabSources: "Report",
+    tabSupply: "Recovery Map",
     barangayFocus: "Nakatutok nga Barangay:",
     confirmedTitle: "KUMPIRMADO HAN KONSEHO",
     confirmedSub: "Ginkumpirma ni Datu Makusog para ha",
@@ -324,9 +324,9 @@ const translations = {
   },
   kapampangan: {
     statusLine: "Darating ne ing bagyu. Siguradwan yo ring bale yo at magsadya kayong lumipat king matas a lugal.",
-    tabDashboard: "Pun Dashboard",
-    tabSources: "Pikukwanan Balita",
-    tabSupply: "Mapa Ning Saup",
+    tabDashboard: "Sources",
+    tabSources: "Report",
+    tabSupply: "Recovery Map",
     barangayFocus: "Pakatalukyan A Barangay:",
     confirmedTitle: "KUMPIRMÁDU NING KONSEHO",
     confirmedSub: "Kinumpirma neng Datu Makusog para king",
@@ -358,9 +358,9 @@ const translations = {
   },
   pangasinan: {
     statusLine: "Oonla so bagyo. Iseguro iray abong yo tan man-akseb ya onalis ed atagey ya pasen.",
-    tabDashboard: "Manunot A Dashboard",
-    tabSources: "Pama-nengnengan Na Balita",
-    tabSupply: "Mapa Na Tulong",
+    tabDashboard: "Sources",
+    tabSources: "Report",
+    tabSupply: "Recovery Map",
     barangayFocus: "Papatarokan A Barangay:",
     confirmedTitle: "AKUMPIRMA NA KONSEHO",
     confirmedSub: "Kinumpirma nen Datu Makusog para ed",
@@ -687,12 +687,12 @@ export default function DisasterApp() {
 
       {/* Main Content Area */}
       <main className="flex-1 container mx-auto p-4 max-w-3xl">
-        <Tabs defaultValue="dashboard" className="w-full">
+        <Tabs defaultValue="sources" className="w-full">
           
           {/* 3 Main Header Tabs */}
           <TabsList className="grid w-full grid-cols-3 h-14 mb-6 sticky top-[104px] z-40 bg-white/95 dark:bg-[#111827]/95 backdrop-blur shadow-xs border border-[#e5e7eb] dark:border-[#1f2937] rounded-xl p-1">
             <TabsTrigger 
-              value="dashboard" 
+              value="sources" 
               className="flex items-center justify-center gap-2 data-[state=active]:text-[#0038a8] dark:data-[state=active]:text-[#60a5fa] data-[state=active]:bg-[#eff6ff] dark:data-[state=active]:bg-[#1e3a8a]/40 font-bold text-xs sm:text-sm rounded-lg transition-all"
             >
               <Activity className="h-4 w-4 text-[#ce2029]" />
@@ -700,7 +700,7 @@ export default function DisasterApp() {
             </TabsTrigger>
 
             <TabsTrigger 
-              value="sources" 
+              value="report" 
               className="flex items-center justify-center gap-2 data-[state=active]:text-[#0038a8] dark:data-[state=active]:text-[#60a5fa] data-[state=active]:bg-[#eff6ff] dark:data-[state=active]:bg-[#1e3a8a]/40 font-bold text-xs sm:text-sm rounded-lg transition-all"
             >
               <Volume2 className="h-4 w-4 text-[#0038a8]" />
@@ -716,10 +716,9 @@ export default function DisasterApp() {
             </TabsTrigger>
           </TabsList>
 
-          {/* ==================== TAB 1: MAIN DASHBOARD ==================== */}
-          <TabsContent value="dashboard" className="outline-none">
-            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="space-y-4">
-            
+          {/* ==================== TAB 1: SOURCES (COMMUNITY TEXT + VOICE) ==================== */}
+          <TabsContent value="sources" className="outline-none">
+            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="space-y-6">
             {/* --- NEW COMMUNITY REPORTING SECTION --- */}
             
             <div className="mt-8 space-y-4">
@@ -778,6 +777,91 @@ export default function DisasterApp() {
                 </div>
               </div>
 
+
+            </div>
+            {/* 1. Community Intake */}
+            <div>
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="font-bold text-base flex items-center gap-2 text-[#111827] dark:text-[#f9fafb]">
+                  <Mic className="h-5 w-5 text-[#ce2029]" /> {t.communityVoiceTitle}
+                </h3>
+                <Badge variant="outline" className="text-[11px] font-bold border-[#ce2029]/30 text-[#ce2029] bg-[#fff1f2] dark:bg-[#881337]/20">
+                  {t.unresynthesized}
+                </Badge>
+              </div>
+
+              <Card className="bg-white dark:bg-[#1f2937] border-[#e5e7eb] dark:border-[#374151] shadow-2xs">
+                <CardHeader className="pb-3 border-b border-[#e5e7eb] dark:border-[#374151] bg-[#f9fafb] dark:bg-[#111827]/50">
+                  <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed font-medium">
+                    {t.communityVoiceDesc}
+                  </p>
+                </CardHeader>
+                <CardContent className="p-4 space-y-4">
+                  {communityMessages.map((item) => (
+                    <div key={item.id} className="p-3.5 rounded-xl border border-[#e5e7eb] dark:border-[#374151] bg-[#f9fafb] dark:bg-[#111827] space-y-3">
+                      <div className="flex items-start justify-between">
+                        <div className="flex items-center gap-2.5">
+                          <Avatar className="h-9 w-9 border border-[#0038a8]">
+                            <AvatarFallback className="bg-[#0038a8] text-white text-xs font-bold">{item.author[0]}</AvatarFallback>
+                          </Avatar>
+                          <div className="flex flex-col">
+                            <div className="flex items-center gap-1.5">
+                              <span className="text-sm font-bold leading-none">{item.author}</span>
+                              <Badge className="bg-[#eff6ff] text-[#0038a8] dark:bg-[#1e3a8a] dark:text-[#93c5fd] border-none text-[9px] font-bold px-1.5 py-0 h-4">
+                                {item.dialect}
+                              </Badge>
+                            </div>
+                            <span className="text-[11px] text-gray-500 dark:text-gray-400 font-medium mt-1 leading-none">{item.role} • {item.time}</span>
+                          </div>
+                        </div>
+                        {item.verified && (
+                          <span className="text-[10px] font-bold text-[#2563eb] dark:text-[#60a5fa] flex items-center gap-1 bg-[#eff6ff] dark:bg-[#1e3a8a]/50 px-2 py-1 rounded-md shrink-0">
+                            <CheckCircle2 className="h-3 w-3 text-[#2563eb]" /> {t.verifiedVoice}
+                          </span>
+                        )}
+                      </div>
+
+                      {/* Text Post Above Audio */}
+                      <p className="text-sm text-[#111827] dark:text-[#f9fafb] font-medium leading-relaxed pl-11">
+                        "{item.transcript}"
+                      </p>
+
+                      {/* Voice Player */}
+                      <div className="flex items-center gap-3 bg-white dark:bg-[#1f2937] p-2.5 rounded-lg border border-[#e5e7eb] dark:border-[#374151] ml-11">
+                        <Button
+                          size="icon"
+                          onClick={() => handlePlayAudio(item.id, item.audioUrl)}
+                          className="h-8 w-8 rounded-full bg-[#ce2029] hover:bg-[#b91c1c] text-white shrink-0 shadow-2xs"
+                        >
+                          {playingAudioId === item.id ? <Pause className="h-3.5 w-3.5" /> : <Play className="h-3.5 w-3.5 fill-current ml-0.5" />}
+                        </Button>
+                        <div className="flex-1">
+                          <div className="flex justify-between text-[10px] text-gray-500 dark:text-gray-400 mb-1.5 font-mono">
+                            <span>{playingAudioId === item.id ? `${formatTime(audioProgress)} / ${formatTime(audioDuration)}` : "Original Dialect Recording"}</span>
+                            <span>{playingAudioId === item.id ? `📍 ${selectedBarangay.replace('-', ' ').toUpperCase()}` : "Ready"}</span>
+                          </div>
+                          <div className="h-1.5 bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
+                            <div 
+                              className={`h-full bg-[#ce2029] transition-all duration-300 ${playingAudioId === item.id ? "" : "w-0"}`} 
+                              style={{ width: playingAudioId === item.id ? `${(audioProgress / (audioDuration || 1)) * 100}%` : '0%' }}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                  {communityMessages.length === 0 && (
+                    <div className="text-center p-4 text-sm text-gray-500">Loading community voices...</div>
+                  )}
+                </CardContent>
+              </Card>
+            </div>
+            </motion.div>
+          </TabsContent>
+
+          {/* ==================== TAB 2: REPORT (SUBMIT FORM) ==================== */}
+          <TabsContent value="report" className="outline-none">
+            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="space-y-6">
               {/* Submit Report Form */}
               <Card className="mt-6 bg-[#f8fafc] dark:bg-[#111827] border-[#e2e8f0] dark:border-[#1e293b] shadow-inner">
                 <CardHeader className="pb-3">
@@ -866,152 +950,7 @@ export default function DisasterApp() {
                   )}
                 </CardContent>
               </Card>
-            </div>
-          </motion.div>
-          </TabsContent>
-
-          {/* ==================== TAB 2: SOURCES (COMMUNITY + OFFICIAL INTAKE) ==================== */}
-          <TabsContent value="sources" className="outline-none">
-            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="space-y-6">
-            
-            {/* 1. Community Intake */}
-            <div>
-              <div className="flex items-center justify-between mb-3">
-                <h3 className="font-bold text-base flex items-center gap-2 text-[#111827] dark:text-[#f9fafb]">
-                  <Mic className="h-5 w-5 text-[#ce2029]" /> {t.communityVoiceTitle}
-                </h3>
-                <Badge variant="outline" className="text-[11px] font-bold border-[#ce2029]/30 text-[#ce2029] bg-[#fff1f2] dark:bg-[#881337]/20">
-                  {t.unresynthesized}
-                </Badge>
-              </div>
-
-              <Card className="bg-white dark:bg-[#1f2937] border-[#e5e7eb] dark:border-[#374151] shadow-2xs">
-                <CardHeader className="pb-3 border-b border-[#e5e7eb] dark:border-[#374151] bg-[#f9fafb] dark:bg-[#111827]/50">
-                  <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed font-medium">
-                    {t.communityVoiceDesc}
-                  </p>
-                </CardHeader>
-                <CardContent className="p-4 space-y-4">
-                  {communityMessages.map((item) => (
-                    <div key={item.id} className="p-3.5 rounded-xl border border-[#e5e7eb] dark:border-[#374151] bg-[#f9fafb] dark:bg-[#111827] space-y-3">
-                      <div className="flex items-start justify-between">
-                        <div className="flex items-center gap-2.5">
-                          <Avatar className="h-9 w-9 border border-[#0038a8]">
-                            <AvatarFallback className="bg-[#0038a8] text-white text-xs font-bold">{item.author[0]}</AvatarFallback>
-                          </Avatar>
-                          <div className="flex flex-col">
-                            <div className="flex items-center gap-1.5">
-                              <span className="text-sm font-bold leading-none">{item.author}</span>
-                              <Badge className="bg-[#eff6ff] text-[#0038a8] dark:bg-[#1e3a8a] dark:text-[#93c5fd] border-none text-[9px] font-bold px-1.5 py-0 h-4">
-                                {item.dialect}
-                              </Badge>
-                            </div>
-                            <span className="text-[11px] text-gray-500 dark:text-gray-400 font-medium mt-1 leading-none">{item.role} • {item.time}</span>
-                          </div>
-                        </div>
-                        {item.verified && (
-                          <span className="text-[10px] font-bold text-[#2563eb] dark:text-[#60a5fa] flex items-center gap-1 bg-[#eff6ff] dark:bg-[#1e3a8a]/50 px-2 py-1 rounded-md shrink-0">
-                            <CheckCircle2 className="h-3 w-3 text-[#2563eb]" /> {t.verifiedVoice}
-                          </span>
-                        )}
-                      </div>
-
-                      {/* Text Post Above Audio */}
-                      <p className="text-sm text-[#111827] dark:text-[#f9fafb] font-medium leading-relaxed pl-11">
-                        "{item.transcript}"
-                      </p>
-
-                      {/* Voice Player */}
-                      <div className="flex items-center gap-3 bg-white dark:bg-[#1f2937] p-2.5 rounded-lg border border-[#e5e7eb] dark:border-[#374151] ml-11">
-                        <Button
-                          size="icon"
-                          onClick={() => handlePlayAudio(item.id, item.audioUrl)}
-                          className="h-8 w-8 rounded-full bg-[#ce2029] hover:bg-[#b91c1c] text-white shrink-0 shadow-2xs"
-                        >
-                          {playingAudioId === item.id ? <Pause className="h-3.5 w-3.5" /> : <Play className="h-3.5 w-3.5 fill-current ml-0.5" />}
-                        </Button>
-                        <div className="flex-1">
-                          <div className="flex justify-between text-[10px] text-gray-500 dark:text-gray-400 mb-1.5 font-mono">
-                            <span>{playingAudioId === item.id ? `${formatTime(audioProgress)} / ${formatTime(audioDuration)}` : "Original Dialect Recording"}</span>
-                            <span>{playingAudioId === item.id ? `📍 ${selectedBarangay.replace('-', ' ').toUpperCase()}` : "Ready"}</span>
-                          </div>
-                          <div className="h-1.5 bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
-                            <div 
-                              className={`h-full bg-[#ce2029] transition-all duration-300 ${playingAudioId === item.id ? "" : "w-0"}`} 
-                              style={{ width: playingAudioId === item.id ? `${(audioProgress / (audioDuration || 1)) * 100}%` : '0%' }}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                  {communityMessages.length === 0 && (
-                    <div className="text-center p-4 text-sm text-gray-500">Loading community voices...</div>
-                  )}
-                </CardContent>
-              </Card>
-            </div>
-
-            {/* 2. Official Intake & AI Disclosures */}
-            <div>
-              <h3 className="font-bold text-base flex items-center gap-2 mb-3 text-[#111827] dark:text-[#f9fafb]">
-                <ShieldAlert className="h-5 w-5 text-[#0038a8]" /> {t.officialIntakeTitle}
-              </h3>
-
-              <Card className="bg-white dark:bg-[#1f2937] border-[#e5e7eb] dark:border-[#374151] shadow-2xs">
-                <CardContent className="p-4 space-y-4">
-                  <div className="flex items-center justify-between border-b border-gray-200 dark:border-gray-800 pb-3">
-                    <div className="flex items-center gap-2">
-                      <FileText className="h-4 w-4 text-[#0038a8]" />
-                      <span className="text-xs font-bold">{t.bulletinTitle}</span>
-                    </div>
-                    <Badge variant="outline" className="text-[10px] border-[#0038a8] text-[#0038a8] bg-[#eff6ff] dark:bg-[#1e3a8a]/30 font-bold">
-                      {t.regionalFeed}
-                    </Badge>
-                  </div>
-
-                  {/* AI Spoken Tag Disclosure */}
-                  <div className="p-3.5 bg-[#fefce8] dark:bg-[#422006]/30 border border-[#fef08a] dark:border-[#713f12] rounded-xl space-y-2">
-                    <div className="flex items-center gap-2">
-                      <Volume2 className="h-4 w-4 text-[#ca8a04] shrink-0" />
-                      <p className="text-xs font-bold text-[#854d0e] dark:text-[#fde047]">
-                        {t.aiDisclosureTitle}
-                      </p>
-                    </div>
-                    <p className="text-xs text-gray-700 dark:text-gray-300 leading-relaxed font-medium">
-                      {t.aiDisclosureDesc}
-                    </p>
-                    <div className="p-2 bg-white dark:bg-[#111827] rounded-md border border-[#fef08a] dark:border-[#713f12] text-xs font-mono text-[#0038a8] dark:text-[#60a5fa] font-bold">
-                      {t.aiAudioTag}
-                    </div>
-
-                    <Button
-                      size="sm"
-                      onClick={() => handlePlayAudio("official-ai")}
-                      className="mt-2 bg-[#0038a8] hover:bg-[#1d4ed8] text-white text-xs h-8 font-bold"
-                    >
-                      {playingAudioId === "official-ai" ? <Pause className="h-3 w-3 mr-1" /> : <Play className="h-3 w-3 mr-1 fill-current" />}
-                      {t.testDisclosureBtn}
-                    </Button>
-                  </div>
-
-                  {/* Human Review Threshold */}
-                  <div className="p-3.5 bg-[#eff6ff] dark:bg-[#1e3a8a]/30 border border-[#bfdbfe] dark:border-[#1e40af] rounded-xl space-y-2">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs font-bold text-[#0038a8] dark:text-[#60a5fa] flex items-center gap-1.5">
-                        <UserCheck className="h-4 w-4 text-[#2563eb]" /> {t.humanReviewTitle}
-                      </span>
-                      <Badge className="bg-[#2563eb] text-white text-[10px] font-bold">{t.verifiedReviewer}</Badge>
-                    </div>
-                    <p className="text-xs text-gray-700 dark:text-gray-300 leading-relaxed font-medium">
-                      {t.humanReviewDesc}
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-
-          </motion.div>
+            </motion.div>
           </TabsContent>
 
           {/* ==================== TAB 3: RECOVERY / SUPPLY MAP ==================== */}
