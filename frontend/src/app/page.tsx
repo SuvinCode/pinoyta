@@ -1334,7 +1334,7 @@ export default function DisasterApp() {
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           
           {/* 4 Main Header Tabs */}
-          <TabsList className="hidden md:grid w-full grid-cols-5 h-14 mb-6 bg-white/95 dark:bg-[#111827]/95 border border-[#e5e7eb] dark:border-[#1f2937] rounded-xl p-1 shadow-xs">
+          <TabsList className="hidden md:grid w-full grid-cols-4 h-14 mb-6 bg-white/95 dark:bg-[#111827]/95 border border-[#e5e7eb] dark:border-[#1f2937] rounded-xl p-1 shadow-xs">
             <TabsTrigger 
               value="dashboard" 
               className="flex items-center justify-center gap-1 sm:gap-2 data-[state=active]:text-[#0038a8] dark:data-[state=active]:text-[#60a5fa] data-[state=active]:bg-[#eff6ff] dark:data-[state=active]:bg-[#1e3a8a]/40 font-bold text-[10px] sm:text-sm rounded-lg transition-all"
@@ -1367,13 +1367,7 @@ export default function DisasterApp() {
               <span className="hidden sm:inline">{t.tabSupplyMap}</span>
             </TabsTrigger>
 
-            <TabsTrigger 
-              value="settings" 
-              className="flex items-center justify-center gap-1 sm:gap-2 data-[state=active]:text-[#0038a8] dark:data-[state=active]:text-[#60a5fa] data-[state=active]:bg-[#eff6ff] dark:data-[state=active]:bg-[#1e3a8a]/40 font-bold text-[10px] sm:text-sm rounded-lg transition-all"
-            >
-              <Settings className="h-3 w-3 sm:h-4 sm:w-4 text-gray-500" />
-              <span className="hidden sm:inline">{t.tabSettings}</span>
-            </TabsTrigger>
+
           </TabsList>
 
           {/* ==================== TAB 0: DASHBOARD ==================== */}
@@ -1806,73 +1800,6 @@ export default function DisasterApp() {
             <motion.div initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4 }} className="space-y-4">
             <SupplyLiveMap />
           </motion.div>
-          </TabsContent>
-
-          {/* ==================== TAB 4: SETTINGS ==================== */}
-          <TabsContent value="settings" className="outline-none">
-            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="space-y-6 mt-4">
-              <Card className="bg-white dark:bg-[#1f2937] border-[#e5e7eb] dark:border-[#374151] shadow-sm">
-                <CardHeader className="pb-4 border-b border-[#e5e7eb] dark:border-[#374151]">
-                  <CardTitle className="flex items-center gap-2">
-                    <Settings className="h-5 w-5 text-gray-500" />
-                    {t.tabSettings}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="pt-6 space-y-6">
-                  {/* Language Setting */}
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wider">{t.languageLabel}</label>
-                    <Select value={language} onValueChange={(val) => {
-                        if (val) {
-                          localStorage.setItem("app_language", val);
-                          window.location.reload();
-                        }
-                      }}>
-                      <SelectTrigger className="w-full md:w-[240px] h-10 border-[#d1d5db] dark:border-[#374151] bg-white dark:bg-[#111827]">
-                        <SelectValue placeholder="Language" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="mamanwa">Minamanwa (Native)</SelectItem>
-                        <SelectItem value="bisaya">Bisaya</SelectItem>
-                        <SelectItem value="cebuano">Cebuano</SelectItem>
-                        <SelectItem value="ilocano">Ilocano</SelectItem>
-                        <SelectItem value="hiligaynon">Hiligaynon</SelectItem>
-                        <SelectItem value="bicolano">Bicolano</SelectItem>
-                        <SelectItem value="waray">Waray-Waray</SelectItem>
-                        <SelectItem value="kapampangan">Kapampangan</SelectItem>
-                        <SelectItem value="pangasinan">Pangasinan</SelectItem>
-                        <SelectItem value="tagalog">Tagalog</SelectItem>
-                        <SelectItem value="english">English</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-
-                  {/* Dark Mode */}
-                  <div className="pt-6 border-t border-[#e5e7eb] dark:border-[#374151] flex items-center justify-between">
-                    <div className="flex items-center gap-2 text-sm font-bold text-gray-700 dark:text-gray-300">
-                      {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Settings className="h-4 w-4" />}
-                      <span>{t.darkTheme || "Dark Mode"}</span>
-                    </div>
-                    <Switch 
-                      checked={theme === "dark"} 
-                      onCheckedChange={(c) => setTheme(c ? "dark" : "light")} 
-                    />
-                  </div>
-
-                  {/* Governance */}
-                  <div className="pt-6 border-t border-[#e5e7eb] dark:border-[#374151]">
-                    <span className="text-xs font-bold text-gray-500 uppercase tracking-wider block mb-2">Simulated Governance State</span>
-                    <div className="flex items-center justify-between bg-blue-50/50 dark:bg-blue-950/30 p-3 rounded-lg border border-blue-200/50 dark:border-blue-900/50">
-                      <span className="text-sm font-medium">{t.alertTribalConfirm}</span>
-                      <Switch 
-                        checked={isAlertConfirmed} 
-                        onCheckedChange={setIsAlertConfirmed}
-                      />
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
           </TabsContent>
 
         </Tabs>
