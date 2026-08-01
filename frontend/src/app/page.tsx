@@ -18,9 +18,9 @@ import SupplyLiveMap from "@/components/supply-map";
 const translations = {
   mamanwa: {
     statusLine: "Mataas ang suba ug kusog ang hangin. Pag-andam kamo sa pagbalhin sa taas nga dapit.",
-    tabDashboard: "1. Main Dashboard",
-    tabSources: "2. Sources",
-    tabSupply: "3. Recovery Map",
+    tabDashboard: "Main Dashboard",
+    tabSources: "Sources",
+    tabSupply: "Recovery Map",
     barangayFocus: "Barangay Focus:",
     confirmedTitle: "CONFIRMED BY TRIBAL COUNCIL",
     confirmedSub: "Verified by Datu Makusog for",
@@ -52,9 +52,9 @@ const translations = {
   },
   bisaya: {
     statusLine: "Nagka-duol ang bagyo. Siguroha ang inyong mga balay ug pangandam sa pag-bakwit sa taas nga dapit.",
-    tabDashboard: "1. Pangunang Dashboard",
-    tabSources: "2. Mga Gikanan",
-    tabSupply: "3. Mapa sa Tabang",
+    tabDashboard: "Pangunang Dashboard",
+    tabSources: "Mga Gikanan",
+    tabSupply: "Mapa sa Tabang",
     barangayFocus: "Gipunting nga Barangay:",
     confirmedTitle: "GIKUMPIRMA SA KATAWHANG TRIBAL",
     confirmedSub: "Gikumpirma ni Datu Makusog alang sa",
@@ -86,9 +86,9 @@ const translations = {
   },
   tagalog: {
     statusLine: "Papalapit ang bagyo. Iseguro ang mga tahanan at maghandang lumipat sa mataas na lugar.",
-    tabDashboard: "1. Pangunahing Dashboard",
-    tabSources: "2. Pinagmulan ng Balita",
-    tabSupply: "3. Mapa ng Tulong",
+    tabDashboard: "Pangunahing Dashboard",
+    tabSources: "Pinagmulan ng Balita",
+    tabSupply: "Mapa ng Tulong",
     barangayFocus: "Nakatutok sa Barangay:",
     confirmedTitle: "KUMPIRMADO NG KONSEHO NG IP/KATUTUBO",
     confirmedSub: "Kinumpirma ni Datu Makusog para sa",
@@ -120,9 +120,9 @@ const translations = {
   },
   english: {
     statusLine: "Typhoon approaching. Secure homes and prepare to move to high ground.",
-    tabDashboard: "1. Main Dashboard",
-    tabSources: "2. Sources",
-    tabSupply: "3. Recovery Map",
+    tabDashboard: "Main Dashboard",
+    tabSources: "Sources",
+    tabSupply: "Recovery Map",
     barangayFocus: "Barangay Focus:",
     confirmedTitle: "CONFIRMED BY TRIBAL COUNCIL",
     confirmedSub: "Verified by Datu Makusog for",
@@ -154,9 +154,9 @@ const translations = {
   },
   cebuano: {
     statusLine: "Nagka-duol ang bagyo. Siguroha ang inyong mga balay ug pangandam sa pag-bakwit sa taas nga dapit.",
-    tabDashboard: "1. Pangunang Dashboard",
-    tabSources: "2. Mga Tinubdan",
-    tabSupply: "3. Mapa sa Tabang",
+    tabDashboard: "Pangunang Dashboard",
+    tabSources: "Mga Tinubdan",
+    tabSupply: "Mapa sa Tabang",
     barangayFocus: "Gipunting nga Barangay:",
     confirmedTitle: "GIKUMPIRMA SA KONSEHO SA TRIBAL",
     confirmedSub: "Gikumpirma ni Datu Makusog alang sa",
@@ -188,9 +188,9 @@ const translations = {
   },
   ilocano: {
     statusLine: "Umay ti bagyo. I-sigurado dagiti balay yo ken agsagana nga mapan iti nangato a lugar.",
-    tabDashboard: "1. Kangrunaan a Dashboard",
-    tabSources: "2. Paggapuan Ti Damag",
-    tabSupply: "3. Mapa Ti Tulong",
+    tabDashboard: "Kangrunaan a Dashboard",
+    tabSources: "Paggapuan Ti Damag",
+    tabSupply: "Mapa Ti Tulong",
     barangayFocus: "Nakatutukan a Barangay:",
     confirmedTitle: "KINUMPIRMA TI KONSEHO TI IP",
     confirmedSub: "Kinumpirma ni Datu Makusog para iti",
@@ -222,9 +222,9 @@ const translations = {
   },
   hiligaynon: {
     statusLine: "Hapit na ang bagyo. Siguraduha ang inyo mga balay kag maghanda sa pag-evacuate sa mataas nga lugar.",
-    tabDashboard: "1. Pangunang Dashboard",
-    tabSources: "2. Ginhalinan Sang Impormasyon",
-    tabSupply: "3. Mapa Sang Bulig",
+    tabDashboard: "Pangunang Dashboard",
+    tabSources: "Ginhalinan Sang Impormasyon",
+    tabSupply: "Mapa Sang Bulig",
     barangayFocus: "Ginapokus Nga Barangay:",
     confirmedTitle: "GINKUMPIRMAR SANG KONSEHO",
     confirmedSub: "Ginkumpirmar ni Datu Makusog para sa",
@@ -256,9 +256,9 @@ const translations = {
   },
   bicolano: {
     statusLine: "Haranihon na ang bagyo. Seguruhon ang mga harong asin mag-andam sa pagbalyo sa halangkaw na lugar.",
-    tabDashboard: "1. Panginot na Dashboard",
-    tabSources: "2. Mga Ginikanan nin Bareta",
-    tabSupply: "3. Mapa nin Tabang",
+    tabDashboard: "Panginot na Dashboard",
+    tabSources: "Mga Ginikanan nin Bareta",
+    tabSupply: "Mapa nin Tabang",
     barangayFocus: "Tinututukan na Barangay:",
     confirmedTitle: "KUMPIRMADO KAN KONSEHO",
     confirmedSub: "Kinumpirma ni Datu Makusog para sa",
@@ -290,9 +290,9 @@ const translations = {
   },
   waray: {
     statusLine: "Ti-arabot na iton bagyo. Siguruha iton iyo mga balay ngan pag-andam ha pagbakwit ngadto ha hitaas nga lugar.",
-    tabDashboard: "1. Pangunahon nga Dashboard",
-    tabSources: "2. Gintikangan Han Impormasyon",
-    tabSupply: "3. Mapa Han Bulig",
+    tabDashboard: "Pangunahon nga Dashboard",
+    tabSources: "Gintikangan Han Impormasyon",
+    tabSupply: "Mapa Han Bulig",
     barangayFocus: "Nakatutok nga Barangay:",
     confirmedTitle: "KUMPIRMADO HAN KONSEHO",
     confirmedSub: "Ginkumpirma ni Datu Makusog para ha",
@@ -324,9 +324,9 @@ const translations = {
   },
   kapampangan: {
     statusLine: "Darating ne ing bagyu. Siguradwan yo ring bale yo at magsadya kayong lumipat king matas a lugal.",
-    tabDashboard: "1. Pun Dashboard",
-    tabSources: "2. Pikukwanan Balita",
-    tabSupply: "3. Mapa Ning Saup",
+    tabDashboard: "Pun Dashboard",
+    tabSources: "Pikukwanan Balita",
+    tabSupply: "Mapa Ning Saup",
     barangayFocus: "Pakatalukyan A Barangay:",
     confirmedTitle: "KUMPIRMÁDU NING KONSEHO",
     confirmedSub: "Kinumpirma neng Datu Makusog para king",
@@ -358,9 +358,9 @@ const translations = {
   },
   pangasinan: {
     statusLine: "Oonla so bagyo. Iseguro iray abong yo tan man-akseb ya onalis ed atagey ya pasen.",
-    tabDashboard: "1. Manunot A Dashboard",
-    tabSources: "2. Pama-nengnengan Na Balita",
-    tabSupply: "3. Mapa Na Tulong",
+    tabDashboard: "Manunot A Dashboard",
+    tabSources: "Pama-nengnengan Na Balita",
+    tabSupply: "Mapa Na Tulong",
     barangayFocus: "Papatarokan A Barangay:",
     confirmedTitle: "AKUMPIRMA NA KONSEHO",
     confirmedSub: "Kinumpirma nen Datu Makusog para ed",
@@ -627,13 +627,7 @@ export default function DisasterApp() {
           </div>
         </div>
         
-        {/* Plain-Language Status Line with Dynamic Translation */}
-        <div className="bg-[#fefce8] dark:bg-[#422006]/50 border-b border-[#fef08a] dark:border-[#713f12] px-4 py-2">
-          <p className="text-xs sm:text-sm text-[#854d0e] dark:text-[#fef08a] font-bold text-center leading-snug flex items-center justify-center gap-1.5">
-            <Sun className="h-4 w-4 text-[#eab308] fill-[#eab308] shrink-0" />
-            {t.statusLine}
-          </p>
-        </div>
+
       </header>
 
       {/* Main Content Area */}
@@ -671,118 +665,6 @@ export default function DisasterApp() {
           <TabsContent value="dashboard" className="outline-none">
             <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="space-y-4">
             
-            {/* Location Selector */}
-            <div className="flex items-center justify-between p-3.5 bg-white dark:bg-[#1f2937] border border-[#e5e7eb] dark:border-[#374151] rounded-xl shadow-2xs">
-              <div className="flex items-center gap-2">
-                <Map className="h-4 w-4 text-[#0038a8] dark:text-[#60a5fa]" />
-                <span className="text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wider">{t.barangayFocus}</span>
-              </div>
-              <Select value={selectedBarangay} onValueChange={(val) => val && setSelectedBarangay(val)}>
-                <SelectTrigger className="w-[210px] h-8 text-xs font-bold border-[#d1d5db] dark:border-[#4b5563] bg-white dark:bg-[#111827]">
-                  <SelectValue placeholder="Barangay" />
-                </SelectTrigger>
-                <SelectContent className="bg-white dark:bg-[#1f2937] border-[#e5e7eb] dark:border-[#374151]">
-                <SelectItem value="mamanwa">Minamanwa (Native)</SelectItem>
-                <SelectItem value="bisaya">Bisaya</SelectItem>
-                <SelectItem value="cebuano">Cebuano</SelectItem>
-                <SelectItem value="ilocano">Ilocano</SelectItem>
-                <SelectItem value="hiligaynon">Hiligaynon</SelectItem>
-                <SelectItem value="bicolano">Bicolano</SelectItem>
-                <SelectItem value="waray">Waray-Waray</SelectItem>
-                <SelectItem value="kapampangan">Kapampangan</SelectItem>
-                <SelectItem value="pangasinan">Pangasinan</SelectItem>
-                <SelectItem value="tagalog">Tagalog</SelectItem>
-                <SelectItem value="english">English</SelectItem>
-              </SelectContent>
-              </Select>
-            </div>
-
-            {/* Verification Row Up Top */}
-            <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}>
-              {isAlertConfirmed ? (
-                <div className="flex items-center gap-3.5 p-4 bg-[#eff6ff] dark:bg-[#1e3a8a]/30 border-2 border-[#2563eb]/40 rounded-xl shadow-2xs">
-                  <Avatar className="h-11 w-11 border-2 border-[#2563eb]">
-                    <AvatarImage src="https://api.dicebear.com/7.x/notionists/svg?seed=datu" />
-                    <AvatarFallback className="bg-[#0038a8] text-white">DM</AvatarFallback>
-                  </Avatar>
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2">
-                      <p className="text-sm font-bold text-[#0038a8] dark:text-[#60a5fa] flex items-center gap-1">
-                        <CheckCircle2 className="h-4 w-4 text-[#2563eb]" /> {t.confirmedTitle}
-                      </p>
-                      <Badge className="bg-[#2563eb] text-white text-[10px] font-bold border-none">
-                        Active Trust
-                      </Badge>
-                    </div>
-                    <p className="text-xs font-medium text-gray-700 dark:text-gray-300 mt-0.5">
-                      {t.confirmedSub} <span className="font-bold text-[#111827] dark:text-white">Datu Makusog</span> ({selectedBarangay === "san-roque" ? "Brgy. San Roque" : "Selected Area"})
-                    </p>
-                  </div>
-                </div>
-              ) : (
-                <div className="flex items-center gap-3.5 p-4 bg-[#fff1f2] dark:bg-[#881337]/30 border-2 border-[#f43f5e]/40 rounded-xl shadow-2xs">
-                  <div className="h-11 w-11 rounded-full bg-[#ffe4e6] dark:bg-[#9f1239]/50 flex items-center justify-center text-[#e11d48] dark:text-[#fda4af] shrink-0">
-                    <HelpCircle className="h-6 w-6" />
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-sm font-bold text-[#be123c] dark:text-[#fda4af] flex items-center gap-1">
-                      <AlertTriangle className="h-4 w-4 text-[#e11d48]" /> {t.notConfirmedTitle}
-                    </p>
-                    <p className="text-xs text-gray-700 dark:text-gray-300 mt-0.5">
-                      {t.notConfirmedSub}
-                    </p>
-                  </div>
-                  <Button 
-                    size="sm" 
-                    onClick={() => setIsAlertConfirmed(true)} 
-                    className="text-xs h-8 bg-[#2563eb] hover:bg-[#1d4ed8] text-white shrink-0 font-bold"
-                  >
-                    {t.confirmButton}
-                  </Button>
-                </div>
-              )}
-            </motion.div>
-
-            {/* Signal Level Card */}
-            <Card className="bg-white dark:bg-[#1f2937] border-[#e5e7eb] dark:border-[#374151] shadow-2xs">
-              <CardHeader className="border-b border-[#e5e7eb] dark:border-[#374151] pb-4">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <CardTitle className="text-xl text-[#ce2029] dark:text-[#f87171] flex items-center gap-2 font-extrabold">
-                      <AlertTriangle className="h-5 w-5 text-[#ce2029]" /> {t.signalTitle}
-                    </CardTitle>
-                    <CardDescription className="text-xs font-semibold text-gray-500 dark:text-gray-400 mt-1">
-                      {t.signalSub}
-                    </CardDescription>
-                  </div>
-                  <Badge className="bg-[#ce2029] text-white font-bold px-2.5 py-1 text-xs">
-                    HIGH RISK
-                  </Badge>
-                </div>
-              </CardHeader>
-
-              <CardContent className="pt-5 space-y-4">
-                <div className="p-3.5 bg-[#f8fafc] dark:bg-[#111827] rounded-xl border border-[#e2e8f0] dark:border-[#1e293b]">
-                  <p className="text-xs font-bold text-[#0038a8] dark:text-[#60a5fa] uppercase tracking-wider mb-1">{t.traditionalWarningTitle}</p>
-                  <p className="text-sm leading-relaxed text-gray-800 dark:text-gray-200">
-                    {t.traditionalWarningDesc}
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-2 gap-3 text-center">
-                  <div className="bg-[#eff6ff] dark:bg-[#1e3a8a]/30 p-3.5 rounded-xl border border-blue-200 dark:border-blue-900">
-                    <p className="text-[10px] text-[#1d4ed8] dark:text-[#93c5fd] uppercase font-bold tracking-wider">{t.evacDirectiveTitle}</p>
-                    <p className="font-extrabold text-base sm:text-lg mt-0.5 text-[#ce2029] dark:text-[#f87171]">{t.evacDirectiveValue}</p>
-                  </div>
-
-                  <div className="bg-[#fefce8] dark:bg-[#422006]/30 p-3.5 rounded-xl border border-yellow-200 dark:border-yellow-900">
-                    <p className="text-[10px] text-[#a16207] dark:text-[#fde047] uppercase font-bold tracking-wider">{t.estWindowTitle}</p>
-                    <p className="font-extrabold text-base sm:text-lg mt-0.5 text-[#ca8a04] dark:text-[#facc15]">{t.estWindowValue}</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
             {/* --- NEW COMMUNITY REPORTING SECTION --- */}
             
             <div className="mt-8 space-y-4">
