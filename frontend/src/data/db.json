@@ -14,7 +14,7 @@
         "cebuano": "Niawas na ang suba sa daang tulay. Ayaw pugsa pagtabok. Balhin dayon sa upland evacuation center!"
       },
       "dialect": "Agta",
-      "audioUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+      "audioUrl": "/audio/er-1.mp3",
       "verified": true,
       "pinned": true
     },
@@ -32,7 +32,7 @@
         "cebuano": "Mubo ra ang lupad sa mga langgam. Naay kusog nga bagyo padulong. Tapoka na ang inyong mga kahayupan."
       },
       "dialect": "Agta",
-      "audioUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+      "audioUrl": "/audio/er-2.mp3",
       "verified": true,
       "pinned": false
     }
@@ -52,7 +52,7 @@
         "cebuano": "Nagkinahanglan mi og mainom nga tubig diri, guba ang mga tubo duol sa kapilya."
       },
       "dialect": "Tagalog",
-      "audioUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+      "audioUrl": "/audio/cr-1.mp3",
       "verified": false,
       "pinned": false
     },
@@ -70,7 +70,7 @@
         "cebuano": "Naay mga natumbang kahoy duol sa basketball court, na-block ang dalan. Palihog pagpadala og clearing operations kung mahimo."
       },
       "dialect": "English",
-      "audioUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+      "audioUrl": "/audio/cr-2.mp3",
       "verified": false,
       "pinned": false
     },
@@ -88,7 +88,7 @@
         "cebuano": "Malamposon namo nga na-evacuate ang 30 ka pamilya ngadto sa high ground shelter. Nagkinahanglan pa mi og dugang habol ug flashlight."
       },
       "dialect": "Tagalog",
-      "audioUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+      "audioUrl": "/audio/cr-3.mp3",
       "verified": true,
       "pinned": false
     }
