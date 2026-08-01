@@ -1219,6 +1219,93 @@ export default function DisasterApp() {
                 </Card>
               </div>
 
+              {/* Added Dashboard Information Sections */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                
+                {/* Problems */}
+                <Card className="bg-white dark:bg-[#1f2937] border-[#e5e7eb] dark:border-[#374151] shadow-sm">
+                  <CardHeader className="pb-2 bg-[#fef2f2] dark:bg-[#450a0a]/30 border-b border-[#fee2e2] dark:border-[#7f1d1d]/30">
+                    <h3 className="font-bold text-[#b91c1c] dark:text-[#f87171] flex items-center gap-2">
+                      <AlertTriangle className="h-4 w-4" />
+                      Problems
+                    </h3>
+                  </CardHeader>
+                  <CardContent className="pt-4">
+                    <ul className="list-disc pl-5 text-sm text-gray-700 dark:text-gray-300 space-y-2">
+                      <li>Overlooked by the government</li>
+                      <li>Gap between indigenous knowledge and government initiatives</li>
+                      <li>Community is mostly illiterate due to lack of education (disconnected from modern communities)</li>
+                    </ul>
+                  </CardContent>
+                </Card>
+
+                {/* Solution */}
+                <Card className="bg-white dark:bg-[#1f2937] border-[#e5e7eb] dark:border-[#374151] shadow-sm">
+                  <CardHeader className="pb-2 bg-[#f0fdf4] dark:bg-[#052e16]/30 border-b border-[#dcfce3] dark:border-[#14532d]/30">
+                    <h3 className="font-bold text-[#15803d] dark:text-[#4ade80] flex items-center gap-2">
+                      <CheckCircle2 className="h-4 w-4" />
+                      Solution
+                    </h3>
+                  </CardHeader>
+                  <CardContent className="pt-4">
+                    <ul className="list-disc pl-5 text-sm text-gray-700 dark:text-gray-300 space-y-2">
+                      <li>Recovery supply map showing facilities so community members know where to go and government knows what to renovate</li>
+                      <li>News from Elders/Chiefs through voice recording (builds trust between government and community)</li>
+                      <li>Respond to facilities that need renovation</li>
+                    </ul>
+                  </CardContent>
+                </Card>
+
+                {/* Measuring Success */}
+                <Card className="bg-white dark:bg-[#1f2937] border-[#e5e7eb] dark:border-[#374151] shadow-sm">
+                  <CardHeader className="pb-2 bg-[#eff6ff] dark:bg-[#1e3a8a]/30 border-b border-[#dbeafe] dark:border-[#1e3a8a]/50">
+                    <h3 className="font-bold text-[#1d4ed8] dark:text-[#60a5fa] flex items-center gap-2">
+                      <Activity className="h-4 w-4" />
+                      Measuring Success
+                    </h3>
+                  </CardHeader>
+                  <CardContent className="pt-4">
+                    <ul className="list-disc pl-5 text-sm text-gray-700 dark:text-gray-300 space-y-2">
+                      <li>Asks Elder's feedback</li>
+                      <li>Death toll (quantitative tracking)</li>
+                      <li>% of evacuation requests executed (infrastructure implementation)</li>
+                    </ul>
+                  </CardContent>
+                </Card>
+
+                {/* Limitations */}
+                <Card className="bg-white dark:bg-[#1f2937] border-[#e5e7eb] dark:border-[#374151] shadow-sm">
+                  <CardHeader className="pb-2 bg-[#fffbeb] dark:bg-[#78350f]/30 border-b border-[#fef3c7] dark:border-[#92400e]/30">
+                    <h3 className="font-bold text-[#b45309] dark:text-[#fbbf24] flex items-center gap-2">
+                      <ShieldAlert className="h-4 w-4" />
+                      Limitations
+                    </h3>
+                  </CardHeader>
+                  <CardContent className="pt-4">
+                    <ul className="list-disc pl-5 text-sm text-gray-700 dark:text-gray-300 space-y-2">
+                      <li>Limited digital infrastructure & knowledge</li>
+                      <li>Need further training workshops to teach community to use</li>
+                    </ul>
+                  </CardContent>
+                </Card>
+
+                {/* Future Implementations */}
+                <Card className="bg-white dark:bg-[#1f2937] border-[#e5e7eb] dark:border-[#374151] shadow-sm md:col-span-2">
+                  <CardHeader className="pb-2 bg-[#faf5ff] dark:bg-[#4c1d95]/30 border-b border-[#f3e8ff] dark:border-[#5b21b6]/30">
+                    <h3 className="font-bold text-[#7e22ce] dark:text-[#c084fc] flex items-center gap-2">
+                      <Star className="h-4 w-4" />
+                      Future Implementations
+                    </h3>
+                  </CardHeader>
+                  <CardContent className="pt-4">
+                    <ul className="list-disc pl-5 text-sm text-gray-700 dark:text-gray-300 space-y-2">
+                      <li>Apply for government grants</li>
+                      <li>GoFundMe alternatives in Philippines (e.g., Daisy, BayanihanPH)</li>
+                    </ul>
+                  </CardContent>
+                </Card>
+
+              </div>
             </motion.div>
           </TabsContent>
 
